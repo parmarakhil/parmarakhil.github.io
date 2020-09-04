@@ -3,7 +3,7 @@
   "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "live-resume": {
+    "parmarakhil.github.io": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/live-resume",
+            "outputPath": "dist/parmarakhil.github.io",
             "index": "docs/index.html",
             "main": "docs/main.ts",
             "polyfills": "docs/polyfills.ts",
@@ -81,27 +81,27 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "live-resume:build"
+            "browserTarget": "parmarakhil.github.io:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "live-resume:build:production"
+              "browserTarget": "parmarakhil.github.io:build:production"
             },
             "en": {
-              "browserTarget": "live-resume:build:en"
+              "browserTarget": "parmarakhil.github.io:build:en"
             },
             "pt": {
-              "browserTarget": "live-resume:build:pt"
+              "browserTarget": "parmarakhil.github.io:build:pt"
             },
             "es5": {
-              "browserTarget": "live-resume:build:es5"
+              "browserTarget": "parmarakhil.github.io:build:es5"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "live-resume:build"
+            "browserTarget": "parmarakhil.github.io:build"
           }
         },
         "test": {
@@ -138,15 +138,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "live-resume:serve"
+            "devServerTarget": "parmarakhil.github.io:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "live-resume:serve:production"
+              "devServerTarget": "parmarakhil.github.io:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "live-resume"
+  "defaultProject": "parmarakhil.github.io"
 }
