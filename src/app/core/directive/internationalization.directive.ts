@@ -34,7 +34,7 @@ export class InternationalizationDirective implements OnInit{
         if(this._data) {
 
             const value: string[] = this._data
-                .filter(element => element.language === (this.locale || "en"))
+                .filter(element => element.language === ("en"))
                 .map(element => element[this.property]) || [""];
 
             return this.ellipsis > 0 ? new EllipsisPipe().transform(value[0], this.ellipsis) : value;

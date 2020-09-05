@@ -23,7 +23,7 @@ export class DataService {
     }
     
     getAbout() : Observable<IAbout> {
-      return this.http.get<IAbout>(this.baseUrl + "about.json")
+      return this.http.get<any>(this.baseUrl + "about.json")
           .pipe(
               catchError(this.handleError)
           );
