@@ -7,26 +7,26 @@
       "projectType": "application",
       "schematics": {},
       "root": "",
-      "sourceRoot": "docs",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/parmarakhil.github.io",
-            "index": "docs/index.html",
-            "main": "docs/main.ts",
-            "polyfills": "docs/polyfills.ts",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "docs/favicon.ico",
-              "docs/assets",
-              "docs/sitemap.xml",
-              "docs/robots.txt"
+              "src/favicon.ico",
+              "src/assets",
+              "src/sitemap.xml",
+              "src/robots.txt"
             ],
             "styles": [
-              "docs/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -34,8 +34,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "docs/environments/environment.ts",
-                  "with": "docs/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -61,14 +61,14 @@
             },
             "en": {
               "aot": true,
-              "i18nFile": "docs/locales/messages.en.xlf",
+              "i18nFile": "src/locales/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
               "i18nMissingTranslation": "error"
             },
             "pt": {
               "aot": true,
-              "i18nFile": "docs/locales/messages.pt.xlf",
+              "i18nFile": "src/locales/messages.pt.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "pt",
               "i18nMissingTranslation": "error"
@@ -107,16 +107,16 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "docs/test.ts",
-            "polyfills": "docs/polyfills.ts",
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "docs/favicon.ico",
-              "docs/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "docs/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           }
