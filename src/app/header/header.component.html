@@ -5,7 +5,7 @@
     </div>
 
     <div class="child logo-container" itemprop="brand" itemscope itemtype="https://schema.org/Brand">
-        <a (click)="resetMenu()" href="#" class="logo" itemprop="name" itemprop="logo">Akhil</a>
+        <a (click)="resetMenu()" href="#" class="logo" itemprop="name" itemprop="logo" style="font-family:Pacifico, cursive;">Akhil</a>
     </div>
 
     <div class="child nav-container" #nav [hidden]="!hasMenuToggled" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -13,6 +13,7 @@
             <li><a (click)="resetMenu()" href="#about" i18n="nav@@aboutMe" itemprop="url"><span itemprop="name">About me</span></a></li>
             <li><a (click)="resetMenu()" href="#experience" i18n="nav@@experiences" itemprop="url"><span itemprop="name">Experiences</span></a></li>
             <!-- <li><a (click)="resetMenu()" href="#posts" i18n="nav@@posts" itemprop="url"><span itemprop="name">Posts</span></a></li> -->
+            <li><a (click)="resetMenu()" href="#projects" i18n="nav@@projects" itemprop="url"><span itemprop="name">Projects</span></a></li>
             <li><a (click)="resetMenu()" href="#contact" i18n="nav@@contact" itemprop="url"><span itemprop="name">Contact</span></a></li>
             <li><a (click)="resetMenu()" href="https://drive.google.com/file/d/1xiyXJe_7I3DEkxFfZri4GbI9THJ-7Aik/view?usp=sharing" i18n-title="nav@@open.as.pdf" title="Open Resume as PDF" target="_blank"><fa-icon [icon]="faCloudDownloadAlt" class="bar-icon"></fa-icon></a></li>
         </ul>

@@ -33,7 +33,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     // Fetches the About information from the Data Service (about.json file).
     this.subscription = this.dataService.getAbout()
         .subscribe((about: IAbout) => this.aboutData = about);
-      console.log(this.aboutData)
+
   }
   
   ngOnDestroy() {

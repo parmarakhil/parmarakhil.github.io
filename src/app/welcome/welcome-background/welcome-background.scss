@@ -33,43 +33,68 @@
 		}
 
 		&.second {
+			top: 340px;
+			left: -55px;
+		}
+
+		&.third {
 			top: 300px;
 			left: -65px;
 		}
 
-		&.third {
-			top: 205px;
-			left: -85px;
-		}
-
 		&.fourth {
-			top: 120px;
-			left: -65px;
+			top: 240px;
+			left: -70px;
 		}
 
 		&.fifth {
-			top: 40px;
-			left: -20px;
+			top: 200px;
+			left: -75px;
 		}
 
 		&.sixth {
-			top: -20px;
-			left: 50px;
+			top: 145px;
+			left: -55px;
 		}
 
 		&.seventh {
-			top: -20px;
-			right: 50px;
+			top: 90px;
+			right: 520px;
 		}
 
 		&.eighth {
-			bottom: 110px;
-			right: -30px;
+			top: 35px;
+			right: 490px;
 		}
 
 		&.ninth {
-			bottom: 40px;
-			right: 10px;
+			top: 0px;
+			right: 450px;
+		}
+
+		&.tenth {
+			top: -35px;
+			right: 400px;
+		}
+		&.eleventh {
+			top: -60px;
+			right: 340px;
+		}
+		&.tweleth {
+			top: -65px;
+			right: 290px;
+		}
+		&.thirteenth {
+			top: -55px;
+			right: 240px;
+		}
+		&.fourteenth {
+			bottom: 380px;
+			right: -70px;
+		}
+		&.fifteenth {
+			bottom: 420px;
+			right: -60px;
 		}
 	}
 }
