@@ -1,0 +1,26 @@
+[
+    {
+        "thumbnail": "../../assets/projects/ToDo.jpg",
+        "http": "https://github.com/parmarakhil/Todo-spring-mvc",
+        "date": "07-08-2020",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "ToDo app using Java ",
+                "description": "A ToDo app using Java. <br> This is a Java spring MVC based app to create and manage your work in form of todo's. <br>The technologies used are : <ul><li>java</li><li>Spring MVC</li><li>BootStrap</li><li>HTML</li><li>MySQL</li></ul>"
+            }
+        ]
+    },
+    {
+        "thumbnail": "../../assets/projects/microservice.png",
+        "http": "https://github.com/parmarakhil/spring-boot-microservice-project",
+        "date": "01-07-2020",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Microservice Architecture demonstration",
+                "description": "Microservice architecture –structural style – arranges an application as a collection of loosely coupled services which are fine-grained and the protocols are lightweight.<br>The technologies used are : <ul><li>java</li><li>Spring boot</li><li>Eureka Server</li></ul>"
+            }
+        ]
+    }
+]

@@ -20,6 +20,7 @@
         </context-group>
         <note priority="1" from="description">posts</note>
       </trans-unit>
+      
       <trans-unit id="successfulSubmit" datatype="html">
         <source>Thank you for contacting me, I&apos;ll reply to you very soon.</source>
         <target>Obrigado por entrar em contato, em breve responderei sua mensagem.</target>

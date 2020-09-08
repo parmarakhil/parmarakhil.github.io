@@ -3,12 +3,12 @@
         <!-- structured data properties -->
         <meta itemprop="jobTitle" content="Full-stack Java Developer" />
         <meta itemprop="knowsLanguage" content="en" />
-        <meta itemprop="knowsLanguage" content="pt" />
-        <meta itemprop="nationality" content="Brazil" />
+        <!-- <meta itemprop="knowsLanguage" content="pt" /> -->
+        <meta itemprop="nationality" content="India" />
         <meta itemprop="gender" content="Male" />
-        <meta itemprop="email" content="guilhermeborgesbastos@gmail.com" />
-        <meta itemprop="birthDate" content="1993-06-29" />
-        <meta itemprop="url" content="https://www.guilhermeborgesbastos.com" />
+        <meta itemprop="email" content="akhilparmar2496@gmail.com" />
+        <meta itemprop="birthDate" content="1996-04-24" />
+        <meta itemprop="url" content="https://www.linkedin.com/in/parmarakhil/" />
         <div class="first-column">
             <h1 i18n="nav@@aboutMe">About me</h1>
             <h2><span itemprop="name">{{ name }}</span></h2>
@@ -16,7 +16,7 @@
                 <span itemprop="yearsOld">{{ yearsOld }}</span>
                 &nbsp;<span i18n="about@@yearsOld">years old</span>
             </p>
-            <p class="text" internationalization [data]="aboutData?.internationalizations" property='description' itemprop="summary">Loading...</p>
+            <p class="text" internationalization [data]="aboutData?.internationalizations" property='description' itemprop="summary">Loading Data...</p>
             <div class="hobbies">
                 <h3>Hobbies</h3>
                 <fa-icon *ngFor="let hobby of aboutData?.hobbies" [icon]="['fas', hobby.icon]" class="icon" title="{{ hobby.title }}" itemprop="hobby"></fa-icon>

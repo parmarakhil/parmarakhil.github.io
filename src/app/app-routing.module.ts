@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: "experience", redirectTo: "/#experience"},
   { path: "experiences", redirectTo: "/#experience"},
   { path: "posts", redirectTo: "/#posts"},
+  { path: "projects", redirectTo: "/#projects"},
   { path: "contact", redirectTo: "/#contact"},
   { path: "**", redirectTo: "/page-not-found" }
 ];

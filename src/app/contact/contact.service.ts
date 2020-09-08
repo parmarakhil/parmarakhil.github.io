@@ -8,6 +8,6 @@ export class ContactService {
     constructor(private database: AngularFirestore) { }
 
     createContact(contact: Contact): Promise<DocumentReference> {
-        return this.database.collection<Contact>("contacts").add(contact);
+        return this.database.collection("contacts").add(contact);
     }
 }

@@ -14,6 +14,7 @@ import localePt from "@angular/common/locales/pt";
 import localePtExtra from "@angular/common/locales/extra/pt";
 
 import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
 import { environment } from "../environments/environment";
@@ -30,7 +31,8 @@ registerLocaleData(localePt, "pt-BR", localePtExtra);
     PageNotFoundRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAnalyticsModule
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule
   ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
