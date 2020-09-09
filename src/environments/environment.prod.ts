@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
   firebaseConfig : {
-    apiKey: "AIzaSyAb-8MnjHuKcOU7gkghanEMucZzsZJ680U",
-    authDomain: "parmarakhil-15225.firebaseapp.com",
-    databaseURL: "https://parmarakhil-15225.firebaseio.com",
-    projectId: "parmarakhil-15225",
-    storageBucket: "parmarakhil-15225.appspot.com",
-    messagingSenderId: "909406216696",
-    appId: "1:909406216696:web:ee48a17cca2cb2f974360d",
-    measurementId: "G-M2NCFPH9M5"
+    apiKey: "AIzaSyCzqPQ1qcM6U5rSggr6Ok84mTBpJttQGWo",
+    authDomain: "parmarakhil-cd124.firebaseapp.com",
+    databaseURL: "https://parmarakhil-cd124.firebaseio.com",
+    projectId: "parmarakhil-cd124",
+    storageBucket: "parmarakhil-cd124.appspot.com",
+    messagingSenderId: "1067564090435",
+    appId: "1:1067564090435:web:a5b41f154d2d1c68c340f6",
+    measurementId: "G-STCVTNXQ2P"
   }
 };

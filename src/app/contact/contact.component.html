@@ -1,11 +1,11 @@
 <section id="contact" itemscope itemtype="https://schema.org/ContactPage">
     <div class="feedback-container" [ngClass]="feedbackStatus">
         <p class="success">
-            <span i18n="contact@@successfulSubmit">Thank you for contacting me, I'll reply to you very soon.</span>
+            <span i18n="contact@@successfulSubmit">Thank you for contacting me, I'll reply to you very soon. Feel free to contact me on linkedin</span>
             <fa-icon [icon]="faTimes" class="icon" title="Close" (click)="closeFeedbackMessage()"></fa-icon>
         </p>
         <p class="error">
-            <span i18n="contact@@errorSubmit">Sorry, there is an instability, try again later, or contact me via email or social media.</span>
+            <span i18n="contact@@errorSubmit">Sorry, there is an instability, please try again later, or contact me via email or social media.</span>
             <fa-icon [icon]="faTimes" class="icon" title="Close" (click)="closeFeedbackMessage()"></fa-icon>
         </p>
     </div>
@@ -17,9 +17,10 @@
             <div class="top-container">
                 <div class="picture"></div>
                 <div class="info">
+                    <br>
                     <p class="name" *ngIf="name"><span itemprop="name">{{ name }}</span></p>
                     <p class="email" *ngIf="email"><fa-icon [icon]="faEnvelope" class="icon" title="Email"></fa-icon><a  href="mailto:{{ email }}" itemprop="email">{{ email }}</a></p>
-                    <p class="phone" *ngIf="phone"><fa-icon [icon]="faPhone" class="icon" title="Phone"></fa-icon><span itemprop="telephone">{{ phone }}</span></p>
+                    <!-- <p class="phone" *ngIf="phone"><fa-icon [icon]="faPhone" class="icon" title="Phone"></fa-icon><span itemprop="telephone">{{ phone }}</span></p> -->
                     <p class="location" *ngIf="location"><fa-icon [icon]="faMapMarkerAlt" class="icon" title="City"></fa-icon><span itemprop="city">{{ location }}</span></p>
                 </div>
             </div>
@@ -28,7 +29,7 @@
                     <div class="form-group">
                         <label for="name" i18n="contact@@name">Your name:</label>
                         <input [class.is-invalid]="senderName.invalid && senderName.touched"
-                            type="text" name="name" i18n-placeholder="contact@@namePlaceholder" placeholder="Mark" formControlName="name" >
+                            type="text" name="name" i18n-placeholder="contact@@namePlaceholder" placeholder="Max" formControlName="name" >
                         <div class="warnings" *ngIf="(senderName.invalid && senderName.touched) || senderName.dirty">
                             <!--question mark(?) is a safe navigation operator-->
                             <small *ngIf="senderName.errors?.required" class="text-danger" i18n="contact@@requiredNameError">The name is required.</small>
@@ -38,7 +39,7 @@
                     <div class="form-group">
                         <label for="email" i18n="contact@@email">Email:</label>
                         <input [class.is-invalid]="senderEmail.invalid && senderEmail.touched"
-                            type="email" name="email" i18n-placeholder="contact@@emailPlaceholder" placeholder="mark@gmail.com" formControlName="email" required>
+                            type="email" name="email" i18n-placeholder="contact@@emailPlaceholder" placeholder="max@gmail.com" formControlName="email" required>
                         <div class="warnings" *ngIf="(senderEmail.invalid && senderEmail.touched) || senderEmail.dirty">
                             <!--question mark(?) is a safe navigation operator-->
                             <small *ngIf="senderEmail.errors?.required" class="text-danger" i18n="contact@@requiredEmailError">The email is required.</small>

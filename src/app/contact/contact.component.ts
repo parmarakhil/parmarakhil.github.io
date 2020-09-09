@@ -29,7 +29,9 @@ export class ContactComponent implements OnInit {
   hasBeenSubmited: boolean = false;
   feedbackStatus: string;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService) {
+    
+   }
 
   contactForm: FormGroup = new FormGroup({
     name: new FormControl("",[
@@ -64,7 +66,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.name = "Akhil Parmar";
     this.email = "akhilparmar2496@gmail.com";
-    this.phone = "+919898266637";
+    // this.phone = "+919898266637";
     this.location = "Pune , Maharastra , India";
 
     this.faEnvelope = faEnvelope;
