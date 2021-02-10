@@ -8,7 +8,7 @@ import { Meta, Title } from "@angular/platform-browser";
 })
 export class AppComponent implements OnInit {
 
-  title: string = "Akhil Parmar portfolio";
+  title: string = "Akhil Parmar";
 
   constructor(
     private titleService: Title,
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     this.titleService.setTitle(this.title);
 
     this.metaTagService.addTags([
-      { name: "keywords", content: "Software developer, Web Developer, Java Developer, Full-stack Java Developer,Automation developer,Camunda Developer, Akhil Parmar portfolio, Akhil Parmar website, Akhil Parmar CV" },
+      { name: "keywords", content: "Software developer, Web Developer, Java Developer, Full-stack Java Developer,Automation developer,Camunda Developer, Akhil Parmar, Akhil Parmar website, Akhil Parmar CV" },
       { name: "robots", content: "index, follow" },
       { name: "author", content: "Akhil Parmar" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

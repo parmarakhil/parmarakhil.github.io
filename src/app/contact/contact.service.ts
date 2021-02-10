@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core";
 export class ContactService {
 
     constructor(private database: AngularFirestore) {}
+    
 
     createContact(contact: Contact): Promise<DocumentReference> {
         return this.database.collection("contacts").add(contact);

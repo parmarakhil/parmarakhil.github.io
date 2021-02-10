@@ -76,7 +76,6 @@ export class ContactComponent implements OnInit {
   }
 
   saveContact(contact: Contact) {
-    console.log(contact)
     this.contactService.createContact(contact).then(() => {
       this.displayUserInterfaceMessage(true);
     })
