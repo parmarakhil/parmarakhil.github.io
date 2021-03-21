@@ -12,7 +12,7 @@
                 "language": "en",
                 "city": "Vadodara",
                 "country": "India",
-                "role": "Intern",
+                "role": "Production Engineer Intern",
                 "description": "<b>Apollo Tyres</b> is the <b>#2</b> tyre manufacturing company in India headquarted in Gurugram, Haryana. It comprises of 4 brands, Apollo and Vredestein comprise of tyres for passenger, commercial and off highway vehicles. Brands Regal and Kaizen focus on the truck-bus tyre segment."
             }
         ],
@@ -51,7 +51,7 @@
                 "language": "en",
                 "city": "Vadodara",
                 "country": "India",
-                "role": "Full-stack Developer",
+                "role": "Business Development Intern",
                 "description": "<b>OYO Rooms</b> also known as Oyo Hotels & Homes, is an Indian <i>hospitality</i> chain of leased and franchised hotels, homes and living spaces. It is the largest hospitality company in the world in terms of number of hotels"
             }
         ],
@@ -81,7 +81,6 @@
         "id": 3,
         "position": 3,
         "startAt": "10-08-2018",
-        "endAt": "10-10-2020",
         "companyName": "Infosys Limited",
         "website": "https://www.infosys.com/",
         "logo": "../../assets/template/experience/logo/infosys.png",
@@ -90,12 +89,12 @@
                 "language": "en",
                 "city": "Pune",
                 "country": "India",
-                "role": "Systems Engineer",
+                "role": "Senior Systems Engineer",
                 "description": "<b>Infosys Limited</b> is an Indian multinational corporation that provides business consulting, information technology and outsourcing services. It is the 2nd largest IT company in India. It is also the home for the world's largest corporate university based in Mysuru, Karnataka"
             }
         ],
         "technologies": [
-            "JAVA", "Spring Framework", "Spring boot", "HTML", "CSS", "CSS3", "Javascript", "Angular", "REST", "Camuunda BPM", "Python", "GITLab","GitHub","Jhipster", "SQL", "MySQL", "PostgreSQL", "Windows","Process Automation"
+            "JAVA", "Spring", "Spring boot", "HTML", "CSS", "CSS3", "Javascript", "Angular", "REST", "Camuunda BPM", "Python", "GITLab","GitHub","Jhipster", "SQL", "MySQL", "PostgreSQL","Process Automation", "AWS", "JIRA","Maven"
         ],
         "medias": [
              {
