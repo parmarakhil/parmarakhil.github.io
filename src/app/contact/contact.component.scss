@@ -117,7 +117,20 @@
                 border-radius: 15px;
                 box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16);
                 padding: 1em;
-    
+                @media screen and (min-width: 192px){
+                    .picture {
+                        display: block;
+                        width: 10px;
+                        height: 110px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        border-radius: 49em;
+                        background-image: url('../../assets/template/about/akhil-parmar-contact.jpg');
+                        border: 1px solid #d4e7fe;
+                        margin-right: 1em;
+                    }
+                }
                 .picture {
                     display: block;
                     width: 110px;
@@ -125,8 +138,8 @@
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-position: center center;
-                    border-radius: 99em;
-                    background-image: url('../../assets/template/about/akhil-parmar.jpg');
+                    border-radius: 79em;
+                    background-image: url('../../assets/template/about/akhil-parmar-contact.jpg');
                     border: 1px solid #d4e7fe;
                     margin-right: 1em;
                 }
