@@ -81,6 +81,7 @@
         "id": 3,
         "position": 3,
         "startAt": "10-08-2018",
+        "endAt": "06-18-2021",
         "companyName": "Infosys Limited",
         "website": "https://www.infosys.com/",
         "logo": "../../assets/template/experience/logo/infosys.png",
@@ -114,5 +115,43 @@
             }
         ],
         "backgroundUrl": "../../assets/template/experience/infosys.jpg"
-    }   
+    },
+    {
+        "id": 4,
+        "position": 4,
+        "startAt": "06-21-2021",
+        "companyName": "EPAM Systems",
+        "website": "https://www.epam.com/",
+        "logo": "../../assets/template/experience/logo/epam.png",
+        "internationalizations": [
+            {
+                "language": "en",
+                "city": "Pune",
+                "country": "India",
+                "role": "Software Engineer",
+                "description": "<b>EPAM Systems, Inc.</b> is an American company that specializes in product development, digital platform engineering, and digital and product design. The world's largest manufacturer of custom software, consulting specialist, resident of the Belarus High Technologies Park. The company's headquarters is located in Newtown, Pennsylvania, and its branches are represented in more than 30 countries."
+            }
+        ],
+        "technologies": [
+            "JAVA", "Spring", "Spring boot", "HTML", "CSS", "CSS3", "Javascript", "Angular", "REST", "Python", "GITLab","GitHub","Jhipster", "SQL", "MySQL", "PostgreSQL","Process Automation", "AWS", "JIRA","Maven"
+        ],
+        "medias": [
+             {
+                "icon": "linkedin",
+                "title": "LinkedIn EPAM Systems",
+                "http": "https://www.linkedin.com/company/epam-systems/"
+            },
+            {
+                "icon": "facebook",
+                "title": "Facebook EPAM Systems",
+                "http": "https://www.facebook.com/EPAM.Global/"
+            },
+            {
+                "icon": "youtube",
+                "title": "Youtube EPAM Systems",
+                "http": "https://www.youtube.com/channel/UCAMBuFovq-_A47Z-MNMenVg"
+            }
+        ],
+        "backgroundUrl": "../../assets/template/experience/epam.jpg"
+    } 
 ]
