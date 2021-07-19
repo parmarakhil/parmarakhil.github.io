@@ -1,5 +1,29 @@
 [
     {
+        "thumbnail": "../../assets/projects/shehnai.png",
+        "http": "https://github.com/parmarakhil/wedding-planner",
+        "date": "01-07-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Wedding planner",
+                "description": "A wedding planning website to book and manage your wedding functions.<br>The technologies used are : <ul><li>java</li><li>Spring boot</li><li>Angular</li><li>PostgreSQL</li></ul>"
+            }
+        ]
+    },
+    {
+        "thumbnail": "../../assets/projects/interpreter.png",
+        "http": "https://github.com/parmarakhil/Calcx",
+        "date": "11-07-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "CalcZeta - A programming language Interpreter",
+                "description": "An interpreter for CalcZeta programming language written in Java.<br>The technologies used are : <ul><li>java</li></ul>"
+            }
+        ]
+    },
+    {
         "thumbnail": "../../assets/projects/ToDo.jpg",
         "http": "https://github.com/parmarakhil/Todo-spring-mvc",
         "date": "07-08-2020",
@@ -7,7 +31,7 @@
             {
                 "language": "en",
                 "title": "ToDo app using Java ",
-                "description": "A ToDo app using Java. <br> This is a Java spring MVC based app to create and manage your work in form of todo's. <br>The technologies used are : <ul><li>java</li><li>Spring MVC</li><li>BootStrap</li><li>HTML</li><li>MySQL</li></ul>"
+                "description": "A Java spring MVC based app to create and manage your work in form of todo's. <br>The technologies used are : <ul><li>java</li><li>Spring MVC</li><li>BootStrap</li><li>HTML</li><li>MySQL</li></ul>"
             }
         ]
     },
