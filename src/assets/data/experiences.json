@@ -120,6 +120,7 @@
         "id": 4,
         "position": 4,
         "startAt": "06-21-2021",
+        "endAt": "07-22-2022",
         "companyName": "EPAM Systems",
         "website": "https://www.epam.com/",
         "logo": "../../assets/template/experience/logo/epam.png",
@@ -153,5 +154,43 @@
             }
         ],
         "backgroundUrl": "../../assets/template/experience/epam.jpg"
-    } 
+    },
+    {
+        "id": 5,
+        "position": 5,
+        "startAt": "07-27-2022",
+        "companyName": "Walmart Global Tech",
+        "website": "https://one.walmart.com/content/globaltechindia/en_in.html",
+        "logo": "../../assets/template/experience/logo/walmart.png",
+        "internationalizations": [
+            {
+                "language": "en",
+                "city": "Bangalore",
+                "country": "India",
+                "role": "Software Development Engineer 3",
+                "description": "<b>Walmart Global Tech</b> technology arm of Walmart, pushing the retail frontiers of the Fortune #1 company with cutting-edge technologies. One of the top retail tech companies in India, Walmart Global Tech India uses next-gen tech to transform Walmart into the retail destination of choice, powering the next retail distruption."
+            }
+        ],
+        "technologies": [
+            "JAVA", "Spring", "Spring boot", "Azure", "COSMOS DB", "Kubernetes", "Azure service bus", "Splunk","GitHub", "AWS","Maven","Kafka"
+        ],
+        "medias": [
+             {
+                "icon": "linkedin",
+                "title": "LinkedIn Walmart Global Tech",
+                "http": "https://www.linkedin.com/company/walmartglobaltechindia/?originalSubdomain=in"
+            },
+            {
+                "icon": "facebook",
+                "title": "Facebook Walmart",
+                "http": "https://www.facebook.com/walmart/"
+            },
+            {
+                "icon": "youtube",
+                "title": "Youtube Walmart Global Tech",
+                "http": "https://www.youtube.com/c/WalmartGlobalTechIndia?app=desktop"
+            }
+        ],
+        "backgroundUrl": "../../assets/template/experience/walmart.jpg"
+    }  
 ]
