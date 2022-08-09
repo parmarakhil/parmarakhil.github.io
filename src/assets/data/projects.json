@@ -1,5 +1,39 @@
 [
     {
+        "thumbnail": "../../assets/projects/snake.png",
+        "http": "https://github.com/parmarakhil/snake-servers",
+        "date": "12-25-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Snake game",
+                "description": "Snake game from codenjoy The java implementation is provided <br> It is based on the codenjoy platform snake game."
+            }
+        ]
+    },
+    {
+        "thumbnail": "../../assets/projects/cp.png",
+        "http": "https://github.com/parmarakhil/competitive-programming",
+        "date": "12-15-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Competitive programming guide",
+                "description": "A comprehensive collection of DSA questions from leetcode."
+            }
+        ]
+    },{
+        "thumbnail": "../../assets/projects/AWS.png",
+        "http": "https://github.com/parmarakhil/aws-study-material",
+        "date": "12-08-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "AWS study material",
+                "description": "A comprehensive collection to prepare for <br> AWS developer associate and solutions architect associate certification."
+            }
+        ]
+    },{
         "thumbnail": "../../assets/projects/shehnai.png",
         "http": "https://github.com/parmarakhil/wedding-planner",
         "date": "01-07-2021",

@@ -67,7 +67,7 @@ export class ContactComponent implements OnInit {
     this.name = "Akhil Parmar";
     this.email = "akhilparmar2496@gmail.com";
     // this.phone = "+919898266637";
-    this.location = "Pune , Maharastra , India";
+    this.location = "India";
 
     this.faEnvelope = faEnvelope;
     this.faPhone = faPhone;
