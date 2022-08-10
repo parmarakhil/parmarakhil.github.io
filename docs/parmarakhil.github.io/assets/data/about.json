@@ -1,0 +1,47 @@
+{
+    "internationalizations": [
+        {
+            "language": "pt",
+            "description": "Minha caminhada como <i>programador</i> teve início aos nove anos de idade quando me apaixonei pelo <i>Logo</i>, uma linguagem de programação educacional usada para cativar crianças nas maravilhosas terras da <i>Programação</i>. Costumava passar horas seguidas tentando criar figuras e animações, usando matemática e geometria. Naquela época, eu simplesmente não conhecia os desafios emocionantes que ainda estavam por vir.<br><br>Alguns anos depois, consegui um estágio como <i>Webmaster</i>, desde então, nunca mais parei, sendo mais de uma década, onde venho tendo a chance de trabalhar com pessoas maravilhosas, aprendendo todos os dias, viajando pelo mundo e, principalmente, sempre fazendo grandes amizades.<br><br>Tive experiência como empreendedor, quando um amigo apresentou-me <i>Magento</i>, um framework de comércio eletrônico extremamente popular. Depois de fazer vários cursos e muita prática, consegui contratos com agências de São Paulo e Rio de Janeiro, Brasil. Essa experiência de empreendedorismo me deu a chance de ver o outro lado da moeda, o que contribuiu para expandir um pouco mais minha consciência como colaborador.<br><br>Atualmente, continuo buscando novas habilidades, aprendendo e compartilhando meu humilde conhecimento, tanto quanto possível."
+        },
+        {
+            "language": "en",
+            "description": "<i>Mechanical Engineer turned Software Developer</i><br><br>My love towards engineering began in early teenage. The whole idea of things being into action yet uniquely different from each other fascinated me. I used to spend hours trying to build a mechanical mechanism. The countless hours I spent gave rise to the <i>curious me</i>.<br><br>With the penetration of internet in the Indian sub-continent I got exposed to programming and it was not too late when I realised the power of <i>internet</i>.I started scanning websites and write small programs. I failed alot but it never stopped me from trying something new. I enrolled for mechanical engineering program where I always tried to find a combination of mechanical and software. Finally after graduation I got a chance to work in automation domain with my current employer.<br><br>I have been an advocate of financial education and have acted as a mentor to many of my friends during which I also got an entrepreneurship experience, when a friend of mine presented me with his idea of an hospitality business, I helped him setup the plan and even interned with the largest hospitality company in the world to know more about the business.I keep traveling, learning and sharing my experience with people."
+        }
+    ],
+    "medias": [        
+        {
+            "icon": "linkedin",
+            "title": "LinkedIn",
+            "http": "https://www.linkedin.com/in/parmarakhil/"
+        },
+        {
+            "icon": "github",
+            "title": "GitHub",
+            "http": "https://github.com/parmarakhil"
+        },
+        {
+            "icon": "instagram",
+            "title": "Instagram",
+            "http": "https://www.instagram.com/superboi_akki/?hl=en"
+        }
+    ],
+    "hobbies": [        
+        {
+            "icon": "biking",
+            "title": "Cycling"
+        },
+        {
+            "icon": "dumbbell",
+            "title": "Gym"
+        },
+        {
+            "icon": "suitcase-rolling",
+            "title": "Travel"
+        },
+        {
+            "icon": "book",
+            "title": "Read"
+        }
+    ]
+}
