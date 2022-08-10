@@ -5,3 +5,6 @@ Technology used
 - Firebase (DB)
 - HTML
 - CSS
+
+### build command
+ng build --output-path docs --base-href /
