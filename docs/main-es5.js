@@ -451,7 +451,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral([":contact@@errorSubmit\u241F0076090b82b5109b30c69caa370c4374fb951854\u241F1856027775128674946:Sorry, there is an instability, please try again later, or contact me via email or social media."]);
+  var data = _taggedTemplateLiteral([":contact@@errorSubmit\u241Febc7c63598e24e7a992659469f7369337834abb2\u241F4485312793225469212:Sorry, there is an instability, please try again later, you can always contact me via email or social media."]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -461,7 +461,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral([":contact@@successfulSubmit\u241Fe1b567a2a5c8a5638dc32f7d7d4908d0d0475bee\u241F720299982185292840:Thank you for contacting me, I'll reply to you very soon. Feel free to contact me on linkedin"]);
+  var data = _taggedTemplateLiteral([":contact@@successfulSubmit\u241F616c79b925b181e94d5fafc108099a37922b82ea\u241F9140900761407755390:Thank you for contacting me, I'll reply to you very soon. Meanwhile Feel free to contact me on linkedin"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1690,7 +1690,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /**
        * @desc contact
        */
-      var MSG_EXTERNAL_successfulSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_1 = goog.getMsg("Thank you for contacting me, I'll reply to you very soon. Feel free to contact me on linkedin");
+      var MSG_EXTERNAL_successfulSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_1 = goog.getMsg("Thank you for contacting me, I'll reply to you very soon. Meanwhile Feel free to contact me on linkedin");
       I18N_0 = MSG_EXTERNAL_successfulSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_1;
     } else {
       I18N_0 = $localize(_templateObject3());
@@ -1702,7 +1702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /**
        * @desc contact
        */
-      var MSG_EXTERNAL_errorSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_3 = goog.getMsg("Sorry, there is an instability, please try again later, or contact me via email or social media.");
+      var MSG_EXTERNAL_errorSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_3 = goog.getMsg("Sorry, there is an instability, please try again later, you can always contact me via email or social media.");
       I18N_2 = MSG_EXTERNAL_errorSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_3;
     } else {
       I18N_2 = $localize(_templateObject4());
