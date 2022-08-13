@@ -1,12 +1,12 @@
-
-name: Angular GitHub CI
+name: akhil parmar portfolio GitHub CI
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   ci:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     strategy:
