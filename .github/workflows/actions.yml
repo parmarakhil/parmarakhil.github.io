@@ -40,7 +40,7 @@ jobs:
           npm ci
       - name: Build
         run: |
-         npm run build --output-path docs --base-href /
+          ng build --output-path docs --base-href /
       # - name: Lint
       #   run: |
       #     npm run lint
