@@ -1,0 +1,84 @@
+[
+    {
+        "thumbnail": "../../assets/projects/snake.png",
+        "http": "https://github.com/parmarakhil/snake-servers",
+        "date": "12-25-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Snake game",
+                "description": "Snake game from codenjoy The java implementation is provided <br> It is based on the codenjoy platform snake game."
+            }
+        ]
+    },
+    {
+        "thumbnail": "../../assets/projects/cp.png",
+        "http": "https://github.com/parmarakhil/competitive-programming",
+        "date": "12-15-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Competitive programming guide",
+                "description": "A comprehensive collection of DSA questions from leetcode."
+            }
+        ]
+    },{
+        "thumbnail": "../../assets/projects/AWS.png",
+        "http": "https://github.com/parmarakhil/aws-study-material",
+        "date": "12-08-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "AWS study material",
+                "description": "A comprehensive collection to prepare for <br> AWS developer associate and solutions architect associate certification."
+            }
+        ]
+    },{
+        "thumbnail": "../../assets/projects/shehnai.png",
+        "http": "https://github.com/parmarakhil/wedding-planner",
+        "date": "01-07-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Wedding planner",
+                "description": "A wedding planning website to book and manage your wedding functions.<br>The technologies used are : <ul><li>java</li><li>Spring boot</li><li>Angular</li><li>PostgreSQL</li></ul>"
+            }
+        ]
+    },
+    {
+        "thumbnail": "../../assets/projects/interpreter.png",
+        "http": "https://github.com/parmarakhil/Calcx",
+        "date": "11-07-2021",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "CalcZeta - A programming language Interpreter",
+                "description": "An interpreter for CalcZeta programming language written in Java.<br>The technologies used are : <ul><li>java</li></ul>"
+            }
+        ]
+    },
+    {
+        "thumbnail": "../../assets/projects/ToDo.jpg",
+        "http": "https://github.com/parmarakhil/Todo-spring-mvc",
+        "date": "07-08-2020",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "ToDo app using Java ",
+                "description": "A Java spring MVC based app to create and manage your work in form of todo's. <br>The technologies used are : <ul><li>java</li><li>Spring MVC</li><li>BootStrap</li><li>HTML</li><li>MySQL</li></ul>"
+            }
+        ]
+    },
+    {
+        "thumbnail": "../../assets/projects/microservice.png",
+        "http": "https://github.com/parmarakhil/spring-boot-microservice-project",
+        "date": "01-07-2020",
+        "internationalizations": [
+            {
+                "language": "en",
+                "title": "Microservice Architecture demonstration",
+                "description": "Microservice architecture –structural style – arranges an application as a collection of loosely coupled services which are fine-grained and the protocols are lightweight.<br>The technologies used are : <ul><li>java</li><li>Spring boot</li><li>Eureka Server</li></ul>"
+            }
+        ]
+    }
+]
