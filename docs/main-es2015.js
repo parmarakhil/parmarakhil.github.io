@@ -596,22 +596,22 @@ if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
     /**
      * @desc contact
      */ 
-    const MSG_EXTERNAL_successfulSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_1 = goog.getMsg("Thank you for contacting me, I'll reply to you very soon. Feel free to contact me on linkedin");
+    const MSG_EXTERNAL_successfulSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_1 = goog.getMsg("Thank you for contacting me, I'll reply to you very soon. Meanwhile Feel free to contact me on linkedin");
     I18N_0 = MSG_EXTERNAL_successfulSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_1;
 }
 else {
-    I18N_0 = $localize `:contact@@successfulSubmit␟e1b567a2a5c8a5638dc32f7d7d4908d0d0475bee␟720299982185292840:Thank you for contacting me, I'll reply to you very soon. Feel free to contact me on linkedin`;
+    I18N_0 = $localize `:contact@@successfulSubmit␟616c79b925b181e94d5fafc108099a37922b82ea␟9140900761407755390:Thank you for contacting me, I'll reply to you very soon. Meanwhile Feel free to contact me on linkedin`;
 }
 var I18N_2;
 if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
     /**
      * @desc contact
      */ 
-    const MSG_EXTERNAL_errorSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_3 = goog.getMsg("Sorry, there is an instability, please try again later, or contact me via email or social media.");
+    const MSG_EXTERNAL_errorSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_3 = goog.getMsg("Sorry, there is an instability, please try again later, you can always contact me via email or social media.");
     I18N_2 = MSG_EXTERNAL_errorSubmit$$SRC_APP_CONTACT_CONTACT_COMPONENT_TS_3;
 }
 else {
-    I18N_2 = $localize `:contact@@errorSubmit␟0076090b82b5109b30c69caa370c4374fb951854␟1856027775128674946:Sorry, there is an instability, please try again later, or contact me via email or social media.`;
+    I18N_2 = $localize `:contact@@errorSubmit␟ebc7c63598e24e7a992659469f7369337834abb2␟4485312793225469212:Sorry, there is an instability, please try again later, you can always contact me via email or social media.`;
 }
 var I18N_4;
 if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
