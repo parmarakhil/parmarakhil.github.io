@@ -12,10 +12,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:ci": "ng build --prod --sourceMap=false --base-href /",
     "int:extract": "ng xi18n --output-path src/locales",
     "build-locale:en": "ng build --aot --prod --i18n-locale=en --i18n-format=xlf --i18n-file=src/locales/messages.en.xlf --output-path=dist/en --base-href /en/",
     "build-locale:pt": "ng build --aot --prod --i18n-locale=pt --i18n-format=xlf --i18n-file=src/locales/messages.pt.xlf --output-path=dist/pt --base-href /pt/",
     "build-locale": "npm run build-locale:en && npm run build-locale:pt",
+    "test:ci": "ng test --watch=false --code-coverage --source-map true",
     "build-prod": "ng build --output-path=docs --base-href=/"
   },
   "private": true,
