@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     ]);
 
     this.metaTagService.updateTag(
-      { name: "description", content: "Hello, I'm a Full-stack Java Web Developer with 2 years of experience developing automation tools using java, angular and camunda" }
+      { name: "description", content: "Hello, I'm a Full-stack Java Web Developer with 4 years of experience developing automation tools using java, angular and camunda" }
     );
   }
 }
