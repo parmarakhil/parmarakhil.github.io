@@ -23,7 +23,7 @@ header {
             text-transform: uppercase;
             font-size: 35px;
             font-weight: 700;
-            color: #222f5c;
+            color: #7a89c4;
         }
     }
 
@@ -45,7 +45,7 @@ header {
                     text-decoration: none;
                     font-size: 20px;
                     font-weight: 600;
-                    color: #222f5c;
+                    color: #7a89c4;
                     padding: 14px;
                     border-radius: 15px;
                     transition: 0.3s;
@@ -58,7 +58,7 @@ header {
                 }
 
                 .active {
-                    background-color: #222f5c;
+                    background-color: #060607;
                     color: #fff;
                     font-weight: 600;
                 }
@@ -93,16 +93,16 @@ header {
                         text-transform: uppercase;
                         font-size: 20px;
                         font-weight: 600;
-                        color: #222f5c59;
+                        color: #7a89c4;
                         transition: 0.3s;
 
                         &:hover {
-                            color: #222f5c;
+                            color: #1c264d;
                         }
                     }
 
                     .active {
-                        color: #222f5c;
+                        color: #3d4973;
                     }
 
                     &:last-of-type {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { faGithubSquare, IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-footer",
@@ -9,14 +10,17 @@ import { faGithubSquare, IconDefinition } from "@fortawesome/free-brands-svg-ico
 export class FooterComponent implements OnInit {
 
   faGithubSquare: IconDefinition;
-
   year: Date;
+  router:Router;
 
-  constructor() { }
+  constructor(router:Router) { this.router= router}
 
   ngOnInit(): void {
     this.faGithubSquare = faGithubSquare;
     this.year = new Date();
   }
 
+  resetMenu(){
+   this.router.navigate(["#"])
+  }
 }
