@@ -10,6 +10,7 @@
                         <fa-icon [icon]="faChevronLeft" class="icon" i18n-title="exp.nav@@previous" title="Previous"></fa-icon>
                         <span i18n="exp.nav@@previous">Previous</span>
                     </div>
+                    <div></div>
                 </a>
                 <div class="divider">|</div>
                 <a href="javascript:void(0)" class="next" (click)="onClickNext()" [ngClass]="{'disabled': currentPage === ceil(projects?.length / resultsPerPage) }">

@@ -4,10 +4,11 @@
 	z-index: 2;
 	margin-top: 5em;
 	animation: float-dialog 6s ease-in-out infinite;
+	position: relative;
 }
 
 .dialog-container img {
-    width: 580px;
+    width: 680px;
     margin-left: -7em;
 }
 

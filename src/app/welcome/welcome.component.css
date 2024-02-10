@@ -1,6 +1,6 @@
 #welcome {
     flex-direction: column;
-    height: 780px;
+    height: 700px;
     padding-top: 5em;
 }
 
@@ -13,10 +13,14 @@
 
 .layer_one .avatar-container {
     position: relative;
+
 }
 
 .layer_one .avatar-container .illustration {
-    height: 780px;
+    height: 640px;
     z-index: 1;
     position: relative;
+    border-radius: 50%;
+    width: 535px;
+
 }
