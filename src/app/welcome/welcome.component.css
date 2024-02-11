@@ -20,7 +20,17 @@
     height: 640px;
     z-index: 1;
     position: relative;
-    border-radius: 50%;
-    width: 535px;
+    border-radius: 46%;
+    width: 485px;
+
+}
+
+.illustration {
+    top: 21%;
+    height: 640px;
+    z-index: 1;
+    position: relative;
+    border-radius: 36%;
+    width: 485px;
 
 }

@@ -50,11 +50,20 @@
             
             .top-container {
                 flex-wrap: wrap;
-                padding: 0.7em;
+                padding: 0.5em;
                 justify-content: center;
     
                 .picture {
-                    display: none;
+                    display: block;
+                    width: 110px;
+                    height: 110px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    border-radius: 4em;
+                    background-image: url('../../assets/template/about/akhil-parmar-contact.jpg');
+                    border: 1px solid #d4e7fe;
+                    margin-right: 1em;
                 }
     
                 .info {

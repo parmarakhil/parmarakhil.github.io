@@ -131,6 +131,34 @@
                         margin-right: 1em;
                     }
                 }
+                @media screen and (max-width: 320px){
+                    .picture {
+                        display: block;
+                        width: 10px;
+                        height: 110px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        border-radius: 49em;
+                        background-image: url('../../assets/template/about/akhil-parmar-contact.jpg');
+                        border: 1px solid #d4e7fe;
+                        margin-right: 1em;
+                    }
+                }
+                @media screen and (max-width: 500px){
+                    .picture {
+                        display: block;
+                        width: 50px;
+                        height: 110px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        border-radius: 49em;
+                        background-image: url('../../assets/template/about/akhil-parmar-contact.jpg');
+                        border: 1px solid #d4e7fe;
+                        margin-right: 1em;
+                    }
+                }
                 .picture {
                     display: block;
                     width: 110px;
