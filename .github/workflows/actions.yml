@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Download
+        uses: actions/upload-artifact@v3 -> actions/upload-artifact@v4
       - name: Use Node 12.x
         uses: actions/setup-node@v1
         with:
