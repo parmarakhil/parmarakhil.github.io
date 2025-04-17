@@ -1,3 +1,69 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'  # You can change this if you really need Node 12.x
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build:ci
+
+      # Uncomment this if you want to run tests
+      # - name: Run tests
+      #   run: npm run test:ci
+
+      - name: Upload build artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy_dist
+          path: dist
+
+      # Uncomment if you want to archive coverage
+      # - name: Upload coverage artifact
+      #   if: success()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: deploy_coverage
+      #     path: coverage
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy_dist
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: dist/parmarakhil.github.io
+
 name: build & deploy
 
 on:
