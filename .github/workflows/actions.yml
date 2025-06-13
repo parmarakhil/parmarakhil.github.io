@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: '20.19.2'  # You can change this if you really need Node 12.x
 
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+      # - name: Install dependencies
+      #   run: npm ci --legacy-peer-deps
 
       - name: Build project
         run: npm run build:ci --force --legacy-peer-deps
