@@ -19,10 +19,10 @@ jobs:
           node-version: '20.x'  # You can change this if you really need Node 12.x
 
       - name: Install dependencies
-        run: npm ci --force
+        run: npm ci --force --legacy-peer-deps
 
       - name: Build project
-        run: npm run build:ci --force
+        run: npm run build:ci --force --legacy-peer-deps
 
       # Uncomment this if you want to run tests
       # - name: Run tests
