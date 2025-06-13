@@ -1,0 +1,1 @@
+{"ast":null,"code":"const getDefaultsFromPostinstall = () => undefined;\nexport { getDefaultsFromPostinstall };","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

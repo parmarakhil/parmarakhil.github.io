@@ -1,14 +1,15 @@
-import { AngularFirestore, DocumentReference } from "@angular/fire/firestore";
+import { Firestore, collection, getDocs, DocumentReference, addDoc } from "@angular/fire/firestore";
 import { Contact } from "../model/contact.model";
 import { Injectable } from "@angular/core";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class ContactService {
 
-    constructor(private database: AngularFirestore) {}
+    constructor(private database: Firestore) {}
     
 
     createContact(contact: Contact): Promise<DocumentReference> {
-        return this.database.collection("contacts").add(contact);
+        const contactsRef = collection(this.database, 'contacts');
+        return addDoc(contactsRef, contact)
     }
 }
