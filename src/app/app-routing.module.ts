@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ResumeComponent } from "./resume/resume.component";
 import { WeAreOneComponent } from './pages/we-are-one/we-are-one.component';
-
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 // Any URL apart from the root domain is going to be rendered as "page-not-found".
 const routes: Routes = [
@@ -34,7 +34,9 @@ const routes: Routes = [
       onSameUrlNavigation: "reload"
     }
   )],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+
 })
 
 export class AppRoutingModule { }
