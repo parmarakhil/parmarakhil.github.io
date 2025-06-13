@@ -11,6 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "baseHref": "/",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/parmarakhil.github.io",
