@@ -22,7 +22,7 @@ jobs:
         run: rm -rf package-lock.json
 
       - name: Build project
-        run: npm clean install --force --legacy-peer-deps
+        run: npm run clean install --force --legacy-peer-deps
 
       # Uncomment this if you want to run tests
       # - name: Run tests
