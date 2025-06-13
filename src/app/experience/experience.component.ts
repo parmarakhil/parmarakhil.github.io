@@ -30,7 +30,6 @@ export class ExperienceComponent implements OnInit {
   nextYear: string;
 
   @ViewChild("orderedList") orderedList: ElementRef;
-
   constructor(
     private dataService: DataService,
     private sortService: SorterService,

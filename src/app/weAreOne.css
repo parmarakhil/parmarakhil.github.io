@@ -1,0 +1,25 @@
+/* Reset & basics */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; color: #333; background: #fafafa; }
+header { text-align: center; padding: 2rem; }
+header h1 { font-size: 2.5rem; font-weight: normal; }
+header .icon { font-size: 1.5rem; margin-left: 0.5rem; }
+
+/* Timeline container */
+main { width: 90%; max-width: 600px; margin: auto; position: relative; }
+
+/* Entry cards */
+.entry { padding: 1.5rem; margin: 2rem 0; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: relative; }
+.entry .date { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+.entry .desc { font-size: 1.1rem; line-height: 1.6; }
+.entry .icon { font-size: 1.2rem; position: absolute; top: 1rem; }
+
+/* Alternating effect */
+.entry:nth-child(odd) { margin-left: 0; }
+.entry:nth-child(even) { margin-left: 50px; }
+
+/* Image style */
+.entry img { width: 100%; max-height: 300px; object-fit: cover; margin-bottom: 1rem; border-radius: 4px; }
+
+/* Footer */
+footer { text-align: center; padding: 2rem; font-size: 1rem; color: #555; }
