@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build:ci
+        run: npm run build:ci --force
 
       # Uncomment this if you want to run tests
       # - name: Run tests
