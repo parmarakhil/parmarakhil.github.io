@@ -22,7 +22,7 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Build project
-        run: npm run build:ci --force --legacy-peer-deps
+        run: npm run build:ci --legacy-peer-deps
 
       # Uncomment this if you want to run tests
       # - name: Run tests
