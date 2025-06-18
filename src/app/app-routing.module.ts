@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ResumeComponent } from "./resume/resume.component";
-import { WeAreOneComponent } from './pages/we-are-one/we-are-one.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 // Any URL apart from the root domain is going to be rendered as "page-not-found".
@@ -13,7 +12,6 @@ const routes: Routes = [
   { path: "posts", redirectTo: "/#posts"},
   { path: "projects", redirectTo: "/#projects"},
   { path: "contact", redirectTo: "/#contact"},
-  { path: 'weAreOne', component: WeAreOneComponent },
   { path: "**", redirectTo: "/page-not-found" },
 ];
 
