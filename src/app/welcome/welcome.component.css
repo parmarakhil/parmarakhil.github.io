@@ -443,7 +443,7 @@
 
 @media (max-width: 768px) {
     .hero-section {
-        min-height: 90vh;
+        min-height: 120vh;
         padding: 2rem 0;
     }
     
@@ -486,8 +486,8 @@
     }
     
     .floating-cards-container {
-        bottom: -150px;
-        height: 140px;
+        bottom: -250px;
+        height: 200px;
     }
     
     .floating-card {
@@ -542,7 +542,7 @@
 
 @media (max-width: 576px) {
     .hero-section {
-        min-height: 85vh;
+        min-height: 130vh;
     }
     
     .hero-title .name {
@@ -588,6 +588,11 @@
         padding: 1rem;
     }
     
+    .floating-cards-container {
+        bottom: -280px;
+        height: 220px;
+    }
+    
     .btn {
         max-width: 250px;
         font-size: 0.9rem;
@@ -595,6 +600,10 @@
 }
 
 @media (max-width: 400px) {
+    .hero-section {
+        min-height: 140vh;
+    }
+    
     .hero-container {
         padding: 0 0.75rem;
     }
@@ -610,6 +619,30 @@
     .profile-img {
         width: 160px;
         height: 160px;
+    }
+    
+    .floating-cards-container {
+        bottom: -320px;
+        height: 240px;
+    }
+    
+    .floating-card {
+        min-width: 90px;
+        max-width: 110px;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .card-icon {
+        font-size: 1rem;
+    }
+    
+    .card-text strong {
+        font-size: 0.7rem;
+    }
+    
+    .card-text span {
+        font-size: 0.65rem;
     }
     
     .btn {
