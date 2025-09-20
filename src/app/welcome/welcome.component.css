@@ -263,7 +263,7 @@
 /* Floating Cards Container */
 .floating-cards-container {
     position: absolute;
-    bottom: -400px;
+    bottom: -350px;
     left: 0;
     right: 0;
     width: 100%;
