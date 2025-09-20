@@ -24,8 +24,14 @@ currentPage: number = 1;
     
     // Fetch the Projects from the Data Service
     this.dataService.getProjects()
-      .subscribe((projects: IProject[]) => {
-        this.projects = projects;
+      .subscribe({
+        next: (projects: IProject[]) => {
+          console.log('Projects loaded:', projects);
+          this.projects = projects;
+        },
+        error: (error) => {
+          console.error('Error loading projects:', error);
+        }
       });
   }
 
