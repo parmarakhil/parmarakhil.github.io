@@ -1,67 +1,206 @@
-<section id="contact" itemscope itemtype="https://schema.org/ContactPage">
-    <div class="feedback-container" [ngClass]="feedbackStatus">
-        <p class="success">
-            <span i18n="contact@@successfulSubmit">Thank you for contacting me, I'll reply to you very soon. Meanwhile Feel free to contact me on linkedin.</span>
-            <fa-icon [icon]="faTimes" class="icon" title="Close" (click)="closeFeedbackMessage()"></fa-icon>
-        </p>
-        <p class="error">
-            <span i18n="contact@@errorSubmit">Sorry, there is an instability, please try again later, you can always contact me via email or social media.</span>
-            <fa-icon [icon]="faTimes" class="icon" title="Close" (click)="closeFeedbackMessage()"></fa-icon>
-        </p>
-    </div>
-    <div class="container" [ngClass]="{'fade': hasBeenSubmited}">
-        <div class="left-side">
-            <div class="title">
-                <h1 i18n="nav@@contact" style="font-family:Pacifico, cursive;">Contact</h1>
-            </div>
-            <div class="top-container">
-                <div class="picture"></div>
-                <div class="info">
-                    <br>
-                    <p class="name" *ngIf="name"><span itemprop="name">{{ name }}</span></p>
-                    <!-- <p class="email" *ngIf="email"><fa-icon [icon]="faEnvelope" class="icon" title="Email"></fa-icon><a  href="mailto:{{ email }}" itemprop="email">{{ email }}</a></p> -->
-                    <!-- <p class="phone" *ngIf="phone"><fa-icon [icon]="faPhone" class="icon" title="Phone"></fa-icon><span itemprop="telephone">{{ phone }}</span></p> -->
-        
-                    <p class="location" *ngIf="location"><fa-icon [icon]="faMapMarkerAlt" class="icon" title="City"></fa-icon><span itemprop="city">{{ location }}</span></p>
+<section id="contact" class="contact-section" itemscope itemtype="https://schema.org/ContactPage">
+    <!-- Feedback Messages -->
+    <div class="feedback-overlay" [ngClass]="feedbackStatus" *ngIf="feedbackStatus">
+        <div class="feedback-card">
+            <div class="feedback-content success" *ngIf="feedbackStatus === 'success'">
+                <div class="feedback-icon">
+                    <fa-icon [icon]="['fas', 'check-circle']" class="success-icon"></fa-icon>
                 </div>
+                <h3>Message Sent Successfully!</h3>
+                <p i18n="contact@@successfulSubmit">Thank you for contacting me. I'll reply to you very soon. Meanwhile, feel free to connect with me on LinkedIn.</p>
+                <button class="close-btn" (click)="closeFeedbackMessage()">
+                    <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
             </div>
-            <div class="bottom-container">
-                <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactNgForm)" #contactNgForm="ngForm" [ngClass]="{'loading': isLoading}">
-                    <div class="form-group">
-                        <label for="name" i18n="contact@@name">Your name:</label>
-                        <input [class.is-invalid]="senderName.invalid && senderName.touched"
-                            type="text" name="name" i18n-placeholder="contact@@namePlaceholder" placeholder="Max" formControlName="name" >
-                        <div class="warnings" *ngIf="(senderName.invalid && senderName.touched) || senderName.dirty">
-                            <!--question mark(?) is a safe navigation operator-->
-                            <small *ngIf="senderName.errors?.required" class="text-danger" i18n="contact@@requiredNameError">The name is required.</small>
-                            <small *ngIf="senderName.errors?.pattern" class="text-danger" i18n="contact@@invalidNameError">Please, provide a valid name.</small>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" i18n="contact@@email">Email:</label>
-                        <input [class.is-invalid]="senderEmail.invalid && senderEmail.touched"
-                            type="email" name="email" i18n-placeholder="contact@@emailPlaceholder" placeholder="max@gmail.com" formControlName="email" required>
-                        <div class="warnings" *ngIf="(senderEmail.invalid && senderEmail.touched) || senderEmail.dirty">
-                            <!--question mark(?) is a safe navigation operator-->
-                            <small *ngIf="senderEmail.errors?.required" class="text-danger" i18n="contact@@requiredEmailError">The email is required.</small>
-                            <small *ngIf="senderEmail.errors?.pattern" class="text-danger" i18n="contact@@invalidEmailError">Please, provide a valid email address.</small>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" i18n="contact@@message">Your message:</label>
-                        <textarea [class.is-invalid]="senderMessage.invalid && senderMessage.touched"
-                            name="message" i18n-placeholder="contact@@messagePlaceholder" placeholder="Write here your message... I will reply to you soon." formControlName="message" required></textarea>
-                        <div class="warnings" *ngIf="(senderMessage.invalid && senderMessage.touched) || senderMessage.dirty">
-                            <!--question mark(?) is a safe navigation operator-->
-                            <small *ngIf="senderMessage.errors?.required" class="text-danger" i18n="contact@@requiredMessageError">The message is required.</small>
-                        </div>
-                    </div>
-                    <input type="submit" i18n-value="contact@@send" value="Send">                
-                </form>
+            <div class="feedback-content error" *ngIf="feedbackStatus === 'error'">
+                <div class="feedback-icon">
+                    <fa-icon [icon]="['fas', 'exclamation-triangle']" class="error-icon"></fa-icon>
+                </div>
+                <h3>Oops! Something went wrong</h3>
+                <p i18n="contact@@errorSubmit">Sorry, there was an issue sending your message. Please try again later or contact me via email or social media.</p>
+                <button class="close-btn" (click)="closeFeedbackMessage()">
+                    <fa-icon [icon]="faTimes"></fa-icon>
+                </button>
             </div>
         </div>
-        <div class="right-side"></div>
     </div>
-    <img loading="lazy" height="705" src="./assets/template/contact/akhil.png" class="illustration" alt="illustration of akhil" itemprop="avatar">
-    <div class="half-circle"></div>
+
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">
+                Ready to discuss your next project or need career guidance? I'd love to hear from you.
+            </p>
+        </div>
+
+        <div class="contact-content" [ngClass]="{'fade': hasBeenSubmited}">
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="profile-section">
+                        <div class="profile-avatar"></div>
+                        <div class="profile-details">
+                            <h3 class="profile-name" *ngIf="name" itemprop="name">{{ name }}</h3>
+                            <p class="profile-title">Senior Software Engineer & Mentor</p>
+                            <div class="profile-location" *ngIf="location">
+                                <fa-icon [icon]="faMapMarkerAlt" class="location-icon"></fa-icon>
+                                <span itemprop="city">{{ location }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-methods">
+                        <h4>Get In Touch</h4>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <fa-icon [icon]="['fas', 'envelope']" class="icon"></fa-icon>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Email</span>
+                                <a href="mailto:akhilparmar2496@gmail.com" class="method-value">Akhil email</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <fa-icon [icon]="['fab', 'linkedin']" class="icon"></fa-icon>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">LinkedIn</span>
+                                <a href="https://linkedin.com/in/parmarakhil" target="_blank" class="method-value">linkedin.com/in/parmarakhil</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <fa-icon [icon]="['fas', 'calendar']" class="icon"></fa-icon>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Book a Session</span>
+                                <a href="https://topmate.io/akhil_parmar" target="_blank" class="method-value">Schedule on Topmate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="response-time">
+                        <div class="response-badge">
+                            <fa-icon [icon]="['fas', 'clock']" class="clock-icon"></fa-icon>
+                            <span>Usually responds within 24 hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <div class="form-card">
+                    <div class="form-header">
+                        <h3>Send me a message</h3>
+                        <p>Whether it's about a project, career guidance, or just to say hello!</p>
+                    </div>
+
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactNgForm)" #contactNgForm="ngForm" 
+                          class="contact-form" [ngClass]="{'loading': isLoading}">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    <fa-icon [icon]="['fas', 'user']" class="label-icon"></fa-icon>
+                                    <span i18n="contact@@name">Your Name</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="name"
+                                    name="name" 
+                                    class="form-input"
+                                    [class.error]="senderName.invalid && senderName.touched"
+                                    i18n-placeholder="contact@@namePlaceholder" 
+                                    placeholder="Enter your full name" 
+                                    formControlName="name">
+                                <div class="error-messages" *ngIf="(senderName.invalid && senderName.touched) || senderName.dirty">
+                                    <small *ngIf="senderName.errors?.required" class="error-text" i18n="contact@@requiredNameError">
+                                        Name is required
+                                    </small>
+                                    <small *ngIf="senderName.errors?.pattern" class="error-text" i18n="contact@@invalidNameError">
+                                        Please provide a valid name
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <fa-icon [icon]="['fas', 'envelope']" class="label-icon"></fa-icon>
+                                    <span i18n="contact@@email">Email Address</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email"
+                                    name="email" 
+                                    class="form-input"
+                                    [class.error]="senderEmail.invalid && senderEmail.touched"
+                                    i18n-placeholder="contact@@emailPlaceholder" 
+                                    placeholder="your.email@example.com" 
+                                    formControlName="email" 
+                                    required>
+                                <div class="error-messages" *ngIf="(senderEmail.invalid && senderEmail.touched) || senderEmail.dirty">
+                                    <small *ngIf="senderEmail.errors?.required" class="error-text" i18n="contact@@requiredEmailError">
+                                        Email is required
+                                    </small>
+                                    <small *ngIf="senderEmail.errors?.pattern" class="error-text" i18n="contact@@invalidEmailError">
+                                        Please provide a valid email address
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="message" class="form-label">
+                                    <fa-icon [icon]="['fas', 'comment']" class="label-icon"></fa-icon>
+                                    <span i18n="contact@@message">Your Message</span>
+                                </label>
+                                <textarea 
+                                    id="message"
+                                    name="message" 
+                                    class="form-textarea"
+                                    [class.error]="senderMessage.invalid && senderMessage.touched"
+                                    i18n-placeholder="contact@@messagePlaceholder" 
+                                    placeholder="Tell me about your project, ask a question, or just say hello..." 
+                                    formControlName="message" 
+                                    required
+                                    rows="5"></textarea>
+                                <div class="error-messages" *ngIf="(senderMessage.invalid && senderMessage.touched) || senderMessage.dirty">
+                                    <small *ngIf="senderMessage.errors?.required" class="error-text" i18n="contact@@requiredMessageError">
+                                        Message is required
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || isLoading">
+                                <span *ngIf="!isLoading" class="btn-content">
+                                    <fa-icon [icon]="['fas', 'paper-plane']" class="btn-icon"></fa-icon>
+                                    <span i18n="contact@@send">Send Message</span>
+                                </span>
+                                <span *ngIf="isLoading" class="btn-loading">
+                                    <fa-icon [icon]="['fas', 'spinner']" class="spinner"></fa-icon>
+                                    <span>Sending...</span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-cta">
+            <div class="cta-content">
+                <h3>Prefer a Quick Chat?</h3>
+                <p>Book a 15-minute consultation to discuss your goals and how I can help</p>
+                <a href="https://topmate.io/akhil_parmar" target="_blank" class="cta-button">
+                    <fa-icon [icon]="['fas', 'video']" class="cta-icon"></fa-icon>
+                    Schedule a Call
+                </a>
+            </div>
+        </div>
+    </div>
 </section>

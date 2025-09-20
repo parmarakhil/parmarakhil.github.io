@@ -242,5 +242,8 @@
       }
     }
   },
-  "defaultProject": "parmarakhil.github.io"
+  "defaultProject": "parmarakhil.github.io",
+  "cli": {
+    "analytics": false
+  }
 }

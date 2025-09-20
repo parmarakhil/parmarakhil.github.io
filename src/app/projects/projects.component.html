@@ -1,32 +1,58 @@
-<section id="projects">
+<section id="projects" class="projects-section">
     <div class="container">
-        <div class="top-container">
-            <div class="title">
-                <h1 i18n="nav@@projects" style="font-family:Pacifico, cursive;">Projects</h1>
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">
+                Innovative solutions and technical implementations showcasing my expertise
+            </p>
+        </div>
+
+        <div class="projects-navigation">
+            <div class="nav-info">
+                <span class="page-indicator">
+                    Page {{ currentPage }} of {{ ceil(projects?.length / resultsPerPage) }}
+                </span>
             </div>
-            <div class="navigation">
-                <a href="javascript:void(0)" class="previous" (click)="onClickPrevious()" [ngClass]="{'disabled': currentPage === 1}">
-                    <div class="molding">
-                        <fa-icon [icon]="faChevronLeft" class="icon" i18n-title="exp.nav@@previous" title="Previous"></fa-icon>
-                        <span i18n="exp.nav@@previous">Previous</span>
-                    </div>
-                    <div></div>
-                </a>
-                <div class="divider">|</div>
-                <a href="javascript:void(0)" class="next" (click)="onClickNext()" [ngClass]="{'disabled': currentPage === ceil(projects?.length / resultsPerPage) }">
-                    <div class="molding">
-                        <span i18n="exp.nav@@next">Next</span>
-                        <fa-icon [icon]="faChevronRight" class="icon" i18n-title="exp.nav@@next" title="Next"></fa-icon>
-                    </div>
-                </a>
+            <div class="nav-controls">
+                <button class="nav-btn prev-btn" 
+                        (click)="onClickPrevious()" 
+                        [disabled]="currentPage === 1"
+                        [ngClass]="{'disabled': currentPage === 1}">
+                    <fa-icon [icon]="faChevronLeft" class="nav-icon"></fa-icon>
+                    <span>Previous</span>
+                </button>
+                <button class="nav-btn next-btn" 
+                        (click)="onClickNext()" 
+                        [disabled]="currentPage === ceil(projects?.length / resultsPerPage)"
+                        [ngClass]="{'disabled': currentPage === ceil(projects?.length / resultsPerPage)}">
+                    <span>Next</span>
+                    <fa-icon [icon]="faChevronRight" class="nav-icon"></fa-icon>
+                </button>
             </div>
         </div>
-        <p class="synopsis" i18n="projects@@synopsis">A Synopsis of project I created</p>
-        <div class="middle-container">
+
+        <div class="projects-content">
             <app-projects-carousel
                 [projects]="projects"
                 [currentPage]="currentPage"
-                (onResultsPerPageChanged)="updateNavigation($event)"></app-projects-carousel>
+                (onResultsPerPageChanged)="updateNavigation($event)">
+            </app-projects-carousel>
+        </div>
+
+        <div class="projects-cta">
+            <div class="cta-content">
+                <h3>Interested in My Work?</h3>
+                <p>Let's discuss how my technical expertise can help solve your challenges</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/parmarakhil" target="_blank" class="btn btn-secondary">
+                        <fa-icon [icon]="['fab', 'github']" class="btn-icon"></fa-icon>
+                        View on GitHub
+                    </a>
+                    <a href="https://topmate.io/akhil_parmar" target="_blank" class="btn btn-primary">
+                        Schedule a Discussion
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

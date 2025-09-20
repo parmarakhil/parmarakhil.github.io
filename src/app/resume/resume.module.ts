@@ -5,6 +5,9 @@ import { ResumeComponent } from "../resume/resume.component";
 import { HeaderComponent } from "../header/header.component";
 import { AboutComponent } from "../about/about.component";
 import { ContactComponent } from "../contact/contact.component";
+import { TestimonialsComponent } from "../testimonials/testimonials.component";
+import { ServicesComponent } from "../services/services.component";
+import { AchievementsComponent } from "../achievements/achievements.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { WelcomeModule } from "../welcome/welcome.molule";
 import { ExperienceModule } from "../experience/experience.module";
@@ -30,6 +33,9 @@ import { FooterComponent } from "../footer/footer.component";
     HeaderComponent,
     AboutComponent,
     ContactComponent,
+    TestimonialsComponent,
+    ServicesComponent,
+    AchievementsComponent,
     FooterComponent
   ],
   exports: [ ResumeComponent ],

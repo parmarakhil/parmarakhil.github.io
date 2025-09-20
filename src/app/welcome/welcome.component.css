@@ -34,3 +34,595 @@
     width: 485px;
 
 }
+
+/* Hero Section Styles */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    color: white;
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
+}
+
+.hero-title .name {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.hero-title .title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.social-proof {
+    opacity: 0.8;
+}
+
+.social-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.company-logos {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.company {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+/* Hero Image */
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.profile-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.profile-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.badge-indicator {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.badge-indic.feature::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(135deg, #3730a3 0%, #7c3aed 100%);
+    border-radius: 50%;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Floating Cards Container */
+.floating-cards-container {
+    position: absolute;
+    bottom: -400px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 300px;
+    z-index: 3;
+}
+
+.floating-cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 0.875rem 1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 160px;
+    max-width: 180px;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-1 {
+    top: 2%;
+    left: 1%;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    top: 2%;
+    right: 1%;
+    animation-delay: 1s;
+}
+
+.card-3 {
+    top: 45%;
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.card-4 {
+    bottom: 2%;
+    right: 1%;
+    animation-delay: 3s;
+}
+
+.card-5 {
+    bottom: 2%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.card-icon {
+    font-size: 1.5rem;
+}
+
+.card-text strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.card-text span {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-container {
+        padding: 1.5rem;
+    }
+    
+    .hero-content {
+        gap: 3rem;
+    }
+    
+    .hero-title .name {
+        font-size: 3rem;
+    }
+    
+    .floating-cards-container {
+        bottom: -350px;
+        height: 260px;
+    }
+    
+    .floating-card {
+        min-width: 140px;
+        max-width: 160px;
+        padding: 0.75rem 0.875rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        padding-top: 100px;
+    }
+    
+    .hero-container {
+        padding: 1rem;
+    }
+    
+    .hero-content {
+        gap: 2rem;
+    }
+    
+    .hero-title .name {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-stats {
+        gap: 1.5rem;
+    }
+    
+    .floating-cards-container {
+        bottom: -300px;
+        height: 220px;
+    }
+    
+    .floating-card {
+        min-width: 120px;
+        max-width: 140px;
+        padding: 0.625rem 0.75rem;
+    }
+    
+    .card-1 {
+        top: 1%;
+        left: 1%;
+    }
+    
+    .card-2 {
+        top: 1%;
+        right: 1%;
+    }
+    
+    .card-3 {
+        top: 40%;
+        left: 35%;
+    }
+    
+    .card-4 {
+        bottom: 1%;
+        right: 1%;
+    }
+    
+    .card-5 {
+        bottom: 1%;
+        left: 18%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 90vh;
+        padding: 2rem 0;
+    }
+    
+    .hero-container {
+        padding: 1rem;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-title .name {
+        font-size: 2rem;
+    }
+    
+    .hero-title .title {
+        font-size: 1.2rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stat {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .floating-cards-container {
+        bottom: -150px;
+        height: 140px;
+    }
+    
+    .floating-card {
+        min-width: 100px;
+        max-width: 120px;
+        padding: 0.5rem 0.625rem;
+        font-size: 0.85rem;
+    }
+    
+    .card-1 {
+        top: 1%;
+        left: 1%;
+    }
+    
+    .card-2 {
+        top: 1%;
+        right: 1%;
+    }
+    
+    .card-3 {
+        top: 35%;
+        left: 30%;
+    }
+    
+    .card-4 {
+        bottom: 1%;
+        right: 1%;
+    }
+    
+    .card-5 {
+        bottom: 1%;
+        left: 15%;
+    }
+    
+    .card-icon {
+        font-size: 1.2rem;
+    }
+    
+    .card-text strong {
+        font-size: 0.8rem;
+    }
+    
+    .card-text span {
+        font-size: 0.7rem;
+    }
+    
+    .company-logos {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: 85vh;
+    }
+    
+    .hero-title .name {
+        font-size: 2rem;
+    }
+    
+    .hero-title .title {
+        font-size: 1.1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .stat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .profile-card {
+        padding: 1rem;
+    }
+    
+    .btn {
+        max-width: 250px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-container {
+        padding: 0 0.75rem;
+    }
+    
+    .hero-title .name {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .profile-img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Legacy styles for compatibility */
+.illustration {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
