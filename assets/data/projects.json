@@ -1,6 +1,6 @@
 [
     {
-        "thumbnail": "../../assets/projects/snake.png",
+        "thumbnail": "assets/projects/snake.png",
         "http": "https://github.com/parmarakhil/snake-servers",
         "date": "12-25-2021",
         "internationalizations": [
@@ -12,7 +12,7 @@
         ]
     },
     {
-        "thumbnail": "../../assets/projects/cp.png",
+        "thumbnail": "assets/projects/cp.png",
         "http": "https://github.com/parmarakhil/competitive-programming",
         "date": "12-15-2021",
         "internationalizations": [
@@ -23,7 +23,7 @@
             }
         ]
     },{
-        "thumbnail": "../../assets/projects/AWS.png",
+        "thumbnail": "assets/projects/AWS.png",
         "http": "https://github.com/parmarakhil/aws-study-material",
         "date": "12-08-2021",
         "internationalizations": [
@@ -34,7 +34,7 @@
             }
         ]
     },{
-        "thumbnail": "../../assets/projects/shehnai.png",
+        "thumbnail": "assets/projects/shehnai.png",
         "http": "https://github.com/parmarakhil/wedding-planner",
         "date": "01-07-2021",
         "internationalizations": [
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "thumbnail": "../../assets/projects/interpreter.png",
+        "thumbnail": "assets/projects/interpreter.png",
         "http": "https://github.com/parmarakhil/Calcx",
         "date": "11-07-2021",
         "internationalizations": [
@@ -58,7 +58,7 @@
         ]
     },
     {
-        "thumbnail": "../../assets/projects/ToDo.jpg",
+        "thumbnail": "assets/projects/ToDo.jpg",
         "http": "https://github.com/parmarakhil/Todo-spring-mvc",
         "date": "07-08-2020",
         "internationalizations": [
@@ -70,7 +70,7 @@
         ]
     },
     {
-        "thumbnail": "../../assets/projects/microservice.png",
+        "thumbnail": "assets/projects/microservice.png",
         "http": "https://github.com/parmarakhil/spring-boot-microservice-project",
         "date": "01-07-2020",
         "internationalizations": [
