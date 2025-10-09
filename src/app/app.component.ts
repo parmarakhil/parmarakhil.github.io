@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     ]);
 
     this.metaTagService.updateTag(
-      { name: "description", content: "Hello, I'm a Full-stack Java Web Developer with 7+ of experience developing highly scaleable distributed softwares and mentoring people to ace in their career." }
+      { name: "description", content: "Hello, I'm a Full-stack Java Web Developer with 8+ of experience developing highly scaleable distributed softwares and mentoring people to ace in their career." }
     );
   }
 }
