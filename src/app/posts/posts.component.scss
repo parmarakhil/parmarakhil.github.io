@@ -29,9 +29,43 @@
         display: flex;
         color: #fff;
         flex-wrap: wrap;
+        align-items: flex-start;
 
         .title {
             flex-grow: 4;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .sort-controls {
+                display: flex;
+                gap: 0.5rem;
+                
+                .sort-btn {
+                    padding: 0.5rem 1rem;
+                    border: 2px solid #222f5c;
+                    background: transparent;
+                    color: #222f5c;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                    
+                    &:hover {
+                        background: #222f5c;
+                        color: white;
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 8px rgba(34, 47, 92, 0.2);
+                    }
+                    
+                    &.active {
+                        background: #222f5c;
+                        color: white;
+                        box-shadow: 0 2px 4px rgba(34, 47, 92, 0.3);
+                    }
+                }
+            }
         }
 
         .navigation {
@@ -40,8 +74,12 @@
             font-size: 30px;
             font-weight: 500;
             align-items: center;
+            justify-content: flex-end;
             text-align: center;
             color: #222f5c;
+            align-self: flex-start;
+            margin-top: 0;
+            min-width: 300px;
 
             a {
                 text-decoration: none;
@@ -86,6 +124,30 @@
         }
     }
 
+    .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 0;
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #222f5c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            color: #5e6788;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
     .middle-container {
         padding-bottom: 2em;  
         display: flex;
@@ -94,4 +156,9 @@
             width: 100%;
         }
     }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

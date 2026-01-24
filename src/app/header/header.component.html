@@ -10,12 +10,10 @@
 
     <div class="child nav-container" #nav [hidden]="!hasMenuToggled" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <ul>
-            <li><a (click)="resetMenu()" href="#about" i18n="nav@@aboutMe" itemprop="url"><span itemprop="name">About me</span></a></li>
-            <li><a (click)="resetMenu()" href="#achievements" itemprop="url"><span itemprop="name">Achievements</span></a></li>
-            <li><a (click)="resetMenu()" href="#services" itemprop="url"><span itemprop="name">Mentorship</span></a></li>
+            <li><a (click)="resetMenu()" href="#about" i18n="nav@@aboutMe" itemprop="url"><span itemprop="name">About</span></a></li>
             <li><a (click)="resetMenu()" href="#experience" i18n="nav@@experiences" itemprop="url"><span itemprop="name">Experience</span></a></li>
+            <li><a (click)="resetMenu()" href="#posts" i18n="nav@@posts" itemprop="url"><span itemprop="name">Posts</span></a></li>
             <li><a (click)="resetMenu()" href="#testimonials" itemprop="url"><span itemprop="name">Testimonials</span></a></li>
-            <li><a (click)="resetMenu()" href="#projects" i18n="nav@@projects" itemprop="url"><span itemprop="name">Projects</span></a></li>
             <li><a (click)="resetMenu()" href="#contact" i18n="nav@@contact" itemprop="url"><span itemprop="name">Contact</span></a></li>
             <li><a (click)="resetMenu()" href="https://topmate.io/akhil_parmar" target="_blank" class="cta-button">Book Mentorship</a></li>
         </ul>

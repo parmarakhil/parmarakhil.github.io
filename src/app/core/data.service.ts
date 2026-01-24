@@ -8,13 +8,14 @@ import { IExperience } from "../experience/experience-interfaces";
 import { IAbout } from "../about/about-interfaces";
 import { IPost } from "../posts/posts-interfaces";
 import {IProject} from "../projects/projects-interfaces";
+import { MediumService } from "./medium.service";
 
 @Injectable()
 export class DataService {
 
     baseUrl: string = "assets/data/";
     
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private mediumService: MediumService) { }
 
     getExperiences() : Observable<IExperience[]> {
         return this.http.get<IExperience[]>(this.baseUrl + "experiences.json")
@@ -31,7 +32,8 @@ export class DataService {
     }
 
     getPosts() : Observable<IPost[]> {
-        return this.http.get<IPost[]>(this.baseUrl + "posts.json")
+        // Fetch only Medium posts
+        return this.mediumService.getMediumPosts()
             .pipe(
                 catchError(this.handleError)
             );

@@ -76,12 +76,12 @@ export class PostsCarouselComponent implements OnInit {
 
     private populateCarousel(): void {
 
-        if(this._currentPage && this._posts) {
+        if(this._currentPage && this._originalPosts) {
             this.start =  (this._currentPage - 1) * this.resultsPerPage;
             this.end = this._currentPage * this.resultsPerPage;
 
             this._posts = this._originalPosts.slice(this.start, this.end);
-            this._posts.sort((a:any, b:any) => +new Date (b.date) - +new Date(a.date));
+            // Note: Sorting is now handled in the parent component
 
             this.onResultsPerPageChanged.emit(this.resultsPerPage);
         }

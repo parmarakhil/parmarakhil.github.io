@@ -3,6 +3,22 @@
         <div class="top-container">
             <div class="title">
                 <h1 i18n="nav@@posts">Posts</h1>
+                <div class="sort-controls">
+                    <button 
+                        class="sort-btn" 
+                        [class.active]="sortBy === 'recent'"
+                        (click)="onSortChange('recent')"
+                        i18n="posts@@sort-recent">
+                        Recent
+                    </button>
+                    <button 
+                        class="sort-btn" 
+                        [class.active]="sortBy === 'popular'"
+                        (click)="onSortChange('popular')"
+                        i18n="posts@@sort-popular">
+                        Most Liked
+                    </button>
+                </div>
             </div>
             <div class="navigation">
                 <a href="javascript:void(0)" class="previous" (click)="onClickPrevious()" [ngClass]="{'disabled': currentPage === 1}">
@@ -20,8 +36,14 @@
                 </a>
             </div>
         </div>
-        <p class="synopsis" i18n="posts@@synopsis">some synopsis</p>
-        <div class="middle-container">
+        <p class="synopsis" i18n="posts@@synopsis">Explore my latest thoughts and insights on software development, career growth, and technology trends from my Medium blog.</p>
+        
+        <div class="loading-container" *ngIf="isLoading">
+            <div class="loading-spinner"></div>
+            <p>Loading posts...</p>
+        </div>
+        
+        <div class="middle-container" *ngIf="!isLoading">
             <app-posts-carousel
                 [posts]="posts"
                 [currentPage]="currentPage"

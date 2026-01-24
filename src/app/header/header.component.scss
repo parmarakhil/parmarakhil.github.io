@@ -1,9 +1,13 @@
 header {
     display: flex;
     background: transparent;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     max-width: 1400px;
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    min-height: 70px;
 
     ul {
         display: flex;
@@ -16,6 +20,8 @@ header {
     .child.logo-container {
         flex-grow: 2;
         text-align: left;
+        display: flex;
+        align-items: center;
 
         a {
             width: 125px;
@@ -24,29 +30,33 @@ header {
             font-size: 35px;
             font-weight: 700;
             color: #7a89c4;
+            display: inline-block;
         }
     }
 
     .child.nav-container {
         flex-grow: 5;
         transition: 0.3s;
+        display: flex;
+        align-items: center;
 
         ul {
             justify-content: flex-end;
             align-items: center;
             height: 52px;
+            width: 100%;
 
             li {
                 text-align: center;
-                margin-right: 1em;
+                margin-right: 1.5em;
 
                 a {
                     text-transform: capitalize;
                     text-decoration: none;
-                    font-size: 20px;
+                    font-size: 18px;
                     font-weight: 600;
                     color: #7a89c4;
-                    padding: 14px;
+                    padding: 12px 18px;
                     border-radius: 15px;
                     transition: 0.3s;
 
@@ -54,6 +64,21 @@ header {
                         background-color: #fff;
                         -webkit-box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16); 
                         box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16);
+                    }
+
+                    &.cta-button {
+                        background-color: #222f5c;
+                        color: #fff;
+                        font-weight: 600;
+                        margin-left: 1rem;
+                        padding: 12px 24px;
+                        font-size: 16px;
+                        
+                        &:hover {
+                            background-color: #1a2347;
+                            transform: translateY(-2px);
+                            box-shadow: 0 4px 12px rgba(34, 47, 92, 0.4);
+                        }
                     }
                 }
 
@@ -121,6 +146,7 @@ header {
         flex-grow: 1;
         display: none;
         justify-content: center;
+        align-items: center;
         cursor: pointer;
     }
 
@@ -133,6 +159,8 @@ header {
         border-radius: 15px;
         box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16);
         cursor: pointer;
+        align-items: center;
+        justify-content: center;
 
         .icon {
             font-size: 25px;
