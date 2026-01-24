@@ -119,6 +119,26 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #1e3a8a;
+    background-color: #222f5c;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.author-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+/* Fallback for broken images */
+.author-avatar[src=""], 
+.author-avatar:not([src]) {
+    background: linear-gradient(135deg, #222f5c 0%, #1e3a8a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .author-info {
