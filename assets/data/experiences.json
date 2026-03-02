@@ -159,6 +159,7 @@
         "id": 5,
         "position": 5,
         "startAt": "07-27-2022",
+        "endAt": "02-02-2026",
         "companyName": "Walmart Global Tech",
         "website": "https://one.walmart.com/content/globaltechindia/en_in.html",
         "logo": "../../assets/template/experience/logo/walmart.png",
@@ -192,5 +193,43 @@
             }
         ],
         "backgroundUrl": "../../assets/template/experience/walmart.jpg"
+    },
+    {
+        "id": 6,
+        "position": 6,
+        "startAt": "02-09-2026",
+        "companyName": "eBay Inc.",
+        "website": "https://www.ebayinc.com/company/",
+        "logo": "../../assets/template/experience/logo/ebay_logo.png",
+        "internationalizations": [
+            {
+                "language": "en",
+                "city": "Bangalore",
+                "country": "India",
+                "role": "Member of Technical Staff 1",
+                "description": "<b>eBay Inc.</b> is a global commerce leader that connects millions of buyers and sellers across more than 190 markets worldwide. Through its trusted marketplace platform, eBay empowers entrepreneurs, small businesses, and individuals to participate in a vibrant digital economy. Leveraging data-driven insights, AI-powered search, and seamless payments integration, eBay continues to innovate in recommerce and sustainable shopping, enabling people everywhere to discover unique items and build thriving businesses."
+            }
+        ],
+        "technologies": [
+            "JAVA", "Spring", "Spring boot", "NoSQL", "Kubernetes", "Service bus", "OpenSearch","GitHub", "OpenTelementry","Maven","Kafka"
+        ],
+        "medias": [
+             {
+                "icon": "linkedin",
+                "title": "LinkedIn eBay Inc",
+                "http": "https://www.linkedin.com/company/ebay/"
+            },
+            {
+                "icon": "facebook",
+                "title": "Facebook eBay Inc.",
+                "http": "https://www.facebook.com/ebay/"
+            },
+            {
+                "icon": "youtube",
+                "title": "Youtube eBay Inc.",
+                "http": "https://www.youtube.com/ebay"
+            }
+        ],
+        "backgroundUrl": "../../assets/template/experience/ebay.png"
     }  
 ]
