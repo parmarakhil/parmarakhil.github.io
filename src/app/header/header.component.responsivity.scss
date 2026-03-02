@@ -24,6 +24,7 @@
         -webkit-box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16); 
         box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16);
         padding: 10px;
+        flex-wrap: wrap;
 
         .child.logo-container {
             flex-grow: 4;
@@ -34,6 +35,19 @@
             border-top: 2px solid #bfbfbf1a;
             padding-top: 1em;
             flex-basis: 100%;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+            padding-top: 0;
+            border-top: none;
+
+            &.menu-open {
+                max-height: 500px;
+                opacity: 1;
+                padding-top: 1em;
+                border-top: 2px solid #bfbfbf1a;
+            }
 
             ul {
                 flex-flow: column;
@@ -64,6 +78,24 @@
                         &:not(.active):hover {
                             box-shadow: none;
                         }
+
+                        &.cta-button {
+                            background-color: #222f5c;
+                            color: #fff;
+                            font-weight: 600;
+                            margin-left: 0;
+                            padding: 10px 20px;
+                            font-size: 18px;
+                            border-radius: 10px;
+                            display: inline-block;
+                            margin-top: 0.5em;
+                            
+                            &:hover {
+                                background-color: #1a2347;
+                                transform: translateY(-2px);
+                                box-shadow: 0 4px 12px rgba(34, 47, 92, 0.4);
+                            }
+                        }
                     }
 
                     &:before {
@@ -75,6 +107,9 @@
                     }
                     &:hover::before {
                         color: #222f5c;
+                    }
+                    &:last-child::before {
+                        content: none;
                     }
                 }
             }

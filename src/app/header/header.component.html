@@ -8,7 +8,7 @@
         <a (click)="resetMenu()" href="#" class="logo" itemprop="name" itemprop="logo" style="font-family:Pacifico, cursive;">Akhil</a>
     </div>
 
-    <div class="child nav-container" #nav [hidden]="!hasMenuToggled" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <div class="child nav-container" #nav [ngClass]="{'menu-open': hasMenuToggled}" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <ul>
             <li><a (click)="resetMenu()" href="#about" i18n="nav@@aboutMe" itemprop="url"><span itemprop="name">About</span></a></li>
             <li><a (click)="resetMenu()" href="#experience" i18n="nav@@experiences" itemprop="url"><span itemprop="name">Experience</span></a></li>
