@@ -6,6 +6,7 @@ import {
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ContactService } from "./contact.service";
 import { Contact } from "../model/contact.model";
+import { serverTimestamp } from "firebase/firestore";
 
 @Component({
   selector: "app-contact",
@@ -103,7 +104,7 @@ export class ContactComponent implements OnInit {
       name: this.senderName.value,
       email: this.senderEmail.value,
       message: this.senderMessage.value,
-      date: new Date()
+      date: serverTimestamp()
     } as Contact;
 
     this.saveContact(contactValues);
