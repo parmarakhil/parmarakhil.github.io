@@ -1,31 +1,70 @@
 #about {
     flex-direction: column;
     align-items: center;
-    // background-image: linear-gradient(0deg, #fff 44.44%, #d4e7fe 44.44%, #d4e7fe 0%, #fff 0%, #fff 94.44%, #d4e7fe 94.44%, #d4e7fe 100%);
     background-size: 10px 1220px;
 }
 
 .about-container {
     display: flex;
     position: relative;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: #fff;
-    flex-direction: row;
+    flex-direction: row-reverse;
     border-radius: 15px;
     box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16);
     width: 85vw;
     z-index: 2;
-    padding: 2em;
+    padding: 3em 2em;
     max-width: 1400px;
+    gap: 3em;
 
     p {
         margin: 0;
         padding: 0;
     }
 
+    .second-column {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        .profile-picture {
+            display: block;
+            width: 280px;
+            height: 280px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 99em;
+            background-image: url('../../assets/template/about/akhil-parmar.jpg');
+            border: 3px solid #d4e7fe;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-media {
+            text-align: center;
+            display: flex;
+            gap: 1.5em;
+
+            .icon {
+                font-size: 40px;
+                color: #5e81abbd;
+                transition: 0.3s;
+
+                &:hover {
+                    color: #667eea;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
     .first-column {
-        flex-grow: 2;
+        flex-grow: 1;
+        min-width: 0;
     
         h1 {
             color: #7d7d7d;
@@ -34,19 +73,51 @@
             text-transform: uppercase;
             margin: 0;
         }
+
+        .section-title-decorative {
+            font-family: 'Pacifico', cursive;
+            font-size: 28px;
+            font-weight: 400;
+            color: #667eea;
+            text-transform: none;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 0.5px;
+        }
     
         h2 {
-            font-size: 35px;
+            font-size: 32px;
             font-weight: 600;
             color: #0b0d0e;
-            margin: 5px 0 0 0;
+            margin: 0 0 0.5em 0;
         }
     
         h3 {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 600;
-            color: #7d7d7d;
-            margin-bottom: 10px;
+            color: #1a2347;
+            margin: 1.5em 0 1em 0;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .years-old {
+            color: #b2b6c6;
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 1em;
+        }
+        
+        .text {
+            font-size: 16px;
+            font-weight: 400;
+            color: #5e81abbd;
+            text-align: left;
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        .about-tabs {
+            margin-top: 1.5em;
         }
     
         p {
@@ -68,48 +139,253 @@
                 line-height: 1.5em;
             }
         }
-    
-        .icon {
-            font-size: 40px;
-            color: #5e81abbd;
-            margin-right: 1em;
-            transition: 0.3s;
-    
-            &:hover {
-                color: #8087a1;
+
+        // Skills Section
+        .skills-section {
+            margin-top: 1.5em;
+
+            .skill-categories {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1.2em;
+            }
+
+            .skill-category {
+                h4 {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #667eea;
+                    margin: 0 0 0.5em 0;
+
+                    &::before {
+                        content: '';
+                        width: 4px;
+                        height: 4px;
+                        background: #667eea;
+                        border-radius: 50%;
+                        margin-right: 0.5em;
+                        display: inline-block;
+                    }
+                }
+
+                .skill-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        font-size: 14px;
+                        color: #5e81abbd;
+                        margin-bottom: 0.4em;
+                        line-height: 1.3;
+
+                        .skill-icon {
+                            color: #667eea;
+                            font-size: 11px;
+                            margin-right: 0.6em;
+                            flex-shrink: 0;
+                        }
+
+                        span {
+                            flex: 1;
+                        }
+                    }
+                }
             }
         }
-    }
-    
-    .second-column {
-        flex-grow: 1;
-    
-        .profile-picture {
-            display: block;
-            width: 450px;
-            height: 450px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            -webkit-border-radius: 99em;
-            -moz-border-radius: 99em;
-            border-radius: 99em;
-            background-image: url('../../assets/template/about/akhil-parmar.jpg');
-            border: 3px solid #d4e7fe;
-        }
-    
-        .social-media {
-            text-align: center;
-            margin-top: 1em;
-    
-            .icon {
-                font-size: 60px;
-                color: #5e81abbd;
-                margin: 0 20px 0 20px;
-                transition: 0.3s;
-    
+
+        // Certifications Section
+        .certifications-section {
+            margin-top: 1.5em;
+
+            .cert-categories {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2em;
+            }
+
+            .cert-category {
+                .category-title {
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: #667eea;
+                    margin-bottom: 0.7em;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    display: flex;
+                    align-items: center;
+
+                    &::before {
+                        content: '';
+                        width: 5px;
+                        height: 5px;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        border-radius: 50%;
+                        margin-right: 0.6em;
+                    }
+                }
+
+                .certifications-list {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                    gap: 0.9em;
+                }
+            }
+
+            .cert-item {
+                display: flex;
+                align-items: flex-start;
+                padding: 0.9em;
+                background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+                border-radius: 10px;
+                border-left: 3px solid #667eea;
+                transition: all 0.3s ease;
+
                 &:hover {
-                    color: #8087a1;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+                }
+
+                .cert-badge {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 42px;
+                    height: 42px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 50%;
+                    color: white;
+                    margin-right: 0.9em;
+                    flex-shrink: 0;
+
+                    .cert-icon {
+                        font-size: 18px;
+                    }
+                }
+
+                .cert-content {
+                    flex: 1;
+
+                    h5 {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #1a2347;
+                        margin: 0 0 0.2em 0;
+                        line-height: 1.3;
+                    }
+
+                    .cert-issuer {
+                        font-size: 13px;
+                        color: #667eea;
+                        margin: 0 0 0.2em 0;
+                        font-weight: 500;
+                    }
+
+                    .cert-year {
+                        font-size: 11px;
+                        color: #a0a8c0;
+                        margin: 0;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        // Achievements Section
+        .achievements-section {
+            margin-top: 1.5em;
+
+            .achievements-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 20px;
+                    top: 20px;
+                    bottom: 0;
+                    width: 2px;
+                    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+                }
+            }
+
+            .achievement-item {
+                display: flex;
+                position: relative;
+                padding-left: 70px;
+
+                .achievement-marker {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 42px;
+                    height: 42px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 50%;
+                    border: 3px solid white;
+                    box-shadow: 0 0 0 2px #667eea;
+                }
+
+                .achievement-content {
+                    flex: 1;
+
+                    h4 {
+                        font-size: 15px;
+                        font-weight: 600;
+                        color: #1a2347;
+                        margin: 0 0 0.3em 0;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: #5e81abbd;
+                        margin: 0 0 0.4em 0;
+                        line-height: 1.4;
+                    }
+
+                    .achievement-meta {
+                        display: flex;
+                        gap: 0.8rem;
+                        align-items: center;
+                        font-size: 12px;
+                    }
+
+                    .achievement-year {
+                        color: #667eea;
+                        font-weight: 600;
+                    }
+
+                    .achievement-date-range {
+                        color: #a0a8c0;
+                        font-style: italic;
+                        border-left: 1px solid #e8ecf1;
+                        padding-left: 0.8rem;
+                    }
+                }
+            }
+        }
+
+        .hobbies {
+            margin-top: 1.5em;
+
+            .hobbies-list {
+                display: flex;
+                gap: 1.5em;
+
+                .icon {
+                    font-size: 36px;
+                    color: #5e81abbd;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: #667eea;
+                        transform: scale(1.15);
+                    }
                 }
             }
         }

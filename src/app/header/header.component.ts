@@ -66,17 +66,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   private updateNavigation() {
 
-    if(this._activeSection && this.renderer) {
-      
-      // Remove any selected anchor
-      const activePreviousElem = this.nav.nativeElement.querySelector("a.active");
-      
-      if(activePreviousElem) {
-        this.renderer.removeClass(activePreviousElem, "active");
-      }
+    if (this._activeSection && this.renderer && this.nav?.nativeElement) {
 
       const targetElem = this.nav.nativeElement.querySelector(`a[href^="#${this._activeSection}"]`);
-      if(targetElem) {
+
+      if (targetElem) {
+        const activePreviousElem = this.nav.nativeElement.querySelector("a.active");
+        if (activePreviousElem) {
+          this.renderer.removeClass(activePreviousElem, "active");
+        }
         this.renderer.addClass(targetElem, "active");
       }
     }

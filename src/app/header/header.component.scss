@@ -31,6 +31,13 @@ header {
             font-weight: 700;
             color: #7a89c4;
             display: inline-block;
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #667eea;
+            }
         }
     }
 

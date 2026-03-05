@@ -41,6 +41,22 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  getSkillCategories(): string[] {
+    if (!this.aboutData?.skills) return [];
+    return Object.keys(this.aboutData.skills).filter(key => this.aboutData.skills[key] && this.aboutData.skills[key].length > 0);
+  }
+
+  getCertCategories(): string[] {
+    if (!this.aboutData?.certifications) return [];
+    const categories = new Set(this.aboutData.certifications.map(c => c.category));
+    return Array.from(categories);
+  }
+
+  getCertsByCategory(category: string): any[] {
+    if (!this.aboutData?.certifications) return [];
+    return this.aboutData.certifications.filter(c => c.category === category);
+  }
+
   private calcAge(dateString: string) {
     const birthday: Date = new Date(dateString);
     const ageDifMs: number = Date.now() - birthday.getTime();

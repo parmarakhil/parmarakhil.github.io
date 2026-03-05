@@ -1,6 +1,7 @@
 <div class="events-content" itemscope itemtype="https://schema.org/Blog">
     <meta itemprop="name" content="Akhil Parmar - Technical Blog"/>
     <meta itemprop="author" content="Akhil Parmar" />
+    <meta itemprop="description" content="Technical articles covering distributed systems, system design, cloud architecture, and career guidance for engineers transitioning to product companies." />
     <ol [ngClass]="{'partial': _posts.length < 3 && currentPage >= (_originalPosts.length / resultsPerPage)}">
         <li *ngFor="let post of _posts" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="card" [@fadeInOut] itemprop="item">
@@ -11,12 +12,15 @@
                         <span class="date" itemprop="datePublished">{{ post.date | safariDateFormatter | localizedDate:'MMM yyyy' }}</span>
                     </div>
                     <div class="content">
-                        <meta itemprop="author" content="{{ post.author || 'Akhil Parmar' }}" />
+                        <meta itemprop="author" content="{{ post.author || 'Akhil Parmar' }}" itemscope itemtype="https://schema.org/Person" />
                         <meta itemprop="creator" content="{{ post.author || 'Akhil Parmar' }}" />
-                        <meta itemprop="publisher" content="Akhil Parmar" />
+                        <meta itemprop="publisher" content="Akhil Parmar" itemscope itemtype="https://schema.org/Person" />
+                        <meta itemprop="dateModified" content="{{ post.date }}" />
+                        <meta *ngIf="post.readingTime" itemprop="timeRequired" content="PT{{ post.readingTime }}M" />
                         <h2 class="title" internationalization [data]="post.internationalizations" property='title' itemprop="headline" itemprop="name">Loading...</h2>
                         <p class="description" internationalization [data]="post.internationalizations" property='description' ellipsis='275' itemprop="description" itemprop="articleBody">Loading...</p>
-                        <div class="blog-meta" *ngIf="post.readingTime || post.categories">
+                        <div class="blog-meta" *ngIf="post.readingTime || post.categories || post.author">
+                            <span class="author" *ngIf="post.author || true">by <strong>{{ post.author || 'Akhil Parmar' }}</strong></span>
                             <span class="reading-time" *ngIf="post.readingTime">{{ post.readingTime }} min read</span>
                             <span class="categories" *ngIf="post.categories" itemprop="keywords">{{ post.categories.join(', ') }}</span>
                         </div>

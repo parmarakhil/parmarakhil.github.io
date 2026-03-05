@@ -100,6 +100,19 @@
                     font-size: 12px;
                     flex-wrap: wrap;
 
+                    .author {
+                        font-weight: 500;
+                        color: #1a2347;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.4rem;
+
+                        strong {
+                            font-weight: 600;
+                            color: #667eea;
+                        }
+                    }
+
                     .reading-time {
                         font-weight: 700;
                         color: #667eea;
