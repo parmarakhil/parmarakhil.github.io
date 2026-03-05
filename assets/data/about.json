@@ -43,5 +43,226 @@
             "icon": "book",
             "title": "Read"
         }
+    ],
+    "certifications": [
+        {
+            "title": "AI-Powered Software and System Design",
+            "issuer": "DeepLearning.AI",
+            "year": 2026,
+            "month": "Jan",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Introduction to Generative AI for Software Development",
+            "issuer": "DeepLearning.AI",
+            "year": 2026,
+            "month": "Jan",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Retrieval Augmented Generation (RAG)",
+            "issuer": "DeepLearning.AI",
+            "year": 2026,
+            "month": "Jan",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Generative AI for Everyone",
+            "issuer": "DeepLearning.AI",
+            "year": 2025,
+            "month": "Dec",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Responsible AI: Applying AI Principles with Google Cloud",
+            "issuer": "Google Cloud",
+            "year": 2026,
+            "month": "Jan",
+            "category": "Responsible AI"
+        },
+        {
+            "title": "Introduction to Responsible AI",
+            "issuer": "Google Cloud",
+            "year": 2026,
+            "month": "Jan",
+            "category": "Responsible AI"
+        },
+        {
+            "title": "Introduction to Large Language Models",
+            "issuer": "Google Cloud",
+            "year": 2026,
+            "month": "Jan",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Introduction to Generative AI",
+            "issuer": "Google Cloud",
+            "year": 2026,
+            "month": "Jan",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Stay Ahead of the AI Curve",
+            "issuer": "Google",
+            "year": 2025,
+            "month": "Dec",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Use AI Responsibly",
+            "issuer": "Google",
+            "year": 2025,
+            "month": "Dec",
+            "category": "Responsible AI"
+        },
+        {
+            "title": "Discover the Art of Prompting",
+            "issuer": "Google",
+            "year": 2025,
+            "month": "Dec",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Maximize Productivity With AI Tools",
+            "issuer": "Google",
+            "year": 2025,
+            "month": "Dec",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Introduction to AI",
+            "issuer": "Google",
+            "year": 2025,
+            "month": "Dec",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Generative AI Primer",
+            "issuer": "Vanderbilt University",
+            "year": 2026,
+            "month": "Jan",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "Responsible and Ethical AI",
+            "issuer": "Northeastern University",
+            "year": 2026,
+            "month": "Jan",
+            "category": "Responsible AI"
+        },
+        {
+            "title": "Generative AI: Fundamentals, Applications, and Challenges",
+            "issuer": "University of Michigan",
+            "year": 2026,
+            "month": "Jan",
+            "category": "AI & Generative AI"
+        },
+        {
+            "title": "AWS Solutions Architect - Professional",
+            "issuer": "Amazon Web Services",
+            "year": 2023,
+            "category": "Cloud & Architecture"
+        },
+        {
+            "title": "AWS Subject Matter Expert (SME)",
+            "issuer": "Amazon Web Services",
+            "year": 2023,
+            "category": "Cloud & Architecture"
+        },
+        {
+            "title": "Cloud Native Architecture",
+            "issuer": "Linux Foundation",
+            "year": 2022,
+            "category": "Cloud & Architecture"
+        }
+    ],
+    "skills": {
+        "backend": [
+            "Distributed Systems",
+            "Microservices Architecture",
+            "Java",
+            "System Design",
+            "Clean Code & SOLID",
+            "Design Patterns"
+        ],
+        "cloud": [
+            "AWS (EC2, S3, Lambda, RDS)",
+            "Kubernetes",
+            "Docker",
+            "Cloud-native Design",
+            "Serverless Architecture"
+        ],
+        "databases": [
+            "SQL (PostgreSQL, MySQL)",
+            "NoSQL (MongoDB, DynamoDB)",
+            "Redis",
+            "Cassandra",
+            "Database Optimization"
+        ],
+        "messaging": [
+            "Apache Kafka",
+            "RabbitMQ",
+            "Message Queues",
+            "Event Streaming",
+            "Pub-Sub Systems"
+        ],
+        "tools": [
+            "Git",
+            "CI/CD Pipelines",
+            "Jenkins",
+            "Jira",
+            "Monitoring & Logging",
+            "Data Structures & Algorithms"
+        ]
+    },
+    "achievements": [
+        {
+            "title": "Member of Technical Staff 1 at eBay",
+            "description": "Current role driving core buyer experience and system architecture at scale. 2 months tenure.",
+            "year": 2026,
+            "dateRange": "Feb 2026 - Present"
+        },
+        {
+            "title": "$700M Annual Savings Delivered",
+            "description": "Implemented intelligent item substitution engine at Walmart, delivering massive financial impact",
+            "year": 2024,
+            "dateRange": "Jul 2022 - Jul 2024"
+        },
+        {
+            "title": "Senior Software Engineer - Team Leadership",
+            "description": "Oversaw team of 6 engineers designing next-generation calling app supporting 2,000 TPS. Managed high-scale architecture and product innovation.",
+            "year": 2024,
+            "dateRange": "Jul 2024 - Feb 2026"
+        },
+        {
+            "title": "80% Cost Optimization at Scale",
+            "description": "Reduced annual operating expenses by $7M through ELK stack migration and system resiliency improvements at Walmart Global Tech",
+            "year": 2023,
+            "dateRange": "Jul 2022 - Jul 2024"
+        },
+        {
+            "title": "Infrastructure SME - Cosmos DB",
+            "description": "Recognized as Subject Matter Expert for Azure Cosmos DB. Member of Infrastructure Onboarding Council at Walmart.",
+            "year": 2023,
+            "dateRange": "Jul 2022 - Jul 2024"
+        },
+        {
+            "title": "1M Requests/10min Microservice Architecture",
+            "description": "Designed loosely coupled microservice architecture handling 1 million requests in 10 minutes for fintech client at EPAM Systems",
+            "year": 2022,
+            "dateRange": "Jun 2021 - Jul 2022"
+        },
+        {
+            "title": "Started Mentoring Career Engineers",
+            "description": "Began mentoring engineers on system design, distributed systems, and career transitions to product companies",
+            "year": 2022,
+            "dateRange": "2022 - Present"
+        },
+        {
+            "title": "Infosys - System Engineer & SDK Framework",
+            "description": "Designed SDK framework and created learning courses for community developers. 2+ years at Infosys.",
+            "year": 2021,
+            "dateRange": "Oct 2018 - Jun 2021"
+        }
     ]
 }
