@@ -13,8 +13,10 @@ export class PostsComponent implements OnInit {
 
   currentPage: number = 1;
   resultsPerPage: number;
-  posts: IPost[] = [];
-  allPosts: IPost[] = []; // Store all posts for sorting
+  blogs: IPost[] = []; // Blog articles
+  allBlogs: IPost[] = []; // Store all blogs for sorting
+  posts: IPost[] = []; // Kept for backwards compatibility
+  allPosts: IPost[] = []; // Kept for backwards compatibility
   sortBy: 'recent' | 'popular' = 'recent';
   isLoading: boolean = false;
   
@@ -33,23 +35,24 @@ export class PostsComponent implements OnInit {
   loadPosts(): void {
     this.isLoading = true;
     
-    // Fetch the Posts from the Data Service
+    // Fetch blog articles from the Data Service
     this.dataService.getPosts()
       .subscribe({
-        next: (posts: IPost[]) => {
-          this.allPosts = posts;
+        next: (blogs: IPost[]) => {
+          this.allBlogs = blogs;
+          this.allPosts = blogs; // Backwards compatibility
           this.applySorting();
           this.isLoading = false;
         },
         error: (error) => {
-          console.error('Error loading posts:', error);
+          console.error('Error loading blog articles:', error);
           this.isLoading = false;
         }
       });
   }
 
   applySorting(): void {
-    let sortedPosts = [...this.allPosts];
+    let sortedPosts = [...this.allBlogs];
     
     if (this.sortBy === 'recent') {
       // Sort by publication date (newest first)
@@ -75,7 +78,8 @@ export class PostsComponent implements OnInit {
       });
     }
     
-    this.posts = sortedPosts;
+    this.blogs = sortedPosts;
+    this.posts = sortedPosts; // Backwards compatibility
     this.currentPage = 1; // Reset to first page when sorting changes
   }
 

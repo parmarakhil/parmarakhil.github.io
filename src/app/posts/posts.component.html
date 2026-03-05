@@ -1,8 +1,9 @@
-<section id="posts">
+<section id="blogs">
     <div class="container">
         <div class="top-container">
             <div class="title">
-                <h1 i18n="nav@@posts">Posts</h1>
+                <h1 i18n="nav@@blogs">Technical Blog & Insights</h1>
+                <p class="section-subtitle">Articles on distributed systems, system design, career growth, and software engineering best practices</p>
                 <div class="sort-controls">
                     <button 
                         class="sort-btn" 
@@ -15,7 +16,7 @@
                         class="sort-btn" 
                         [class.active]="sortBy === 'popular'"
                         (click)="onSortChange('popular')"
-                        i18n="posts@@sort-popular">
+                        i18n="blogs@@sort-popular">
                         Most Liked
                     </button>
                 </div>
@@ -28,7 +29,7 @@
                     </div>
                 </a>
                 <div class="divider">|</div>
-                <a href="javascript:void(0)" class="next" (click)="onClickNext()" [ngClass]="{'disabled': currentPage === ceil(posts?.length / resultsPerPage) }">
+                <a href="javascript:void(0)" class="next" (click)="onClickNext()" [ngClass]="{'disabled': currentPage === ceil(blogs?.length / resultsPerPage) }">
                     <div class="molding">
                         <span i18n="exp.nav@@next">Next</span>
                         <fa-icon [icon]="faChevronRight" class="icon" i18n-title="exp.nav@@next" title="Next"></fa-icon>
@@ -40,12 +41,12 @@
         
         <div class="loading-container" *ngIf="isLoading">
             <div class="loading-spinner"></div>
-            <p>Loading posts...</p>
+            <p>Loading blog articles...</p>
         </div>
         
         <div class="middle-container" *ngIf="!isLoading">
             <app-posts-carousel
-                [posts]="posts"
+                [posts]="blogs"
                 [currentPage]="currentPage"
                 (onResultsPerPageChanged)="updateNavigation($event)"></app-posts-carousel>
         </div>

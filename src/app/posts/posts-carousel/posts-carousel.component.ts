@@ -58,6 +58,17 @@ export class PostsCarouselComponent implements OnInit {
             this.onResizeElement();
         }
     }
+
+    @Input() get blogs(): IPost[] {
+        return this._posts;
+    }
+
+    set blogs(value: IPost[]) {
+        if(value) {
+            this._originalPosts = value;
+            this.onResizeElement();
+        }
+    }
     
     ngOnInit(): void {}
 
