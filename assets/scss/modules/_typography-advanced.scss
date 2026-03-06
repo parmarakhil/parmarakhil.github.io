@@ -1,0 +1,290 @@
+// ==========================================
+// ADVANCED TYPOGRAPHY & CODE STYLING
+// ==========================================
+
+// Code Block Styling
+code {
+    font-family: $font-family-mono;
+    font-size: 0.9em;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 2px 6px;
+    border-radius: $radius-sm;
+    color: #667eea;
+}
+
+pre {
+    background: $color-bg-dark;
+    color: #e0e0e0;
+    padding: $space-6;
+    border-radius: $radius-lg;
+    overflow-x: auto;
+    font-family: $font-family-mono;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    
+    code {
+        background: none;
+        padding: 0;
+        color: inherit;
+    }
+}
+
+// Typography Enhancements
+.text-hero {
+    font-size: $font-size-6xl;
+    font-weight: $font-weight-black;
+    line-height: $line-height-tight;
+    letter-spacing: $letter-spacing-tight;
+    font-family: $font-family-heading;
+}
+
+.text-headline {
+    font-size: $font-size-5xl;
+    font-weight: $font-weight-extrabold;
+    line-height: $line-height-tight;
+    letter-spacing: $letter-spacing-tight;
+    font-family: $font-family-heading;
+}
+
+.text-title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    font-family: $font-family-heading;
+}
+
+.text-subtitle {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-snug;
+    font-family: $font-family-heading;
+}
+
+.text-subheading {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-snug;
+    font-family: $font-family-heading;
+}
+
+.text-small {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-normal;
+}
+
+.text-tiny {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-tight;
+    letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
+}
+
+// Emphasis Styles
+.text-bold {
+    font-weight: $font-weight-bold;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-decoration-color: $color-primary;
+}
+
+.text-strikethrough {
+    text-decoration: line-through;
+}
+
+// Accent Text
+.text-accent {
+    color: $color-accent;
+    font-weight: $font-weight-semibold;
+}
+
+.text-success {
+    color: $color-success;
+    font-weight: $font-weight-semibold;
+}
+
+.text-error {
+    color: $color-danger;
+    font-weight: $font-weight-semibold;
+}
+
+// Heading with Underline
+.heading-with-underline {
+    position: relative;
+    padding-bottom: $space-4;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: $gradient-primary;
+        border-radius: $radius-sm;
+    }
+}
+
+// Tech Stack / Badge Styling
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+    margin: $space-4 0;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    padding: $space-2 $space-4;
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+    transition: all $transition-base;
+    
+    &:hover {
+        background: rgba(102, 126, 234, 0.2);
+        border-color: $color-primary;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    }
+}
+
+// Achievement / Success Label
+.achievement-label {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    padding: $space-3 $space-6;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-success;
+    
+    &::before {
+        content: '✓';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        background: $color-success;
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+    }
+}
+
+// Warning / Alert Label
+.alert-label {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    padding: $space-3 $space-6;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: $radius-full;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-warning;
+}
+
+// Link Styles
+a.link-primary {
+    color: $color-primary;
+    text-decoration: none;
+    position: relative;
+    font-weight: $font-weight-medium;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $color-primary;
+        transition: width $transition-base;
+    }
+    
+    &:hover {
+        color: $color-primary-dark;
+        
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+a.link-secondary {
+    color: $color-text-secondary;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    transition: color $transition-base;
+    
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+// Breadcrumb
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    
+    a {
+        color: $color-primary;
+        text-decoration: none;
+        transition: color $transition-base;
+        
+        &:hover {
+            color: $color-primary-dark;
+            text-decoration: underline;
+        }
+    }
+    
+    .separator {
+        color: $color-text-muted;
+    }
+}
+
+// Stats Display
+.stat-display {
+    text-align: center;
+    
+    .stat-value {
+        display: block;
+        font-size: $font-size-5xl;
+        font-weight: $font-weight-black;
+        color: $color-primary;
+        line-height: 1;
+        margin-bottom: $space-2;
+    }
+    
+    .stat-label {
+        display: block;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        color: $color-text-light;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-wide;
+    }
+}

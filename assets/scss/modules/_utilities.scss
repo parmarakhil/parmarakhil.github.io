@@ -1,0 +1,309 @@
+// ==========================================
+// UTILITY CLASSES
+// ==========================================
+
+// Text Utilities
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-primary {
+    color: $color-text-primary;
+}
+
+.text-secondary {
+    color: $color-text-secondary;
+}
+
+.text-light {
+    color: $color-text-light;
+}
+
+.text-muted {
+    color: $color-text-muted;
+}
+
+.text-brand {
+    color: $color-primary;
+}
+
+// Font Weight Utilities
+.font-light {
+    font-weight: $font-weight-light;
+}
+
+.font-normal {
+    font-weight: $font-weight-regular;
+}
+
+.font-medium {
+    font-weight: $font-weight-medium;
+}
+
+.font-semibold {
+    font-weight: $font-weight-semibold;
+}
+
+.font-bold {
+    font-weight: $font-weight-bold;
+}
+
+.font-extrabold {
+    font-weight: $font-weight-extrabold;
+}
+
+// Spacing Utilities
+.p-4 { padding: $space-4; }
+.p-6 { padding: $space-6; }
+.p-8 { padding: $space-8; }
+
+.px-4 { padding-left: $space-4; padding-right: $space-4; }
+.py-4 { padding-top: $space-4; padding-bottom: $space-4; }
+
+.m-4 { margin: $space-4; }
+.m-6 { margin: $space-6; }
+.m-8 { margin: $space-8; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.gap-4 { gap: $space-4; }
+.gap-6 { gap: $space-6; }
+.gap-8 { gap: $space-8; }
+
+// Flexbox Utilities
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+// Display Utilities
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+
+// Opacity Utilities
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-80 { opacity: 0.8; }
+.opacity-90 { opacity: 0.9; }
+
+// Shadow Utilities
+.shadow-sm { box-shadow: $shadow-sm; }
+.shadow-md { box-shadow: $shadow-md; }
+.shadow-lg { box-shadow: $shadow-lg; }
+.shadow-xl { box-shadow: $shadow-xl; }
+
+// Border Radius Utilities
+.rounded-md { border-radius: $radius-md; }
+.rounded-lg { border-radius: $radius-lg; }
+.rounded-xl { border-radius: $radius-xl; }
+.rounded-2xl { border-radius: $radius-2xl; }
+.rounded-full { border-radius: $radius-full; }
+
+// Background Utilities
+.bg-white { background-color: $color-bg-primary; }
+.bg-light { background-color: $color-bg-secondary; }
+.bg-lighter { background-color: $color-bg-tertiary; }
+.bg-brand {
+    @include text-gradient(#667eea, #764ba2);
+}
+
+// Transition Utilities
+.transition-fast { transition: all $transition-fast; }
+.transition-base { transition: all $transition-base; }
+.transition-slow { transition: all $transition-slow; }
+
+// Hover Effects
+.hover-lift {
+    transition: transform $transition-base, box-shadow $transition-base;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-xl;
+    }
+}
+
+.hover-glow {
+    transition: all $transition-base;
+    
+    &:hover {
+        color: $color-primary;
+        text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+    }
+}
+
+.hover-scale {
+    transition: transform $transition-base;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Button Utilities
+.btn-base {
+    @include button-base;
+    padding: $space-4 $space-8;
+    font-size: $font-size-base;
+}
+
+.btn-primary {
+    @include button-base;
+    background: $gradient-primary;
+    color: white;
+    padding: $space-4 $space-8;
+    box-shadow: $shadow-elevation-2;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-elevation-3;
+    }
+}
+
+.btn-secondary {
+    @include button-base;
+    background: rgba(102, 126, 234, 0.1);
+    color: $color-primary;
+    padding: $space-4 $space-8;
+    border: 1px solid $color-primary;
+    
+    &:hover {
+        background: rgba(102, 126, 234, 0.2);
+    }
+}
+
+.btn-outline {
+    @include button-base;
+    background: transparent;
+    color: $color-primary;
+    padding: $space-4 $space-8;
+    border: 2px solid $color-primary;
+    
+    &:hover {
+        background: $color-primary;
+        color: white;
+    }
+}
+
+// Card Utilities
+.card {
+    @include card-base;
+    padding: $space-6;
+}
+
+.card-lg {
+    @include card-base;
+    padding: $space-8;
+}
+
+// Container Utilities
+.container-sm {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-md {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-lg {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-xl {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Animation Utilities
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-down {
+    animation: slideInDown 0.6s ease-out;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+// Underline Effect
+.underline-animated {
+    position: relative;
+    text-decoration: none;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $gradient-primary;
+        transition: width $transition-base;
+    }
+    
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+// Glass Effect
+.glass {
+    @include glass-effect(0.08, 10px);
+}
+
+.glass-thick {
+    @include glass-effect(0.15, 20px);
+}
+
+// Responsive Grid
+.grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $space-6;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-6;
+    
+    @include responsive('sm') {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-6;
+    
+    @include responsive('md') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include responsive('sm') {
+        grid-template-columns: 1fr;
+    }
+}
