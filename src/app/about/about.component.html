@@ -16,6 +16,13 @@
                     <fa-icon [icon]="['fab', media.icon]" class="icon" title="{{ media.title }}"></fa-icon>
                 </a>
             </div>
+            <!-- Hobbies/Interests -->
+            <div class="hobbies">
+                <h3>Interests</h3>
+                <div class="hobbies-list">
+                    <fa-icon *ngFor="let hobby of aboutData?.hobbies" [icon]="['fas', hobby.icon]" class="icon" title="{{ hobby.title }}" itemprop="hobby"></fa-icon>
+                </div>
+            </div>
         </div>
 
         <div class="first-column">
@@ -28,44 +35,6 @@
             <p class="text" internationalization [data]="aboutData?.internationalizations" property='description' itemprop="summary">Loading Data...</p>
             
             <div class="about-tabs">
-                <!-- Skills Section -->
-                <div class="skills-section" *ngIf="aboutData?.skills">
-                    <h3>Skills & Expertise</h3>
-                    <div class="skill-categories">
-                        <div class="skill-category" *ngFor="let category of getSkillCategories()">
-                            <h4>{{ category | titlecase }}</h4>
-                            <ul class="skill-list">
-                                <li *ngFor="let skill of aboutData.skills[category]">
-                                    <fa-icon icon="check-circle" class="skill-icon"></fa-icon>
-                                    <span>{{ skill }}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certifications Section -->
-                <div class="certifications-section" *ngIf="aboutData?.certifications && aboutData.certifications.length > 0">
-                    <h3>Certifications ({{ aboutData.certifications.length }})</h3>
-                    <div class="cert-categories">
-                        <div class="cert-category" *ngFor="let category of getCertCategories()">
-                            <h4 class="category-title">{{ category }}</h4>
-                            <div class="certifications-list">
-                                <div class="cert-item" *ngFor="let cert of getCertsByCategory(category)">
-                                    <div class="cert-badge">
-                                        <fa-icon icon="award" class="cert-icon"></fa-icon>
-                                    </div>
-                                    <div class="cert-content">
-                                        <h5>{{ cert.title }}</h5>
-                                        <p class="cert-issuer">{{ cert.issuer }}</p>
-                                        <p class="cert-year">{{ cert.month ? cert.month + ' ' : '' }}{{ cert.year }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Achievements Section -->
                 <div class="achievements-section" *ngIf="aboutData?.achievements && aboutData.achievements.length > 0">
                     <h3>Achievements</h3>
@@ -81,14 +50,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Hobbies -->
-                <div class="hobbies">
-                    <h3>Interests</h3>
-                    <div class="hobbies-list">
-                        <fa-icon *ngFor="let hobby of aboutData?.hobbies" [icon]="['fas', hobby.icon]" class="icon" title="{{ hobby.title }}" itemprop="hobby"></fa-icon>
                     </div>
                 </div>
             </div>

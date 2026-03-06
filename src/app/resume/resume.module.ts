@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { ResumeComponent } from "../resume/resume.component";
 import { HeaderComponent } from "../header/header.component";
 import { AboutComponent } from "../about/about.component";
+import { SkillsComponent } from "../skills/skills.component";
 import { ContactComponent } from "../contact/contact.component";
 import { TestimonialsComponent } from "../testimonials/testimonials.component";
 import { ServicesComponent } from "../services/services.component";
@@ -32,6 +33,7 @@ import { FooterComponent } from "../footer/footer.component";
     ResumeComponent,
     HeaderComponent,
     AboutComponent,
+    SkillsComponent,
     ContactComponent,
     TestimonialsComponent,
     ServicesComponent,

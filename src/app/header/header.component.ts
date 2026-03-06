@@ -68,7 +68,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
     if (this._activeSection && this.renderer && this.nav?.nativeElement) {
 
-      const targetElem = this.nav.nativeElement.querySelector(`a[href^="#${this._activeSection}"]`);
+      const targetElem = this.nav.nativeElement.querySelector(`a[href="#${this._activeSection}"]`);
 
       if (targetElem) {
         const activePreviousElem = this.nav.nativeElement.querySelector("a.active");

@@ -7,6 +7,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 const routes: Routes = [
   { path: "", component: ResumeComponent},
   { path: "about", redirectTo: "/#about"},
+  { path: "skills", redirectTo: "/#skills"},
   { path: "experience", redirectTo: "/#experience"},
   { path: "experiences", redirectTo: "/#experience"},
   { path: "blogs", redirectTo: "/#blogs"},

@@ -1,0 +1,38 @@
+<section id="skills" class="skills-section">
+    <div class="skills-container">
+        <h1 class="section-title">Skills & Expertise</h1>
+        
+        <!-- Skills Grid -->
+        <div class="skills-grid" *ngIf="aboutData?.skills">
+            <div class="skill-card glass-card" *ngFor="let category of getSkillCategories()">
+                <div class="card-header">
+                    <fa-icon icon="code" class="header-icon"></fa-icon>
+                    <h3>{{ category | titlecase }}</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag" *ngFor="let skill of aboutData.skills[category]">
+                        {{ skill }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Grid -->
+        <div class="certifications-wrapper" *ngIf="aboutData?.certifications && aboutData.certifications.length > 0">
+            <h2 class="section-subtitle">Certifications <span class="cert-count">({{ aboutData.certifications.length }})</span></h2>
+            <div class="certifications-grid">
+                <div class="cert-card glass-card" *ngFor="let cert of aboutData.certifications">
+                    <div class="cert-icon-wrapper">
+                        <fa-icon icon="award" class="cert-icon"></fa-icon>
+                    </div>
+                    <div class="cert-info">
+                        <h4>{{ cert.title }}</h4>
+                        <p class="cert-issuer">{{ cert.issuer }}</p>
+                        <p class="cert-date">{{ cert.month ? cert.month + ' ' : '' }}{{ cert.year }}</p>
+                    </div>
+                    <div class="cert-badge">{{ cert.category }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
