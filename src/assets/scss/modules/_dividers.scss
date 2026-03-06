@@ -1,0 +1,160 @@
+// ==========================================
+// SECTION DIVIDERS & VISUAL SEPARATORS
+// ==========================================
+
+// SVG Wave Divider
+.divider-wave {
+    position: relative;
+    height: 100px;
+    background: white;
+    
+    svg {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Gradient Line Separator
+.divider-gradient {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(102, 126, 234, 0.3) 25%, 
+        rgba(102, 126, 234, 0.6) 50%, 
+        rgba(102, 126, 234, 0.3) 75%, 
+        transparent 100%);
+    margin: 4rem 0;
+}
+
+// Dotted Separator
+.divider-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    gap: 1rem;
+    
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(102, 126, 234, 0.2), 
+            transparent);
+    }
+    
+    span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $color-primary;
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+    }
+}
+
+// Accent Bar
+.divider-accent {
+    height: 4px;
+    width: 60px;
+    background: $gradient-primary;
+    border-radius: 2px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+// Section Enhancement - Background Patterns
+.section-pattern-1 {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        pointer-events: none;
+    }
+}
+
+.section-pattern-2 {
+    background: linear-gradient(135deg, #fff 0%, #f9fafb 100%);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:rgba(102,126,234,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(118,75,162,0.1);stop-opacity:1" /></linearGradient></defs><path fill="url(%23grad)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+        background-size: cover;
+        pointer-events: none;
+    }
+}
+
+// Highlight Box
+.highlight-box {
+    padding: $space-6 $space-8;
+    background: rgba(102, 126, 234, 0.05);
+    border-left: 4px solid $color-primary;
+    border-radius: $radius-lg;
+    margin: $space-6 0;
+    
+    h4 {
+        color: $color-primary;
+        margin-top: 0;
+    }
+    
+    p {
+        color: $color-text-secondary;
+        margin-bottom: 0;
+    }
+}
+
+// Quote Style
+.quote-block {
+    padding: $space-8;
+    background: linear-gradient(135deg, 
+        rgba(102, 126, 234, 0.05) 0%, 
+        rgba(118, 75, 162, 0.05) 100%);
+    border-radius: $radius-xl;
+    border-left: 4px solid $color-primary;
+    margin: $space-8 0;
+    position: relative;
+    
+    &::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 60px;
+        color: $color-primary;
+        opacity: 0.3;
+        font-family: Georgia, serif;
+    }
+    
+    p {
+        font-size: $font-size-lg;
+        line-height: $line-height-relaxed;
+        color: $color-text-primary;
+        font-style: italic;
+        margin: 0;
+        padding-left: $space-4;
+    }
+    
+    .author {
+        margin-top: $space-4;
+        padding-top: $space-4;
+        border-top: 1px solid rgba(102, 126, 234, 0.2);
+        font-weight: $font-weight-semibold;
+        color: $color-text-secondary;
+    }
+}

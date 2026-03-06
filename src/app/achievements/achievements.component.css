@@ -1,6 +1,6 @@
 .achievements-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     position: relative;
 }
 
@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(30,58,138,0.1)"/><circle cx="75" cy="45" r="1.5" fill="rgba(124,58,237,0.1)"/><circle cx="45" cy="75" r="1" fill="rgba(168,85,247,0.1)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(139,159,245,0.05)"/><circle cx="75" cy="45" r="1.5" fill="rgba(157,109,200,0.05)"/><circle cx="45" cy="75" r="1" fill="rgba(251,191,36,0.05)"/></svg>');
     opacity: 0.6;
 }
 
@@ -31,9 +31,8 @@
 .section-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #1e293b;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #e2e8f0 0%, #8b9ff5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -41,7 +40,7 @@
 
 .section-subtitle {
     font-size: 1.2rem;
-    color: #475569;
+    color: #cbd5e1;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -55,12 +54,13 @@
 }
 
 .achievement-card {
-    background: white;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(139, 159, 245, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -72,22 +72,22 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(90deg, #8b9ff5 0%, #9d6dc8 100%);
 }
 
 .achievement-card.highlight {
     transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(30, 58, 138, 0.15);
-    border: 2px solid rgba(30, 58, 138, 0.2);
+    box-shadow: 0 15px 40px rgba(139, 159, 245, 0.3);
+    border: 2px solid rgba(139, 159, 245, 0.4);
 }
 
 .achievement-card.highlight::before {
-    background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
 }
 
 .achievement-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 15px 40px rgba(139, 159, 245, 0.3);
 }
 
 .achievement-icon {
@@ -103,13 +103,13 @@
 .achievement-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #e2e8f0;
     margin-bottom: 0.75rem;
 }
 
 .achievement-description {
     font-size: 1rem;
-    color: #475569;
+    color: #cbd5e1;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -121,7 +121,7 @@
 }
 
 .achievement-year {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    background: linear-gradient(135deg, #8b9ff5 0%, #667eea 100%);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
@@ -130,8 +130,8 @@
 }
 
 .achievement-category {
-    background: rgba(124, 58, 237, 0.1);
-    color: #7c3aed;
+    background: rgba(139, 159, 245, 0.2);
+    color: #a3b3f7;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -144,34 +144,48 @@
 
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(30, 41, 59, 0.5);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(139, 159, 245, 0.2);
+    align-items: stretch;
 }
 
 .stat-card {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.25rem;
+    padding: 1.25rem;
     border-radius: 15px;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    background: rgba(139, 159, 245, 0.08);
+    border: 1px solid rgba(139, 159, 245, 0.15);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(139, 159, 245, 0.12);
+    border-color: rgba(139, 159, 245, 0.3);
+    transform: translateY(-2px);
 }
 
 .stat-icon {
-    font-size: 2rem;
-    width: 60px;
-    height: 60px;
+    font-size: 1.5rem;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
     border-radius: 50%;
     color: white;
+    box-shadow: 0 4px 15px rgba(139, 159, 245, 0.3);
 }
 
 .stat-content {
@@ -181,7 +195,7 @@
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -190,12 +204,14 @@
 
 .stat-label {
     font-size: 0.9rem;
-    color: #475569;
+    color: #cbd5e1;
     font-weight: 500;
 }
 
 .achievements-timeline {
-    background: white;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 159, 245, 0.2);
     border-radius: 20px;
     padding: 3rem 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -204,10 +220,10 @@
 .timeline-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #e2e8f0;
     text-align: center;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #e2e8f0 0%, #8b9ff5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -225,7 +241,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(180deg, #8b9ff5 0%, #9d6dc8 100%);
 }
 
 .timeline-item {
@@ -247,30 +263,29 @@
 }
 
 .timeline-content {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    background: rgba(139, 159, 245, 0.08);
     padding: 1.5rem;
     border-radius: 15px;
-    border-left: 4px solid transparent;
-    border-image: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%) 1;
+    border-left: 4px solid rgba(139, 159, 245, 0.4);
 }
 
 .timeline-year {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #1e3a8a;
+    color: #8b9ff5;
     margin-bottom: 0.5rem;
 }
 
 .timeline-event {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #e2e8f0;
     margin-bottom: 0.25rem;
 }
 
 .timeline-description {
     font-size: 0.9rem;
-    color: #475569;
+    color: #94a3b8;
 }
 
 /* Responsive Design */

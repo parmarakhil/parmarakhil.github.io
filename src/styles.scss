@@ -1,11 +1,16 @@
 //----------------------------------*\
-// Fonts
+// Fonts & Theme System
 //----------------------------------*/
 @import 'assets/scss/modules/_fonts.scss';
+@import 'assets/scss/modules/_theme.scss';
+@import 'assets/scss/modules/_utilities.scss';
+@import 'assets/scss/modules/_dividers.scss';
+@import 'assets/scss/modules/_typography-advanced.scss';
 
 // primary background and font
-$primary_font: "Montserrat", sans-serif;
-$primary_background: #0b0d0e;
+$primary_font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$heading_font: "Outfit", "Inter", sans-serif;
+$primary_background: #0f172a;
 
 // font-weight
 $thin:100;
@@ -31,6 +36,69 @@ html, body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $color-text-primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading_font;
+    font-weight: 700;
+    margin: 0;
+    color: $color-text-primary;
+    line-height: $line-height-tight;
+}
+
+h1 {
+    font-size: $font-size-5xl;
+    font-weight: 800;
+    letter-spacing: $letter-spacing-tight;
+}
+
+h2 {
+    font-size: $font-size-4xl;
+    font-weight: 800;
+    letter-spacing: $letter-spacing-tight;
+}
+
+h3 {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    letter-spacing: $letter-spacing-tight;
+}
+
+h4 {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: $font-size-xl;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: $font-size-lg;
+    font-weight: 600;
+}
+
+p {
+    line-height: $line-height-normal;
+    color: $color-text-secondary;
+}
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+    transition: color $transition-base;
+    
+    &:hover {
+        color: $color-primary-dark;
+    }
+}
+
+button {
+    @include button-base;
 }
 
 section {

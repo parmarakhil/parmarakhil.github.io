@@ -35,15 +35,25 @@
 
 }
 
-/* Hero Section Styles */
+/* Hero Section Styles - Dark Theme */
 .hero-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     padding-top: 80px;
+    padding-bottom: 5rem;
+    z-index: 2;
+    isolation: isolate;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-section::after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
 .hero-section::before {
@@ -53,17 +63,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(139,159,245,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.5;
 }
 
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 4rem 2rem;
     width: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 .hero-content {
@@ -77,63 +87,125 @@
     color: white;
 }
 
+/* Role Badge - Dark Theme */
+.role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(139, 159, 245, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 159, 245, 0.3);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.role-label {
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.role-value {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.rotating-role {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+}
+
 .hero-title {
     margin-bottom: 1.5rem;
+    animation: slideInLeft 1s ease-out;
 }
 
 .hero-title .name {
     display: block;
-    font-size: 3.8rem;
+    font-size: 4.2rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
-    background: linear-gradient(45deg, #fff, #e0e0e0);
+    background: linear-gradient(45deg, #e2e8f0 0%, #8b9ff5 50%, #e2e8f0 100%);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1.1;
     letter-spacing: -1px;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    animation: textShimmer 8s ease-in-out infinite;
 }
 
-.hero-title .title {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 500;
-    opacity: 0.95;
-    background: linear-gradient(45deg, rgba(255,255,255,1), rgba(255,255,255,0.9));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+@keyframes textShimmer {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.8;
     margin-bottom: 2.5rem;
     opacity: 0.95;
-    font-weight: 300;
+    font-weight: 400;
+    animation: slideInLeft 1.2s ease-out;
+}
+
+.hero-subtitle strong {
+    font-weight: 600;
 }
 
 .hero-stats {
     display: flex;
     gap: 3rem;
     margin-bottom: 2.5rem;
+    animation: slideInLeft 1.4s ease-out;
 }
 
 .stat {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .stat-number {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    color: #fff;
+    color: #fbbf24;
+    line-height: 1;
 }
 
 .stat-label {
     display: block;
-    font-size: 0.95rem;
-    opacity: 0.85;
+    font-size: 0.9rem;
+    opacity: 0.8;
     margin-top: 0.5rem;
     font-weight: 500;
 }
@@ -143,21 +215,23 @@
     gap: 1.25rem;
     margin-bottom: 3.5rem;
     flex-wrap: wrap;
+    animation: slideInLeft 1.6s ease-out;
 }
 
 .btn {
-    padding: 1.1rem 2.5rem;
-    border-radius: 50px;
+    padding: 1rem 2.2rem;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    font-family: 'Inter', sans-serif;
 }
 
 .btn-primary {
@@ -168,7 +242,7 @@
 
 .btn-primary:hover {
     background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 12px 35px rgba(245, 158, 11, 0.5);
 }
 
@@ -182,16 +256,17 @@
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
 }
 
 .social-proof {
     opacity: 0.9;
+    animation: slideInLeft 1.8s ease-out;
 }
 
 .social-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
     font-weight: 500;
 }
@@ -203,7 +278,7 @@
 }
 
 .company {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     opacity: 0.8;
     padding: 0.5rem 1rem;
@@ -211,474 +286,317 @@
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
-}
-
-/* Hero Image */
-.hero-image {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
-
-.profile-card {
-    position: relative;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(30px);
-    border-radius: 25px;
-    padding: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
-.profile-card:hover {
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+.company:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
+/* ─── Hero Image column ─────────────────────────────────────────── */
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+/*
+  photo-wrapper: fixed-size relative anchor for the cards.
+  The photo sits centred inside it via margin:auto.
+  Badge sits below the photo via absolute bottom offset.
+*/
+.photo-wrapper {
+    position: relative;
+    width: 340px;
+    height: 380px; /* extra height so badge doesn't clip */
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Circular photo — normal flow, fixed size */
 .profile-img {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border: 4px solid rgba(139, 159, 245, 0.45);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.55);
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 
-.profile-card:hover .profile-img {
-    transform: scale(1.02);
-}
-
+/* "Available for Mentorship" badge — sits below the photo */
 .profile-badge {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
-    padding: 0.7rem 1.2rem;
+    padding: 0.55rem 1.1rem;
     border-radius: 25px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.55rem;
     box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
-    letter-spacing: 0.3px;
+    white-space: nowrap;
+    z-index: 4;
 }
 
 .badge-indicator {
-    width: 10px;
-    height: 10px;
-    background: #fff;
+    width: 9px;
+    height: 9px;
+    background: #34d399;
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
 
-.badge-indic.feature::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: linear-gradient(135deg, #3730a3 0%, #7c3aed 100%);
-    border-radius: 50%;
-}
-
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.6; transform: scale(0.85); }
 }
 
-/* Floating Cards Container */
-.floating-cards-container {
+/* ─── Service cards ─────────────────────────────────────────────── */
+.fc {
     position: absolute;
-    bottom: -350px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 300px;
-    z-index: 3;
-}
-
-.floating-cards {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.floating-card {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 0.875rem 1rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(13, 20, 38, 0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(139, 159, 245, 0.28);
+    border-radius: 14px;
+    padding: 0.7rem 1rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    animation: float 6s ease-in-out infinite;
-    pointer-events: auto;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 160px;
-    max-width: 180px;
+    gap: 0.65rem;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.45), inset 0 1px 0 rgba(139,159,245,0.12);
+    z-index: 3;
+    cursor: default;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
 }
 
-.floating-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+.fc:hover {
+    border-color: rgba(139, 159, 245, 0.6);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.55), 0 0 16px rgba(139,159,245,0.18);
 }
 
-.card-1 {
-    top: 2%;
-    left: 1%;
-    animation-delay: 0s;
+.fc-icon {
+    font-size: 1.35rem;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
-.card-2 {
-    top: 2%;
-    right: 1%;
-    animation-delay: 1s;
-}
-
-.card-3 {
-    top: 45%;
-    left: 40%;
-    animation-delay: 2s;
-}
-
-.card-4 {
-    bottom: 2%;
-    right: 1%;
-    animation-delay: 3s;
-}
-
-.card-5 {
-    bottom: 2%;
-    left: 20%;
-    animation-delay: 4s;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-
-.card-icon {
-    font-size: 1.5rem;
-}
-
-.card-text strong {
+.fc-body strong {
     display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    line-height: 1.25;
 }
 
-.card-text span {
-    font-size: 0.8rem;
-    opacity: 0.7;
+.fc-body span {
+    display: block;
+    font-size: 0.73rem;
+    color: #94a3b8;
+    margin-top: 0.1rem;
 }
 
-/* Responsive Design */
+/*
+  Card placement — each card is nudged outside the photo circle.
+  The wrapper is 340×340, so center = (170,170), radius ≈ 170.
+  Cards are pushed ~15-30 px beyond the edge so the gap is visible.
+*/
+
+/* top-left — beside circle, upper */
+.fc-tl {
+    top: 10px;
+    right: calc(100% + 16px);
+    animation: floatY 6s ease-in-out infinite 0s;
+}
+
+/* top-right — beside circle, upper */
+.fc-tr {
+    top: 10px;
+    left: calc(100% + 16px);
+    animation: floatY 6s ease-in-out infinite 1.2s;
+}
+
+/* mid — vertically centred beside circle */
+.fc-mid {
+    top: 130px;
+    left: calc(100% + 16px);
+    animation: floatY 6s ease-in-out infinite 2.4s;
+}
+
+/* bottom-left */
+.fc-bl {
+    top: 240px;
+    right: calc(100% + 16px);
+    animation: floatY 6s ease-in-out infinite 3.6s;
+}
+
+/* bottom-right */
+.fc-br {
+    top: 240px;
+    left: calc(100% + 16px);
+    animation: floatY 6s ease-in-out infinite 4.8s;
+}
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0);    }
+    50%       { transform: translateY(-9px); }
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
 @media (max-width: 1200px) {
-    .hero-container {
-        padding: 1.5rem;
-    }
-    
-    .hero-content {
-        gap: 3rem;
-    }
-    
-    .hero-title .name {
-        font-size: 3rem;
-    }
-    
-    .floating-cards-container {
-        bottom: -350px;
-        height: 260px;
-    }
-    
-    .floating-card {
-        min-width: 140px;
-        max-width: 160px;
-        padding: 0.75rem 0.875rem;
-    }
+    .hero-container { padding: 1.5rem; }
+    .hero-content   { gap: 3rem; }
+    .hero-title .name { font-size: 3rem; }
+
+    .photo-wrapper { width: 300px; height: 340px; }
+    .profile-img   { width: 260px; height: 260px; }
+
+    .fc-bl, .fc-br { top: 210px; }
+    .fc-mid        { top: 110px; }
 }
 
 @media (max-width: 992px) {
-    .hero-section {
-        padding-top: 100px;
-    }
-    
-    .hero-container {
-        padding: 1rem;
-    }
-    
-    .hero-content {
-        gap: 2rem;
-    }
-    
-    .hero-title .name {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .hero-stats {
-        gap: 1.5rem;
-    }
-    
-    .floating-cards-container {
-        bottom: -300px;
-        height: 220px;
-    }
-    
-    .floating-card {
-        min-width: 120px;
-        max-width: 140px;
-        padding: 0.625rem 0.75rem;
-    }
-    
-    .card-1 {
-        top: 1%;
-        left: 1%;
-    }
-    
-    .card-2 {
-        top: 1%;
-        right: 1%;
-    }
-    
-    .card-3 {
-        top: 40%;
-        left: 35%;
-    }
-    
-    .card-4 {
-        bottom: 1%;
-        right: 1%;
-    }
-    
-    .card-5 {
-        bottom: 1%;
-        left: 18%;
-    }
+    .hero-section   { padding-top: 100px; }
+    .hero-container { padding: 1rem; }
+    .hero-content   { gap: 2rem; }
+    .hero-title .name { font-size: 2.5rem; }
+    .hero-subtitle  { font-size: 1.1rem; }
+    .hero-stats     { gap: 1.5rem; }
+
+    .photo-wrapper  { width: 260px; height: 300px; }
+    .profile-img    { width: 220px; height: 220px; }
+
+    .fc { padding: 0.55rem 0.8rem; }
+    .fc-icon { font-size: 1.15rem; }
+    .fc-body strong { font-size: 0.78rem; }
+    .fc-body span   { font-size: 0.68rem; }
+
+    .fc-tl, .fc-tr  { top: 5px; }
+    .fc-mid         { top: 90px; }
+    .fc-bl, .fc-br  { top: 175px; }
+
+    .fc-tl, .fc-bl { right: calc(100% + 10px); }
+    .fc-tr, .fc-br, .fc-mid { left: calc(100% + 10px); }
 }
 
+/*
+  Below 768 px the two-column layout stacks.
+  photo-wrapper becomes a 2-col CSS grid:
+  photo → badge (both full-width) → card pairs.
+*/
 @media (max-width: 768px) {
-    .hero-section {
-        min-height: 120vh;
-        padding: 2rem 0;
+    .hero-section   { 
+        min-height: auto;
+        max-height: none;
+        overflow: hidden;
+        padding: 5rem 0 4rem;
+        isolation: isolate;
     }
-    
-    .hero-container {
-        padding: 1rem;
-    }
-    
+    .hero-container { padding: 1.25rem; }
+
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
+        text-align: center;
     }
-    
-    .hero-title .name {
-        font-size: 2rem;
+
+    .hero-text  { order: 0; }
+    .hero-image { order: 1; }
+
+    .role-badge    { margin: 0 auto 1.5rem; }
+    .hero-stats    { justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    .stat          { align-items: center; }
+    .hero-cta      { justify-content: center; }
+    .company-logos { justify-content: center; }
+
+    /* photo-wrapper: 2-col grid, no absolute positioning */
+    .photo-wrapper {
+        position: static;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+        align-items: start;
+        padding: 0 0.5rem;
     }
-    
-    .hero-title .title {
-        font-size: 1.2rem;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .stat {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.5rem 0;
-    }
-    
-    .profile-card {
-        padding: 1.5rem;
-    }
-    
+
+    /* photo: reset to normal flow */
     .profile-img {
-        width: 200px;
-        height: 200px;
+        position: static;
+        width: 190px;
+        height: 190px;
+        grid-column: 1 / -1;
+        justify-self: center;
     }
-    
-    .floating-cards-container {
-        bottom: -250px;
-        height: 200px;
+
+    /* badge: reset to normal flow */
+    .profile-badge {
+        position: static;
+        transform: none;
+        bottom: auto;
+        left: auto;
+        grid-column: 1 / -1;
+        justify-self: center;
     }
-    
-    .floating-card {
-        min-width: 100px;
-        max-width: 120px;
-        padding: 0.5rem 0.625rem;
-        font-size: 0.85rem;
+
+    /* cards: static grid items */
+    .fc {
+        position: static;
+        animation: none;
+        transform: none;
+        white-space: normal;
+        width: 100%;
     }
-    
-    .card-1 {
-        top: 1%;
-        left: 1%;
-    }
-    
-    .card-2 {
-        top: 1%;
-        right: 1%;
-    }
-    
-    .card-3 {
-        top: 35%;
-        left: 30%;
-    }
-    
-    .card-4 {
-        bottom: 1%;
-        right: 1%;
-    }
-    
-    .card-5 {
-        bottom: 1%;
-        left: 15%;
-    }
-    
-    .card-icon {
-        font-size: 1.2rem;
-    }
-    
-    .card-text strong {
-        font-size: 0.8rem;
-    }
-    
-    .card-text span {
-        font-size: 0.7rem;
-    }
-    
-    .company-logos {
-        justify-content: center;
-        gap: 1rem;
-    }
+
+    .fc-tl  { grid-column: 1; }
+    .fc-tr  { grid-column: 2; }
+    .fc-mid { grid-column: 1 / -1; justify-self: center; width: 240px; }
+    .fc-bl  { grid-column: 1; }
+    .fc-br  { grid-column: 2; }
 }
 
 @media (max-width: 576px) {
-    .hero-section {
-        min-height: 130vh;
-    }
-    
-    .hero-title .name {
-        font-size: 2rem;
-    }
-    
-    .hero-title .title {
-        font-size: 1.1rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: 0.75rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .stat {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .stat-number {
-        font-size: 1.5rem;
-    }
-    
-    .stat-label {
-        font-size: 0.8rem;
-    }
-    
-    .profile-img {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .profile-card {
-        padding: 1rem;
-    }
-    
-    .floating-cards-container {
-        bottom: -280px;
-        height: 220px;
-    }
-    
-    .btn {
-        max-width: 250px;
-        font-size: 0.9rem;
-    }
+    .hero-title .name { font-size: 1.9rem; }
+    .hero-subtitle    { font-size: 1rem; margin-bottom: 1.5rem; }
+    .stat-number      { font-size: 1.6rem; }
+    .stat-label       { font-size: 0.8rem; }
+    .btn              { font-size: 0.9rem; padding: 0.875rem 1.5rem; }
+    .profile-img      { width: 165px; height: 165px; }
+    .fc               { padding: 0.6rem 0.75rem; }
+    .fc-icon          { font-size: 1.1rem; }
+    .fc-body strong   { font-size: 0.78rem; }
+    .fc-body span     { font-size: 0.68rem; }
+    .fc-mid           { width: 200px; }
 }
 
 @media (max-width: 400px) {
-    .hero-section {
-        min-height: 140vh;
-    }
-    
-    .hero-container {
-        padding: 0 0.75rem;
-    }
-    
-    .hero-title .name {
-        font-size: 1.75rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.95rem;
-    }
-    
-    .profile-img {
-        width: 160px;
-        height: 160px;
-    }
-    
-    .floating-cards-container {
-        bottom: -320px;
-        height: 240px;
-    }
-    
-    .floating-card {
-        min-width: 90px;
-        max-width: 110px;
-        padding: 0.4rem 0.5rem;
-        font-size: 0.75rem;
-    }
-    
-    .card-icon {
-        font-size: 1rem;
-    }
-    
-    .card-text strong {
-        font-size: 0.7rem;
-    }
-    
-    .card-text span {
-        font-size: 0.65rem;
-    }
-    
-    .btn {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.85rem;
-    }
+    .hero-container   { padding: 0 0.875rem; }
+    .hero-title .name { font-size: 1.75rem; }
+    .hero-subtitle    { font-size: 0.95rem; }
+    .profile-img      { width: 150px; height: 150px; }
+    .btn              { padding: 0.75rem 1.25rem; font-size: 0.85rem; }
+    .fc               { padding: 0.5rem 0.6rem; }
+    .fc-icon          { font-size: 1rem; }
+    .fc-body strong   { font-size: 0.72rem; }
+    .fc-body span     { font-size: 0.62rem; }
+    .fc-mid           { width: 180px; }
 }
 
 /* Legacy styles for compatibility */

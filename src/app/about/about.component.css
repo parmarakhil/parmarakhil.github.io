@@ -1,6 +1,6 @@
 .about-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     position: relative;
 }
 
@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="15" cy="15" r="1.5" fill="rgba(30,58,138,0.08)"/><circle cx="85" cy="35" r="1" fill="rgba(124,58,237,0.08)"/><circle cx="35" cy="85" r="1.2" fill="rgba(245,158,11,0.08)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="15" cy="15" r="1.5" fill="rgba(139,159,245,0.05)"/><circle cx="85" cy="35" r="1" fill="rgba(157,109,200,0.05)"/><circle cx="35" cy="85" r="1.2" fill="rgba(251,191,36,0.05)"/></svg>');
     opacity: 0.7;
 }
 
@@ -31,9 +31,8 @@
 .section-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #1e293b;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #e2e8f0 0%, #8b9ff5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -41,7 +40,7 @@
 
 .section-subtitle {
     font-size: 1.2rem;
-    color: #475569;
+    color: #cbd5e1;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -61,11 +60,12 @@
 }
 
 .intro-card {
-    background: white;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(139, 159, 245, 0.2);
     position: relative;
 }
 
@@ -76,7 +76,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(90deg, #8b9ff5 0%, #9d6dc8 100%);
     border-radius: 20px 20px 0 0;
 }
 
@@ -90,12 +90,12 @@
 .name {
     font-size: 2rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #e2e8f0;
     margin: 0;
 }
 
 .title-badge {
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -113,20 +113,22 @@
 .description-text {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #475569;
+    color: #cbd5e1;
 }
 
 .skills-highlights {
-    background: white;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 159, 245, 0.2);
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .skills-highlights h4 {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #e2e8f0;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -150,13 +152,13 @@
     gap: 1rem;
     padding: 1rem;
     border-radius: 15px;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(139, 159, 245, 0.1) 0%, rgba(157, 109, 200, 0.1) 100%);
     transition: all 0.3s ease;
 }
 
 .skill-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.1);
+    box-shadow: 0 5px 15px rgba(139, 159, 245, 0.2);
 }
 
 .skill-icon {
@@ -166,7 +168,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
     border-radius: 50%;
     color: white;
 }
@@ -179,25 +181,27 @@
 .skill-title {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #e2e8f0;
 }
 
 .skill-desc {
     font-size: 0.8rem;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 .hobbies-section {
-    background: white;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 159, 245, 0.2);
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hobbies-section h4 {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #e2e8f0;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -240,7 +244,7 @@
 .hobby-label {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #1e293b;
+    color: #cbd5e1;
     text-align: center;
 }
 
@@ -251,10 +255,12 @@
 }
 
 .profile-card-container {
-    background: white;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 159, 245, 0.2);
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
@@ -294,7 +300,7 @@
 .stat-number {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -303,21 +309,23 @@
 
 .stat-label {
     font-size: 0.8rem;
-    color: #64748b;
+    color: #94a3b8;
     margin-top: 0.25rem;
 }
 
 .social-media-enhanced {
-    background: white;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 159, 245, 0.2);
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .social-media-enhanced h4 {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #e2e8f0;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -334,16 +342,18 @@
     gap: 1rem;
     padding: 0.75rem 1rem;
     border-radius: 15px;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    background: rgba(139, 159, 245, 0.08);
     text-decoration: none;
-    color: #1e293b;
+    color: #cbd5e1;
     transition: all 0.3s ease;
+    border: 1px solid rgba(139, 159, 245, 0.15);
 }
 
 .social-link:hover {
-    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
     color: white;
     transform: translateX(5px);
+    border-color: transparent;
 }
 
 .social-icon {

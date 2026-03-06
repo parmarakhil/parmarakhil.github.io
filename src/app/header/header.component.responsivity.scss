@@ -19,10 +19,13 @@
 @media screen and (max-width: 1024px) {
 
     header {
-        background: #fff;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(139, 159, 245, 0.15);
         border-radius: 0 0 15px 15px;
-        -webkit-box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16); 
-        box-shadow: 0 0 9px 0 rgba(112, 112, 112, 0.16);
+        -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         padding: 10px;
         flex-wrap: wrap;
 
@@ -60,19 +63,21 @@
 
                     a {
                         font-size: 20px;
-                        color: #5e81abbd;
+                        color: #cbd5e1;
                         padding-left: 25px;                        
 
                         &:hover {
-                            color: #222f5c;
+                            color: #8b9ff5;
                             -webkit-box-shadow: none;
                             -moz-box-shadow: none;
                             box-shadow: none;
                         }
 
                         &.active {
-                            background-color: #fff;
-                            color: #222f5c;
+                            background-color: rgba(139, 159, 245, 0.15);
+                            backdrop-filter: blur(10px);
+                            border: 1px solid rgba(139, 159, 245, 0.3);
+                            color: #8b9ff5;
                         }
 
                         &:not(.active):hover {
@@ -80,7 +85,7 @@
                         }
 
                         &.cta-button {
-                            background-color: #222f5c;
+                            background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
                             color: #fff;
                             font-weight: 600;
                             margin-left: 0;
@@ -91,9 +96,9 @@
                             margin-top: 0.5em;
                             
                             &:hover {
-                                background-color: #1a2347;
+                                background: linear-gradient(135deg, #9d6dc8 0%, #8b9ff5 100%);
                                 transform: translateY(-2px);
-                                box-shadow: 0 4px 12px rgba(34, 47, 92, 0.4);
+                                box-shadow: 0 4px 12px rgba(139, 159, 245, 0.4);
                             }
                         }
                     }
@@ -102,11 +107,11 @@
                         content: '\2022';
                         font-size: 50px;
                         position: absolute;
-                        color: #5e81abbd;
+                        color: rgba(139, 159, 245, 0.4);
                         margin-top: -4px;
                     }
                     &:hover::before {
-                        color: #222f5c;
+                        color: #8b9ff5;
                     }
                     &:last-child::before {
                         content: none;

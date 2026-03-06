@@ -1,88 +1,109 @@
 .bottom-container {
   position: relative;
-  bottom: -75px;
+  bottom: 0;
+  margin-top: 0.5rem;
+  padding: 1rem 0;
 }
 
 .mainCont {
-  height: 80%;
+  height: 60px;
   width: 100%;
   position: relative;
   color: white;
-  font-size: 62px;
   text-align: center;
   transition: all 0.2s ease-out;
 }
 
 .lineCont {
   width: 100%;
-  height: 20%;
+  height: 60px;
+  display: flex;
+  align-items: center;
 
   .line {
     height: 3px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(90deg,
+      rgba(139, 159, 245, 0.15) 0%,
+      rgba(139, 159, 245, 0.7) 50%,
+      rgba(139, 159, 245, 0.15) 100%);
     border-radius: 5px;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
     position: relative;
   }
 }
 
 .milestone {
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 15px;
+  width: 12px;
+  height: 12px;
+  background: #8b9ff5;
+  border-radius: 50%;
   position: absolute;
-  top: -6px;
-  border: 3px solid white;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid rgba(163, 179, 247, 0.5);
   cursor: pointer;
-  transition: text-shadow 0.3s linear;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px rgba(139, 159, 245, 0.5);
 
   .popupSpan {
     width: auto;
     height: auto;
-    padding: 10px;
+    padding: 5px 10px;
     white-space: nowrap;
-    color: white;
+    color: #e2e8f0;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(139, 159, 245, 0.3);
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 500;
     position: absolute;
-    top: 20px;
-    left: -35px;
+    top: -38px;
+    left: 50%;
+    transform: translateX(-50%);
     transition: all 0.1s ease-out;
-    pointer-events: none; /* Only the Circles in the timeline are listened by events. */
+    pointer-events: none;
+    display: none;
 
     .month {
-      margin-right: 5px;
+      margin-right: 3px;
       text-transform: capitalize;
     }
   }
-  &.current {
-    width: 15px;
-    height: 15px;
-    background: #414c73;
-    top: -8px;
-    font-size: 22px;
-    text-shadow: 0 0 15px white;
+
+  &:hover {
+    width: 16px;
+    height: 16px;
+    background: #a3b3f7;
+    box-shadow: 0 0 16px rgba(139, 159, 245, 0.8);
   }
+
+  &.current {
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
+    border: 3px solid #a3b3f7;
+    box-shadow: 0 0 20px rgba(139, 159, 245, 0.7);
+  }
+
   &.active .popupSpan {
-    top: -40px;
     display: block;
   }
+
   &.active.future {
-    width: 1px;
-    height: 1px;
-    border-top: 7px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-left: 13px solid white;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 11px solid #8b9ff5;
     background: transparent;
     border-radius: 0;
-    border-right: 0;
+    box-shadow: none;
     pointer-events: none;
   }
+
   &.active.current .popupSpan {
-    left: -50px;
-    top: -50px;
+    left: 50%;
+    top: -45px;
   }
 }
 

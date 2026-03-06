@@ -1,5 +1,41 @@
 <section id="blogs">
     <div class="container">
+        <!-- Featured Article Section -->
+        <div class="featured-section" *ngIf="blogs && blogs.length > 0">
+            <div class="featured-header">
+                <span class="featured-label">Featured Article</span>
+                <h2>Latest Insights</h2>
+            </div>
+            <article class="featured-article" *ngIf="blogs[0].internationalizations?.length > 0">
+                <div class="featured-content">
+                    <span class="featured-category" [ngStyle]="{'background-color': '#667eea'}">
+                        {{ blogs[0].categories?.[0] || 'Engineering' }}
+                    </span>
+                    <h3>{{ blogs[0].internationalizations[0].title }}</h3>
+                    <p class="featured-excerpt">{{ blogs[0].internationalizations[0].description }}</p>
+                    <div class="featured-meta">
+                        <span class="meta-item">
+                            <span class="meta-label">Reading time</span>
+                            {{ blogs[0].readingTime || '5' }} min
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-label">Published</span>
+                            {{ blogs[0].pubDate ? (blogs[0].pubDate | date: 'MMM dd, yyyy') : blogs[0].date }}
+                        </span>
+                    </div>
+                    <a [href]="blogs[0].http" target="_blank" class="featured-cta">
+                        Read Full Article
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L11 7L6 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="featured-image">
+                    <img [src]="blogs[0].thumbnail" [alt]="blogs[0].internationalizations[0].title" loading="lazy">
+                </div>
+            </article>
+        </div>
+
         <div class="top-container">
             <div class="title">
                 <h1 i18n="nav@@blogs">Technical Blog & Insights</h1>
