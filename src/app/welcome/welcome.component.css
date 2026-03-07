@@ -44,7 +44,7 @@
     position: relative;
     overflow: hidden;
     padding-top: 80px;
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
     z-index: 2;
     isolation: isolate;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -97,10 +97,11 @@
     border: 1px solid rgba(139, 159, 245, 0.3);
     padding: 0.6rem 1.2rem;
     border-radius: 30px;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.85rem;
     font-weight: 600;
     animation: slideInLeft 0.8s ease-out;
+    width: fit-content;
 }
 
 .role-label {
@@ -139,7 +140,8 @@
 }
 
 .hero-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 0;
     animation: slideInLeft 1s ease-out;
 }
 
@@ -147,7 +149,7 @@
     display: block;
     font-size: 4.2rem;
     font-weight: 800;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     background: linear-gradient(45deg, #e2e8f0 0%, #8b9ff5 50%, #e2e8f0 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -171,7 +173,7 @@
 .hero-subtitle {
     font-size: 1.2rem;
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
     opacity: 0.95;
     font-weight: 400;
     animation: slideInLeft 1.2s ease-out;
@@ -184,8 +186,8 @@
 .hero-stats {
     display: flex;
     gap: 3rem;
-    margin-bottom: 2.5rem;
-    animation: slideInLeft 1.4s ease-out;
+    margin-bottom: 3.5rem;
+    animation: slidInLeft 1.4s ease-out;
 }
 
 .stat {
@@ -335,7 +337,7 @@
 /* "Available for Mentorship" badge — sits below the photo */
 .profile-badge {
     position: absolute;
-    bottom: 0;
+    bottom: -35px;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
@@ -517,7 +519,7 @@
     .hero-text  { order: 0; }
     .hero-image { order: 1; }
 
-    .role-badge    { margin: 0 auto 1.5rem; }
+    .role-badge    { margin: 0 auto 0.75rem; font-size: 0.8rem; padding: 0.5rem 1rem; }
     .hero-stats    { justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
     .stat          { align-items: center; }
     .hero-cta      { justify-content: center; }
