@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MENTORSHIP_PLANS } from '../mentorship/mentorship.data';
 
 @Component({
   selector: 'app-services',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
-  constructor() { }
+  readonly plans = MENTORSHIP_PLANS;
 }

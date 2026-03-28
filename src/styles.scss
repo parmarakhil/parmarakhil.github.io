@@ -1,6 +1,9 @@
 //----------------------------------*\
 // Fonts & Theme System
 //----------------------------------*/
+@tailwind components;
+@tailwind utilities;
+
 @import 'assets/scss/modules/_fonts.scss';
 @import 'assets/scss/modules/_theme.scss';
 @import 'assets/scss/modules/_utilities.scss';

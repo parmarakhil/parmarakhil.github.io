@@ -1,0 +1,226 @@
+<main class="min-h-screen bg-slate-950 bg-hero-radial text-white">
+  <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a routerLink="/" class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-violet-500 font-display text-lg font-extrabold text-white shadow-lg shadow-indigo-500/30">
+        AP
+      </a>
+      <div class="flex items-center gap-3">
+        <a routerLink="/" class="hidden rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-indigo-300/50 hover:text-white sm:inline-flex">
+          Back to Home
+        </a>
+        <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex rounded-full bg-indigo-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-400">
+          Book a Session
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
+    <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+      <div>
+        <span class="inline-flex rounded-full border border-indigo-300/20 bg-indigo-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-indigo-100">
+          Mentorship Program
+        </span>
+        <h1 class="mt-6 max-w-3xl font-display text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
+          Crack Product-Based Companies in 60–90 Days
+        </h1>
+        <p class="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          Structured mentorship for DSA, LLD, resume &amp; real interview prep.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a [routerLink]="['/mentorship']" fragment="ways-to-work" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
+            View Plans
+          </a>
+          <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-indigo-300/50 hover:bg-indigo-400/10">
+            Book a Session
+          </a>
+        </div>
+
+        <div class="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <div *ngFor="let point of heroPoints" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-slate-200">
+            {{ point }}
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-slate-950/30 sm:p-8">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-200">Why this works</p>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white">Preparation that is structured, focused, and accountable.</h2>
+        <div class="mt-8 space-y-5">
+          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p class="text-sm font-semibold text-indigo-200">Structured plan</p>
+            <p class="mt-2 text-sm leading-7 text-slate-300">Know exactly what to practice each week instead of guessing what matters most.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p class="text-sm font-semibold text-indigo-200">Real interview feedback</p>
+            <p class="mt-2 text-sm leading-7 text-slate-300">Fix gaps in communication, problem solving, and system design before the real interview.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p class="text-sm font-semibold text-indigo-200">Momentum that stays</p>
+            <p class="mt-2 text-sm leading-7 text-slate-300">Use review loops and accountability to stay consistent for the full 60–90 day sprint.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Pricing</span>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Choose the plan that matches your urgency and depth.</h2>
+        <p class="mt-4 text-base leading-8 text-slate-300">Each offer is designed to reduce confusion, improve execution, and move you closer to strong interview outcomes.</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        <app-mentorship-plan-card *ngFor="let plan of plans" [plan]="plan"></app-mentorship-plan-card>
+      </div>
+    </div>
+  </section>
+
+  <section id="ways-to-work" class="scroll-mt-24 border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Ways to Work With Me</span>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Choose the format that works best for you</h2>
+      </div>
+
+      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
+          <h3 class="font-display text-2xl font-bold text-white">Quick 1:1 Sessions</h3>
+          <p class="mt-4 flex-1 text-sm leading-7 text-slate-300">Best for quick guidance, resume reviews, and short calls</p>
+          <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
+            Book on Topmate
+          </a>
+        </article>
+
+        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
+          <h3 class="font-display text-2xl font-bold text-white">Structured Mentorship (via ProPeers)</h3>
+          <p class="mt-4 text-sm leading-7 text-slate-300">Join my long-term mentorship program via platform</p>
+          <p class="mt-4 inline-flex w-fit rounded-full border border-indigo-300/30 bg-indigo-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-100">Most mentees enroll here</p>
+          <a [href]="propeersUrl" target="_blank" rel="noreferrer" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
+            Join on ProPeers
+          </a>
+        </article>
+
+        <article class="relative flex h-full flex-col rounded-3xl border border-indigo-300/50 bg-indigo-400/10 p-6 shadow-glow transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
+          <span class="absolute right-6 top-6 rounded-full border border-indigo-300/40 bg-indigo-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-100">Recommended</span>
+          <h3 class="font-display text-2xl font-bold text-white">Direct Mentorship (Best Value)</h3>
+          <p class="mt-4 font-display text-3xl font-extrabold text-white">₹14,999 <span class="text-base font-medium text-slate-300">(2 months)</span></p>
+          <ul class="mt-5 flex-1 space-y-3 text-sm text-slate-200">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-indigo-400/20 text-xs text-indigo-100">✓</span>
+              <span>Same structured program as ProPeers</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-indigo-400/20 text-xs text-indigo-100">✓</span>
+              <span>More direct access</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-indigo-400/20 text-xs text-indigo-100">✓</span>
+              <span>Flexible scheduling</span>
+            </li>
+          </ul>
+          <a [href]="directMentorshipUrl" target="_blank" rel="noreferrer" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
+            Apply Now
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="max-w-3xl">
+        <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">What you get</span>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Everything needed to prepare with direction instead of noise.</h2>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <article *ngFor="let column of valueColumns" class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20">
+          <h3 class="font-display text-2xl font-bold text-white">{{ column.title }}</h3>
+          <p class="mt-4 text-sm leading-7 text-slate-300">{{ column.description }}</p>
+          <ul class="mt-5 space-y-3 text-sm text-slate-200">
+            <li *ngFor="let point of column.points" class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-indigo-400/15 text-xs text-indigo-200">•</span>
+              <span>{{ point }}</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div>
+        <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Who this is for</span>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Built for engineers who need clarity, structure, and faster progress.</h2>
+        <p class="mt-4 text-base leading-8 text-slate-300">If you know you can do better but your preparation feels random, this page is built for you.</p>
+      </div>
+      <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 sm:p-8">
+        <ul class="space-y-4 text-base text-slate-200">
+          <li *ngFor="let point of audiencePoints" class="flex items-start gap-4 rounded-2xl border border-white/10 bg-slate-900/60 px-5 py-4">
+            <span class="inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-indigo-400/15 font-semibold text-indigo-100">✓</span>
+            <span class="pt-1">{{ point }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="max-w-3xl">
+        <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">How it works</span>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">A simple process designed to turn intent into interview results.</h2>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <article *ngFor="let step of steps" class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <span class="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-200">{{ step.step }}</span>
+          <h3 class="mt-4 font-display text-2xl font-bold text-white">{{ step.title }}</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-300">{{ step.description }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="max-w-3xl">
+        <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Testimonials</span>
+        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Real mentee stories and outcomes.</h2>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <article *ngFor="let testimonial of testimonials" class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20">
+          <div class="flex items-center gap-4">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-indigo-400/15 font-display text-lg font-bold text-indigo-100">
+              {{ testimonial.name.charAt(0) }}
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-white">{{ testimonial.name }}</h3>
+              <p class="text-sm text-slate-400">{{ testimonial.role }}</p>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-7 text-slate-300">“{{ testimonial.quote }}”</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <div class="mx-auto max-w-5xl rounded-[2rem] border border-indigo-300/20 bg-gradient-to-br from-indigo-500/15 via-white/5 to-violet-500/15 p-8 text-center shadow-glow sm:p-12">
+      <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-100">Final CTA</span>
+      <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-5xl">Start Your Journey Today</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-200">If you want a faster path to product-based companies, start with a plan and get moving this week.</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
+          Book a Session
+        </a>
+        <a [href]="applyNowUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-indigo-300/50 hover:bg-indigo-400/10">
+          Apply for Elite Mentorship
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

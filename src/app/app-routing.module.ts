@@ -1,17 +1,17 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ResumeComponent } from "./resume/resume.component";
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { MentorshipPageComponent } from "./mentorship/mentorship-page.component";
 
 // Any URL apart from the root domain is going to be rendered as "page-not-found".
 const routes: Routes = [
   { path: "", component: ResumeComponent},
+  { path: "mentorship", component: MentorshipPageComponent },
   { path: "about", redirectTo: "/#about"},
   { path: "skills", redirectTo: "/#skills"},
   { path: "experience", redirectTo: "/#experience"},
   { path: "experiences", redirectTo: "/#experience"},
   { path: "blogs", redirectTo: "/#blogs"},
-  { path: "mentorship", redirectTo: "/#mentorship"},
   { path: "testimonials", redirectTo: "/#testimonials"},
   { path: "contact", redirectTo: "/#contact"},
   { path: "**", redirectTo: "/page-not-found" },
@@ -34,8 +34,7 @@ const routes: Routes = [
       onSameUrlNavigation: "reload"
     }
   )],
-  exports: [ RouterModule ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+  exports: [ RouterModule ]
 
 })
 

@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 import { ResumeComponent } from "../resume/resume.component";
 import { HeaderComponent } from "../header/header.component";
 import { AboutComponent } from "../about/about.component";
@@ -17,11 +18,14 @@ import { PostsModule } from "../posts/posts.molule";
 import { ProjectsModule } from "../projects/projects.molule";
 import { ContactService } from "../contact/contact.service";
 import { FooterComponent } from "../footer/footer.component";
+import { MentorshipPageComponent } from "../mentorship/mentorship-page.component";
+import { MentorshipPlanCardComponent } from "../mentorship/mentorship-plan-card.component";
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     CommonModule, 
+    RouterModule,
     CoreModule,
     FontAwesomeModule,
     WelcomeModule,
@@ -38,9 +42,11 @@ import { FooterComponent } from "../footer/footer.component";
     TestimonialsComponent,
     ServicesComponent,
     AchievementsComponent,
-    FooterComponent
+    FooterComponent,
+    MentorshipPageComponent,
+    MentorshipPlanCardComponent
   ],
-  exports: [ ResumeComponent ],
+  exports: [ ResumeComponent, MentorshipPlanCardComponent ],
   providers: [ ContactService ]
 })
 

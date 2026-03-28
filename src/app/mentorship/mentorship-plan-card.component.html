@@ -1,0 +1,111 @@
+<article
+  class="relative flex h-full flex-col overflow-hidden rounded-3xl border bg-slate-900/70 p-5 text-slate-50 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-glow"
+  [ngClass]="plan.isPopular ? 'border-indigo-400/70 ring-1 ring-indigo-400/50' : 'border-white/10'"
+>
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-300/80 to-transparent"></div>
+
+  <div class="mb-4 flex items-start justify-between gap-3">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">Plan</p>
+      <h3 class="mt-2 font-display text-2xl font-bold text-white">{{ plan.name }}</h3>
+      <p *ngIf="plan.subtitle" class="mt-2 text-sm text-slate-300">{{ plan.subtitle }}</p>
+    </div>
+
+    <span
+      *ngIf="plan.badge"
+      class="rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em]"
+      [ngClass]="plan.isPopular ? 'border-indigo-300/40 bg-indigo-400/15 text-indigo-100' : 'border-amber-300/40 bg-amber-400/15 text-amber-100'"
+    >
+      {{ plan.badge }}
+    </span>
+  </div>
+
+  <div class="mb-4 border-b border-white/10 pb-4">
+    <ng-container *ngIf="!plan.pricingOptions?.length; else multiOptionPricing">
+      <div class="flex items-end gap-2">
+        <span class="font-display text-3xl font-extrabold text-white">{{ plan.price }}</span>
+        <span *ngIf="plan.duration" class="pb-1 text-sm text-slate-400">/{{ plan.duration }}</span>
+      </div>
+      <p class="mt-2 text-sm text-slate-400">
+        {{ compact ? 'Built to move you from confusion to focused action.' : 'A focused offer designed to convert effort into interview results.' }}
+      </p>
+    </ng-container>
+
+    <ng-template #multiOptionPricing>
+      <ng-container *ngIf="compact; else fullMultiOptionPricing">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">Program Options</p>
+          <div class="mt-2 flex items-end gap-2">
+            <span class="font-display text-3xl font-extrabold text-white">{{ plan.pricingOptions?.[0]?.price }}</span>
+            <span class="pb-1 text-sm text-slate-400">/starts at</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-400">1, 2, or 3 month mentorship plans with the 2-month option as the most popular choice.</p>
+        </div>
+      </ng-container>
+
+      <ng-template #fullMultiOptionPricing>
+      <div class="space-y-3">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">Program Options</p>
+          <p class="mt-2 text-sm text-slate-400">Choose the timeline that fits your interview preparation window.</p>
+        </div>
+
+        <div class="grid gap-3">
+          <div
+            *ngFor="let option of plan.pricingOptions"
+            class="rounded-2xl border px-4 py-4 transition duration-300"
+            [ngClass]="option.isPopular ? 'border-indigo-300/50 bg-indigo-400/10 shadow-lg shadow-indigo-950/20' : 'border-white/10 bg-white/5'"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{{ option.label }}</p>
+                <div class="mt-2 flex items-end gap-2">
+                  <span class="font-display text-2xl font-extrabold text-white">{{ option.price }}</span>
+                  <span class="pb-0.5 text-sm text-slate-400">/{{ option.duration }}</span>
+                </div>
+              </div>
+
+              <span
+                *ngIf="option.badge"
+                class="rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em]"
+                [ngClass]="option.isPopular ? 'border-indigo-300/40 bg-indigo-400/15 text-indigo-100' : 'border-white/10 bg-white/5 text-slate-200'"
+              >
+                {{ option.badge }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </ng-template>
+    </ng-template>
+  </div>
+
+  <ul class="mb-4 flex flex-1 flex-col gap-2 text-sm text-slate-200">
+    <li *ngFor="let feature of (compact ? (plan.features | slice:0:2) : plan.features)" class="flex items-start gap-3">
+      <span class="mt-1 inline-flex h-4 w-4 flex-none items-center justify-center rounded-full bg-indigo-400/15 text-[10px] text-indigo-200">✓</span>
+      <span>{{ feature }}</span>
+    </li>
+  </ul>
+
+  <a
+    *ngIf="!compact"
+    [href]="plan.ctaUrl"
+    target="_blank"
+    rel="noreferrer"
+    class="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition duration-300"
+    [ngClass]="plan.isPopular ? 'bg-indigo-500 text-white hover:bg-indigo-400' : 'bg-white text-slate-950 hover:bg-slate-200'"
+  >
+    {{ plan.ctaLabel }}
+  </a>
+
+  <a
+    *ngIf="compact"
+    [href]="plan.ctaUrl"
+    target="_blank"
+    rel="noreferrer"
+    class="mt-auto inline-flex items-center justify-center rounded-2xl px-4 py-2.5 text-sm font-semibold transition duration-300"
+    [ngClass]="plan.isPopular ? 'bg-indigo-500 text-white hover:bg-indigo-400' : 'bg-white text-slate-950 hover:bg-slate-200'"
+  >
+    {{ plan.pricingOptions?.length ? '1, 2, or 3 month plans' : plan.ctaLabel }}
+  </a>
+</article>
