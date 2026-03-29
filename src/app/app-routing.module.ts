@@ -25,6 +25,10 @@ const routes: Routes = [
       // enable it on the router.
       anchorScrolling: "enabled",
 
+      // Ensure route navigation starts at the top for new pages (for example,
+      // clicking "View All Plans" from the home page).
+      scrollPositionRestoration: "enabled",
+
       // Once the above is enabled, the fragment link will only work on the
       // first click. This is because, by default, the Router ignores requests
       // to navigate to the SAME URL that is currently rendered. Unfortunately,

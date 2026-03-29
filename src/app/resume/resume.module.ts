@@ -20,6 +20,7 @@ import { ContactService } from "../contact/contact.service";
 import { FooterComponent } from "../footer/footer.component";
 import { MentorshipPageComponent } from "../mentorship/mentorship-page.component";
 import { MentorshipPlanCardComponent } from "../mentorship/mentorship-plan-card.component";
+import { SocialComponent } from "../social/social.component";
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { MentorshipPlanCardComponent } from "../mentorship/mentorship-plan-card.
     AchievementsComponent,
     FooterComponent,
     MentorshipPageComponent,
-    MentorshipPlanCardComponent
+    MentorshipPlanCardComponent,
+    SocialComponent
   ],
   exports: [ ResumeComponent, MentorshipPlanCardComponent ],
   providers: [ ContactService ]

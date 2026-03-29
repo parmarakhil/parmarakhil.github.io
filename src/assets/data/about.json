@@ -177,13 +177,25 @@
         }
     ],
     "skills": {
+        "ai": [
+            "Generative AI",
+            "Large Language Models (LLMs)",
+            "Prompt Engineering",
+            "RAG (Retrieval-Augmented Generation)",
+            "AI System Design",
+            "Agentic AI",
+            "Small Language Model (SLM)",
+            "Knowledge Graph",
+            "Vector Database"
+        ],
         "backend": [
             "Distributed Systems",
             "Microservices Architecture",
             "Java",
             "System Design",
             "Clean Code & SOLID",
-            "Design Patterns"
+            "Design Patterns",
+            "Micro Latency System"
         ],
         "cloud": [
             "AWS (EC2, S3, Lambda, RDS)",
@@ -197,7 +209,9 @@
             "NoSQL (MongoDB, DynamoDB)",
             "Redis",
             "Cassandra",
-            "Database Optimization"
+            "Database Optimization",
+            "Azure Cosmos",
+            "Timeseries Database"
         ],
         "messaging": [
             "Apache Kafka",

@@ -7,7 +7,7 @@
             <div class="skill-card glass-card" *ngFor="let category of getSkillCategories()">
                 <div class="card-header">
                     <fa-icon icon="code" class="header-icon"></fa-icon>
-                    <h3>{{ category | titlecase }}</h3>
+                    <h3>{{ getSkillCategoryLabel(category) }}</h3>
                 </div>
                 <div class="skill-tags">
                     <span class="skill-tag" *ngFor="let skill of aboutData.skills[category]">

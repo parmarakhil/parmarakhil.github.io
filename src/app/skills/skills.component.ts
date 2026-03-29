@@ -12,6 +12,16 @@ import { Subscription } from "rxjs";
 })
 export class SkillsComponent implements OnInit, OnDestroy {
 
+  private readonly skillOrder: string[] = ["ai", "backend", "databases", "messaging", "cloud", "tools"];
+  private readonly skillLabels: Record<string, string> = {
+    ai: "AI",
+    backend: "Backend",
+    databases: "Databases",
+    messaging: "Messaging",
+    cloud: "Cloud",
+    tools: "Tools"
+  };
+
   subscription: Subscription;
   aboutData: IAbout;
 
@@ -33,7 +43,13 @@ export class SkillsComponent implements OnInit, OnDestroy {
 
   getSkillCategories(): string[] {
     if (!this.aboutData?.skills) return [];
-    return Object.keys(this.aboutData.skills).filter(key => this.aboutData.skills[key] && this.aboutData.skills[key].length > 0);
+    return this.skillOrder.filter(
+      key => this.aboutData.skills[key] && this.aboutData.skills[key].length > 0
+    );
+  }
+
+  getSkillCategoryLabel(category: string): string {
+    return this.skillLabels[category] || category;
   }
 
   getCertCategories(): string[] {

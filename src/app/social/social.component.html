@@ -1,0 +1,52 @@
+<section id="social" class="border-t border-white/10 bg-slate-950 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Connect With Me</span>
+      <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Follow My Journey</h2>
+      <p class="mt-4 text-base leading-8 text-slate-300">
+        Stay updated with my latest insights, career tips, and tech content across social platforms
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+      <a
+        *ngFor="let profile of socialProfiles"
+        [href]="profile.url"
+        target="_blank"
+        rel="noreferrer"
+        class="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 shadow-lg shadow-slate-950/20 transition duration-300 hover:border-white/20 hover:shadow-xl hover:shadow-slate-950/40"
+      >
+        <div class="absolute inset-0 transition duration-300 group-hover:opacity-10" [style.background.linear-gradient]="'to bottom right, ' + profile.color + ', transparent'"></div>
+
+        <div class="relative z-10">
+          <div class="mb-4 flex items-start justify-between">
+            <div>
+              <h3 class="font-display text-2xl font-bold text-white">{{ profile.name }}</h3>
+              <p class="mt-1 text-sm font-semibold text-indigo-200">{{ profile.followers }} followers</p>
+            </div>
+            <div class="rounded-2xl p-3 transition duration-300 group-hover:scale-110" [ngClass]="profile.name === 'LinkedIn' ? 'bg-blue-500/10' : 'bg-pink-500/10'">
+              <fa-icon icon="fa-brands fa-linkedin-in" *ngIf="profile.name === 'LinkedIn'" class="text-2xl text-blue-500"></fa-icon>
+              <fa-icon icon="fa-brands fa-instagram" *ngIf="profile.name === 'Instagram'" class="text-2xl text-pink-500"></fa-icon>
+            </div>
+          </div>
+
+          <p class="mt-5 text-base leading-7 text-slate-300">{{ profile.description }}</p>
+
+          <div class="mt-6 flex items-center gap-2 font-semibold text-slate-200 transition duration-300 group-hover:text-white">
+            <span>Visit Profile</span>
+            <fa-icon icon="arrow-right" class="transition duration-300 group-hover:translate-x-1"></fa-icon>
+          </div>
+        </div>
+
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100"></div>
+      </a>
+    </div>
+
+    <div class="mt-12 rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+      <p class="text-base leading-8 text-slate-300">
+        Whether you're looking to connect professionally, need career advice, or want to stay updated with tech insights,
+        <span class="font-semibold text-white">feel free to reach out on any platform</span>. I'm always open to conversations about tech, career growth, and helping others succeed.
+      </p>
+    </div>
+  </div>
+</section>
