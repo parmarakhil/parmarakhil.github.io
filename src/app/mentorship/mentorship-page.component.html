@@ -8,9 +8,9 @@
         <a routerLink="/" class="hidden rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-indigo-300/50 hover:text-white sm:inline-flex">
           Back to Home
         </a>
-        <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex rounded-full bg-indigo-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-400">
+        <button type="button" (click)="openInquiryModal('One-Time Session', bookSessionUrl)" class="inline-flex rounded-full bg-indigo-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-400">
           Book a Session
-        </a>
+        </button>
       </div>
     </div>
   </nav>
@@ -25,40 +25,74 @@
           Crack Product-Based Companies in 60–90 Days
         </h1>
         <p class="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-          Structured mentorship for DSA, LLD, resume &amp; real interview prep.
+          Structured mentorship for DSA, LLD, HLD, resume review, AI readiness &amp; real interview prep.
         </p>
 
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a [routerLink]="['/mentorship']" fragment="ways-to-work" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a [routerLink]="['/mentorship']" fragment="ways-to-work" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-white/10 transition hover:-translate-y-0.5 hover:bg-slate-200">
             View Plans
           </a>
-          <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-indigo-300/50 hover:bg-indigo-400/10">
+          <button type="button" (click)="openInquiryModal('One-Time Session', bookSessionUrl)" class="inline-flex items-center justify-center rounded-2xl border border-indigo-300/20 bg-indigo-500/15 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-950/30 transition hover:-translate-y-0.5 hover:border-indigo-300/50 hover:bg-indigo-500/25">
             Book a Session
-          </a>
+          </button>
         </div>
 
-        <div class="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          <div *ngFor="let point of heroPoints" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-slate-200">
-            {{ point }}
+        <div class="mt-10 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/8 to-white/3 p-4 shadow-2xl shadow-slate-950/20 sm:p-5">
+          <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            <div *ngFor="let point of heroPoints" class="group flex min-h-[88px] items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/65 px-4 py-4 text-sm font-medium text-slate-100 transition duration-300 hover:-translate-y-1 hover:border-indigo-300/30 hover:bg-slate-900/90 hover:shadow-lg hover:shadow-indigo-950/20">
+              <span class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-2xl border border-indigo-300/20 bg-indigo-400/10 text-indigo-100 transition duration-300 group-hover:bg-indigo-400/20">
+                <span class="h-2.5 w-2.5 rounded-full bg-indigo-300"></span>
+              </span>
+              <span class="leading-6">{{ point }}</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-slate-950/30 sm:p-8">
-        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-200">Why this works</p>
-        <h2 class="mt-4 font-display text-3xl font-bold text-white">Preparation that is structured, focused, and accountable.</h2>
-        <div class="mt-8 space-y-5">
-          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <p class="text-sm font-semibold text-indigo-200">Structured plan</p>
-            <p class="mt-2 text-sm leading-7 text-slate-300">Know exactly what to practice each week instead of guessing what matters most.</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <p class="text-sm font-semibold text-indigo-200">Real interview feedback</p>
-            <p class="mt-2 text-sm leading-7 text-slate-300">Fix gaps in communication, problem solving, and system design before the real interview.</p>
-          </div>
-          <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <p class="text-sm font-semibold text-indigo-200">Momentum that stays</p>
-            <p class="mt-2 text-sm leading-7 text-slate-300">Use review loops and accountability to stay consistent for the full 60–90 day sprint.</p>
+      <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/8 via-slate-900/70 to-indigo-500/10 p-6 shadow-2xl shadow-slate-950/30 sm:p-8">
+        <div class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-indigo-300/70 to-transparent"></div>
+        <div class="absolute -right-20 top-10 h-40 w-40 rounded-full bg-indigo-400/10 blur-3xl"></div>
+        <div class="relative">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-200">Why this works</p>
+          <h2 class="mt-4 font-display text-3xl font-bold text-white">Preparation that is structured, focused, and accountable.</h2>
+          <p class="mt-4 max-w-xl text-sm leading-7 text-slate-300">The format is designed to remove guesswork, tighten feedback loops, and keep your preparation moving with visible momentum.</p>
+
+          <div class="mt-8 space-y-4">
+            <div class="group rounded-[1.6rem] border border-white/10 bg-slate-900/75 p-5 transition duration-300 hover:-translate-y-1 hover:border-indigo-300/30 hover:bg-slate-900/90 hover:shadow-lg hover:shadow-indigo-950/20">
+              <div class="flex items-start gap-4">
+                <span class="inline-flex h-11 w-11 flex-none items-center justify-center rounded-2xl border border-indigo-300/20 bg-indigo-400/10 text-indigo-100">
+                  <span class="h-2.5 w-2.5 rounded-full bg-indigo-300"></span>
+                </span>
+                <div>
+                  <p class="text-sm font-semibold text-indigo-200">Structured plan</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">Know exactly what to practice each week instead of guessing what matters most.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="group rounded-[1.6rem] border border-white/10 bg-slate-900/75 p-5 transition duration-300 hover:-translate-y-1 hover:border-indigo-300/30 hover:bg-slate-900/90 hover:shadow-lg hover:shadow-indigo-950/20">
+              <div class="flex items-start gap-4">
+                <span class="inline-flex h-11 w-11 flex-none items-center justify-center rounded-2xl border border-indigo-300/20 bg-indigo-400/10 text-indigo-100">
+                  <span class="h-2.5 w-2.5 rounded-full bg-indigo-300"></span>
+                </span>
+                <div>
+                  <p class="text-sm font-semibold text-indigo-200">Real interview feedback</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">Fix gaps in communication, problem solving, and system design before the real interview.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="group rounded-[1.6rem] border border-white/10 bg-slate-900/75 p-5 transition duration-300 hover:-translate-y-1 hover:border-indigo-300/30 hover:bg-slate-900/90 hover:shadow-lg hover:shadow-indigo-950/20">
+              <div class="flex items-start gap-4">
+                <span class="inline-flex h-11 w-11 flex-none items-center justify-center rounded-2xl border border-indigo-300/20 bg-indigo-400/10 text-indigo-100">
+                  <span class="h-2.5 w-2.5 rounded-full bg-indigo-300"></span>
+                </span>
+                <div>
+                  <p class="text-sm font-semibold text-indigo-200">Momentum that stays</p>
+                  <p class="mt-2 text-sm leading-7 text-slate-300">Use review loops and accountability to stay consistent for the full 60–90 day sprint.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -74,7 +108,11 @@
       </div>
 
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
-        <app-mentorship-plan-card *ngFor="let plan of plans" [plan]="plan"></app-mentorship-plan-card>
+        <app-mentorship-plan-card
+          *ngFor="let plan of plans"
+          [plan]="plan"
+          (openInquiry)="openInquiryModal($event.program, $event.redirectUrl)"
+        ></app-mentorship-plan-card>
       </div>
     </div>
   </section>
@@ -87,48 +125,213 @@
       </div>
 
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        <!-- Growth Card - Available on Topmate and ProPeers -->
         <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-          <h3 class="font-display text-2xl font-bold text-white">Quick 1:1 Sessions</h3>
+          <h3 class="font-display text-2xl font-bold text-white">Growth Mentorship</h3>
+          <p class="mt-2 text-sm text-slate-400">Available on</p>
+          <div class="mt-4 flex-1 space-y-2">
+            <p class="text-sm font-semibold text-indigo-200">Topmate</p>
+            <p class="text-sm leading-6 text-slate-300">Quick 1:1 sessions for guidance and reviews</p>
+            <p class="mt-4 text-sm font-semibold text-indigo-200">ProPeers</p>
+            <p class="text-sm leading-6 text-slate-300">Be part of a platform (an extra cost)</p>
+          </div>
+          <div class="mt-6 flex flex-col gap-3">
+            <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
+              Book on Topmate
+            </a>
+            <a [href]="propeersUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
+              Join on ProPeers
+            </a>
+          </div>
+        </article>
+
+        <!-- One-Time Mentorship Card (Starter) -->
+        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
+          <h3 class="font-display text-2xl font-bold text-white">One-Time Session</h3>
+          <p class="mt-2 text-sm text-slate-400">Starter Plan</p>
           <p class="mt-4 flex-1 text-sm leading-7 text-slate-300">Best for quick guidance, resume reviews, and short calls</p>
-          <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
-            Book on Topmate
-          </a>
+          <button type="button" (click)="openInquiryModal('One-Time Session', bookSessionUrl)" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
+            Book Now
+          </button>
         </article>
 
-        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-          <h3 class="font-display text-2xl font-bold text-white">Structured Mentorship (via ProPeers)</h3>
-          <p class="mt-4 text-sm leading-7 text-slate-300">Join my long-term mentorship program via platform</p>
-          <p class="mt-4 inline-flex w-fit rounded-full border border-indigo-300/30 bg-indigo-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-100">Most mentees enroll here</p>
-          <a [href]="propeersUrl" target="_blank" rel="noreferrer" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
-            Join on ProPeers
-          </a>
-        </article>
-
+        <!-- Long-Term Mentorship Card (Elite) -->
         <article class="relative flex h-full flex-col rounded-3xl border border-indigo-300/50 bg-indigo-400/10 p-6 shadow-glow transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-          <span class="absolute right-6 top-6 rounded-full border border-indigo-300/40 bg-indigo-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-100">Recommended</span>
-          <h3 class="font-display text-2xl font-bold text-white">Direct Mentorship (Best Value)</h3>
-          <p class="mt-4 font-display text-3xl font-extrabold text-white">₹14,999 <span class="text-base font-medium text-slate-300">(2 months)</span></p>
-          <ul class="mt-5 flex-1 space-y-3 text-sm text-slate-200">
-            <li class="flex items-start gap-3">
-              <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-indigo-400/20 text-xs text-indigo-100">✓</span>
-              <span>Same structured program as ProPeers</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-indigo-400/20 text-xs text-indigo-100">✓</span>
-              <span>More direct access</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-indigo-400/20 text-xs text-indigo-100">✓</span>
-              <span>Flexible scheduling</span>
-            </li>
-          </ul>
-          <a [href]="directMentorshipUrl" target="_blank" rel="noreferrer" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
+          <span class="absolute right-6 top-6 rounded-full border border-indigo-300/40 bg-indigo-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-100">Most Popular</span>
+          <h3 class="font-display text-2xl font-bold text-white">Elite Mentorship</h3>
+          <p class="mt-2 text-sm text-slate-400">Long-term Program</p>
+          <p class="mt-4 flex-1 text-sm leading-7 text-slate-300">Structured mentorship with personalized roadmap and direct access</p>
+          <button type="button" (click)="openInquiryModal('Elite Mentorship', directMentorshipUrl)" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
             Apply Now
-          </a>
+          </button>
         </article>
       </div>
     </div>
   </section>
+
+  <!-- Inquiry Modal -->
+  <div *ngIf="showInquiryModal" class="fixed inset-0 z-[1000] flex items-start justify-center overflow-y-auto bg-slate-950/80 px-4 py-6 backdrop-blur-sm sm:py-10">
+    <div class="my-0 w-full max-w-2xl rounded-3xl border border-white/10 bg-slate-900 p-6 shadow-2xl shadow-slate-950/50 sm:p-8">
+      <div class="mb-6 flex items-start justify-between gap-4">
+        <div>
+          <h3 class="font-display text-2xl font-bold text-white">{{ selectedProgram }} Inquiry</h3>
+          <p class="mt-2 text-sm text-slate-300">Please share your details and I will review your request personally.</p>
+        </div>
+        <button type="button" (click)="closeInquiryModal()" class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/20">Close</button>
+      </div>
+
+      <ng-container *ngIf="!inquirySubmitted; else mentorshipInquirySuccess">
+      <form [formGroup]="inquiryForm" (ngSubmit)="submitInquiry()" class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2">
+        <div class="min-w-0">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Full Name</label>
+          <input formControlName="fullName" type="text" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400" placeholder="Your full name" />
+          <p class="mt-1 text-xs text-rose-300" *ngIf="inquiryForm.get('fullName')?.invalid && inquiryForm.get('fullName')?.touched">
+            Please enter your full name
+          </p>
+        </div>
+
+        <div class="min-w-0">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Email</label>
+          <input formControlName="email" type="email" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400" placeholder="you@example.com" />
+          <p class="mt-1 text-xs text-rose-300" *ngIf="inquiryForm.get('email')?.errors?.required && inquiryForm.get('email')?.touched">
+            Email is required
+          </p>
+          <p class="mt-1 text-xs text-rose-300" *ngIf="inquiryForm.get('email')?.errors?.pattern && inquiryForm.get('email')?.touched">
+            Please enter a valid email
+          </p>
+        </div>
+
+        <div class="min-w-0">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Contact Number</label>
+          <input formControlName="phone" type="tel" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400" placeholder="9876543210" />
+          <p class="mt-1 text-xs text-rose-300" *ngIf="inquiryForm.get('phone')?.errors?.required && inquiryForm.get('phone')?.touched">
+            Contact number is required
+          </p>
+          <p class="mt-1 text-xs text-rose-300" *ngIf="inquiryForm.get('phone')?.errors?.pattern && inquiryForm.get('phone')?.touched">
+            Enter a 10-digit mobile number without +91, starting with 9, 8, 7, or 6, and not all digits the same
+          </p>
+        </div>
+
+        <div class="min-w-0">
+          <label class="mb-1 block text-sm font-medium text-slate-200">LinkedIn Profile</label>
+          <input formControlName="linkedin" type="url" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400" placeholder="https://www.linkedin.com/in/parmarakhil/" />
+          <p class="mt-1 text-xs text-rose-300" *ngIf="inquiryForm.get('linkedin')?.errors?.required && inquiryForm.get('linkedin')?.touched">
+            LinkedIn profile URL is required
+          </p>
+          <p class="mt-1 text-xs text-rose-300" *ngIf="inquiryForm.get('linkedin')?.errors?.pattern && inquiryForm.get('linkedin')?.touched">
+            Please use a LinkedIn URL like https://www.linkedin.com/in/parmarakhil/
+          </p>
+        </div>
+
+        <div class="min-w-0">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Current Role</label>
+          <input formControlName="currentRole" type="text" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400" placeholder="SDE / Backend Engineer / Student" />
+        </div>
+
+        <div class="min-w-0">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Target Goal</label>
+          <input formControlName="targetGoal" type="text" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400" placeholder="Target company / role" />
+        </div>
+
+        <div class="md:col-span-2" *ngIf="!isOneTimeMentorship">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Preparation Timeline</label>
+          <div class="relative">
+            <button type="button" (click)="toggleTimelineDropdown()" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400 text-left hover:border-indigo-300/50 flex items-center justify-between">
+              <span [class.text-slate-400]="!inquiryForm.get('timeline')?.value">{{ inquiryForm.get('timeline')?.value || 'Select timeline' }}</span>
+              <svg class="h-4 w-4 transition" [class.rotate-180]="showTimelineDropdown" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </button>
+            <div *ngIf="showTimelineDropdown" class="absolute top-full left-0 right-0 z-[60] mt-1 rounded-xl border border-white/15 bg-slate-950 shadow-lg">
+              <button type="button" (click)="selectTimeline('0-1 month')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition first:rounded-t-xl border-b border-white/10 last:border-b-0">
+                0-1 month
+              </button>
+              <button type="button" (click)="selectTimeline('1-3 months')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition border-b border-white/10 last:border-b-0">
+                1-3 months
+              </button>
+              <button type="button" (click)="selectTimeline('3-6 months')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition border-b border-white/10 last:border-b-0">
+                3-6 months
+              </button>
+              <button type="button" (click)="selectTimeline('6+ months')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition last:rounded-b-xl">
+                6+ months
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2" *ngIf="isOneTimeMentorship">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Session Type</label>
+          <div class="relative">
+            <button type="button" (click)="toggleSessionTypeDropdown()" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400 text-left hover:border-indigo-300/50 flex items-center justify-between">
+              <span [class.text-slate-400]="!inquiryForm.get('sessionType')?.value">{{ inquiryForm.get('sessionType')?.value || 'Select session type' }}</span>
+              <svg class="h-4 w-4 transition" [class.rotate-180]="showSessionTypeDropdown" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </button>
+            <div *ngIf="showSessionTypeDropdown" class="absolute top-full left-0 right-0 z-[60] mt-1 rounded-xl border border-white/15 bg-slate-950 shadow-lg">
+              <button type="button" (click)="selectSessionType('Mock Interview')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition first:rounded-t-xl border-b border-white/10 last:border-b-0">
+                Mock Interview
+              </button>
+              <button type="button" (click)="selectSessionType('Resume Review')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition border-b border-white/10 last:border-b-0">
+                Resume Review
+              </button>
+              <button type="button" (click)="selectSessionType('Career Guidance')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition border-b border-white/10 last:border-b-0">
+                Career Guidance
+              </button>
+              <button type="button" (click)="selectSessionType('Other')" class="w-full bg-transparent px-4 py-2.5 text-left text-sm text-white hover:bg-indigo-500/30 hover:text-indigo-100 transition last:rounded-b-xl">
+                Other
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="mb-1 block text-sm font-medium text-slate-200">Additional Information (optional)</label>
+          <textarea formControlName="additionalInfo" rows="3" class="box-border w-full rounded-xl border border-white/15 bg-slate-800 px-4 py-2.5 text-sm text-white outline-none transition focus:border-indigo-400" placeholder="Share your preparation background, blockers, or specific mentorship expectations."></textarea>
+        </div>
+
+        <p class="md:col-span-2 text-xs text-rose-300" *ngIf="inquiryForm.invalid && inquiryForm.touched">
+          Please fill all required fields before continuing.
+        </p>
+
+        <div class="md:col-span-2 flex justify-end gap-3 pt-2">
+          <button type="button" (click)="closeInquiryModal()" class="rounded-2xl border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/20">Cancel</button>
+          <button type="submit" [disabled]="isSubmitting" class="rounded-2xl bg-indigo-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-400 disabled:cursor-not-allowed disabled:opacity-60">{{ isSubmitting ? 'Submitting...' : 'Submit & Continue' }}</button>
+        </div>
+
+        <p class="md:col-span-2 text-sm text-emerald-300" *ngIf="inquirySubmitted">
+        </p>
+
+        <p class="md:col-span-2 text-sm text-rose-300" *ngIf="inquiryError">
+          Sorry, there was an issue saving your details. Please try again.
+        </p>
+      </form>
+      </ng-container>
+
+      <ng-template #mentorshipInquirySuccess>
+        <div class="space-y-5 rounded-3xl border border-emerald-400/20 bg-emerald-400/5 p-5 text-sm text-slate-200">
+          <div>
+            <h4 class="font-display text-2xl font-bold text-white">Request Received</h4>
+            <p class="mt-2 leading-7 text-slate-300">I have received your query and shall revert back on mail, phone, or LinkedIn for the next steps. I am also working on automating this process.</p>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-200">What happens next</p>
+            <ul class="mt-3 space-y-3 text-sm leading-7 text-slate-300">
+              <li>I will review and approve the request if it is a good fit.</li>
+              <li>Once approved, I will send the payment request details like a payment link or UPI ID.</li>
+              <li>After payment is done, you can send me the screenshot for confirmation.</li>
+              <li>Once payment is confirmed, I will send the calendar details so you can book your session.</li>
+            </ul>
+          </div>
+
+          <div class="flex justify-end pt-2">
+            <button type="button" (click)="closeInquiryModal()" class="rounded-2xl bg-indigo-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-400">Close</button>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
 
   <section class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
     <div class="mx-auto max-w-7xl">
@@ -210,16 +413,15 @@
 
   <section class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
     <div class="mx-auto max-w-5xl rounded-[2rem] border border-indigo-300/20 bg-gradient-to-br from-indigo-500/15 via-white/5 to-violet-500/15 p-8 text-center shadow-glow sm:p-12">
-      <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-100">Final CTA</span>
       <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-5xl">Start Your Journey Today</h2>
       <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-200">If you want a faster path to product-based companies, start with a plan and get moving this week.</p>
       <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
+        <button type="button" (click)="openInquiryModal('One-Time Session', bookSessionUrl)" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
           Book a Session
-        </a>
-        <a [href]="applyNowUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-indigo-300/50 hover:bg-indigo-400/10">
+        </button>
+        <button type="button" (click)="openInquiryModal('Elite Mentorship', applyNowUrl)" class="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-indigo-300/50 hover:bg-indigo-400/10">
           Apply for Elite Mentorship
-        </a>
+        </button>
       </div>
     </div>
   </section>

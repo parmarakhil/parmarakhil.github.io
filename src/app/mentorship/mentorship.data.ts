@@ -54,10 +54,8 @@ export const MENTORSHIP_PLANS: MentorshipPlan[] = [
   {
     name: 'Growth',
     price: '₹2,499',
-    badge: 'Most Popular',
-    isPopular: true,
     features: [
-      '3 mock interviews',
+      'Be part of a platform (an extra cost)',
       'Personalized roadmap',
       'Resume + LinkedIn review'
     ],
@@ -66,6 +64,8 @@ export const MENTORSHIP_PLANS: MentorshipPlan[] = [
   },
   {
     name: 'Elite Mentorship',
+    badge: 'Most Popular',
+    isPopular: true,
     subtitle: 'Choose the duration that matches your preparation runway.',
     pricingOptions: [
       {
@@ -167,5 +167,8 @@ export const MENTORSHIP_HERO_POINTS: string[] = [
   'DSA planning',
   'LLD interview prep',
   'Resume positioning',
-  'Real mock feedback'
+  'Real mock feedback',
+  'AI ready',
+  'HLD mastery',
+  'Personalised roadmap'
 ];

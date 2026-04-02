@@ -196,7 +196,7 @@
             <div class="cta-content">
                 <h3>Prefer a Quick Chat?</h3>
                 <p>Book a 15-minute consultation to discuss your goals and how I can help</p>
-                <a href="https://topmate.io/akhil_parmar" target="_blank" class="cta-button">
+                <a [routerLink]="[]" fragment="mentorship" [queryParams]="{ inquiry: 'one-time' }" class="cta-button">
                     <fa-icon [icon]="['fas', 'video']" class="cta-icon"></fa-icon>
                     Schedule a Call
                 </a>
