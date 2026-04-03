@@ -145,6 +145,14 @@ export const MENTORSHIP_STEPS: MentorshipStep[] = [
   }
 ];
 
+export const MENTORSHIP_DISCOUNTS = {
+  studentDiscount: 30,
+  studentDescription: 'Students get 30% off all plans with valid student ID or enrollment proof',
+  supportDiscount: 'Custom pricing',
+  supportDescription: 'Preparing for interviews while managing financial constraints? Reach out—we can discuss flexible pricing or scholarship options.',
+  contactEmail: 'mentor.techbytesize@gmail.com'
+};
+
 export const MENTORSHIP_TESTIMONIALS: MentorshipTestimonial[] = [
   {
     name: 'Vaibhav Kansagara',

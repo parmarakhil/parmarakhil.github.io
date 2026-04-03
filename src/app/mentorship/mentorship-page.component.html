@@ -29,7 +29,7 @@
         </p>
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a [routerLink]="['/mentorship']" fragment="ways-to-work" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-white/10 transition hover:-translate-y-0.5 hover:bg-slate-200">
+          <a [routerLink]="['/mentorship']" fragment="pricing" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-white/10 transition hover:-translate-y-0.5 hover:bg-slate-200">
             View Plans
           </a>
           <button type="button" (click)="openInquiryModal('One-Time Session', bookSessionUrl)" class="inline-flex items-center justify-center rounded-2xl border border-indigo-300/20 bg-indigo-500/15 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-950/30 transition hover:-translate-y-0.5 hover:border-indigo-300/50 hover:bg-indigo-500/25">
@@ -99,12 +99,58 @@
     </div>
   </section>
 
+  <!-- Discount & Support Section -->
+  <section class="border-y border-white/10 px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-6 lg:grid-cols-2">
+        <!-- Student Discount -->
+        <div class="group relative overflow-hidden rounded-2xl border-2 border-emerald-400/40 bg-gradient-to-br from-emerald-500/20 via-slate-900/50 to-emerald-500/5 p-6 shadow-lg shadow-emerald-950/30 transition hover:-translate-y-1 sm:p-8">
+          <div class="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-emerald-400/10 blur-3xl"></div>
+          <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-300/50 bg-emerald-400/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-100 transition">
+              <span class="inline-flex h-2 w-2 rounded-full bg-emerald-300"></span>
+              Special Offer for Students
+            </div>
+            <h3 class="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">30% Student Discount</h3>
+            <p class="mt-3 text-base leading-7 text-slate-200 sm:text-lg">{{ discounts.studentDescription }}</p>
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button type="button" (click)="openInquiryModal('Student Discount (30% Off)', applyNowUrl)" class="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 hover:-translate-y-1">
+                Claim Student Discount
+              </button>
+              <p class="text-xs text-slate-400">Valid ID required</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financial Support -->
+        <div class="group relative overflow-hidden rounded-2xl border-2 border-amber-400/40 bg-gradient-to-br from-amber-500/20 via-slate-900/50 to-amber-500/5 p-6 shadow-lg shadow-amber-950/30 transition hover:-translate-y-1 sm:p-8">
+          <div class="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-amber-400/10 blur-3xl"></div>
+          <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 rounded-full border border-amber-300/50 bg-amber-400/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-100 transition">
+              <span class="inline-flex h-2 w-2 rounded-full bg-amber-300"></span>
+              Need Support?
+            </div>
+            <h3 class="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">Flexible Pricing Available</h3>
+            <p class="mt-3 text-base leading-7 text-slate-200 sm:text-lg">{{ discounts.supportDescription }}</p>
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a [href]="'mailto:' + discounts.contactEmail" class="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-amber-400 hover:-translate-y-1">
+                Let's Talk
+              </a>
+              <p class="text-xs text-slate-400">{{ discounts.contactEmail }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="pricing" class="border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
     <div class="mx-auto max-w-7xl">
       <div class="mx-auto max-w-3xl text-center">
         <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Pricing</span>
         <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Choose the plan that matches your urgency and depth.</h2>
         <p class="mt-4 text-base leading-8 text-slate-300">Each offer is designed to reduce confusion, improve execution, and move you closer to strong interview outcomes.</p>
+        <p class="mt-3 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-100">✨ All plans include student and support discounts</p>
       </div>
 
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
@@ -113,58 +159,6 @@
           [plan]="plan"
           (openInquiry)="openInquiryModal($event.program, $event.redirectUrl)"
         ></app-mentorship-plan-card>
-      </div>
-    </div>
-  </section>
-
-  <section id="ways-to-work" class="scroll-mt-24 border-t border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-    <div class="mx-auto max-w-7xl">
-      <div class="mx-auto max-w-3xl text-center">
-        <span class="text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Ways to Work With Me</span>
-        <h2 class="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">Choose the format that works best for you</h2>
-      </div>
-
-      <div class="mt-12 grid gap-6 lg:grid-cols-3">
-        <!-- Growth Card - Available on Topmate and ProPeers -->
-        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-          <h3 class="font-display text-2xl font-bold text-white">Growth Mentorship</h3>
-          <p class="mt-2 text-sm text-slate-400">Available on</p>
-          <div class="mt-4 flex-1 space-y-2">
-            <p class="text-sm font-semibold text-indigo-200">Topmate</p>
-            <p class="text-sm leading-6 text-slate-300">Quick 1:1 sessions for guidance and reviews</p>
-            <p class="mt-4 text-sm font-semibold text-indigo-200">ProPeers</p>
-            <p class="text-sm leading-6 text-slate-300">Be part of a platform (an extra cost)</p>
-          </div>
-          <div class="mt-6 flex flex-col gap-3">
-            <a [href]="bookSessionUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
-              Book on Topmate
-            </a>
-            <a [href]="propeersUrl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
-              Join on ProPeers
-            </a>
-          </div>
-        </article>
-
-        <!-- One-Time Mentorship Card (Starter) -->
-        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-          <h3 class="font-display text-2xl font-bold text-white">One-Time Session</h3>
-          <p class="mt-2 text-sm text-slate-400">Starter Plan</p>
-          <p class="mt-4 flex-1 text-sm leading-7 text-slate-300">Best for quick guidance, resume reviews, and short calls</p>
-          <button type="button" (click)="openInquiryModal('One-Time Session', bookSessionUrl)" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
-            Book Now
-          </button>
-        </article>
-
-        <!-- Long-Term Mentorship Card (Elite) -->
-        <article class="relative flex h-full flex-col rounded-3xl border border-indigo-300/50 bg-indigo-400/10 p-6 shadow-glow transition duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-          <span class="absolute right-6 top-6 rounded-full border border-indigo-300/40 bg-indigo-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-100">Most Popular</span>
-          <h3 class="font-display text-2xl font-bold text-white">Elite Mentorship</h3>
-          <p class="mt-2 text-sm text-slate-400">Long-term Program</p>
-          <p class="mt-4 flex-1 text-sm leading-7 text-slate-300">Structured mentorship with personalized roadmap and direct access</p>
-          <button type="button" (click)="openInquiryModal('Elite Mentorship', directMentorshipUrl)" class="mt-auto pt-6 inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
-            Apply Now
-          </button>
-        </article>
       </div>
     </div>
   </section>

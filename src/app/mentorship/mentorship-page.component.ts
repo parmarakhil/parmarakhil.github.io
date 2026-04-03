@@ -8,6 +8,7 @@ import {
   APPLY_NOW_URL,
   BOOK_SESSION_URL,
   MENTORSHIP_AUDIENCE_POINTS,
+  MENTORSHIP_DISCOUNTS,
   MENTORSHIP_HERO_POINTS,
   MENTORSHIP_PLANS,
   MENTORSHIP_STEPS,
@@ -34,6 +35,7 @@ export class MentorshipPageComponent {
   readonly audiencePoints = MENTORSHIP_AUDIENCE_POINTS;
   readonly steps = MENTORSHIP_STEPS;
   readonly testimonials = MENTORSHIP_TESTIMONIALS;
+  readonly discounts = MENTORSHIP_DISCOUNTS;
 
   showInquiryModal = false;
   selectedProgram = '';

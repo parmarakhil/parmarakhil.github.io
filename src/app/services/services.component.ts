@@ -7,6 +7,7 @@ import { Contact } from '../model/contact.model';
 import {
   APPLY_NOW_URL,
   BOOK_SESSION_URL,
+  MENTORSHIP_DISCOUNTS,
   MENTORSHIP_PLANS,
   MentorshipPlan
 } from '../mentorship/mentorship.data';
@@ -26,6 +27,7 @@ export class ServicesComponent {
   readonly starterPlan = this.getPlan('Starter');
   readonly growthPlan = this.getPlan('Growth');
   readonly elitePlan = this.getPlan('Elite Mentorship');
+  readonly discounts = MENTORSHIP_DISCOUNTS;
 
   showInquiryModal = false;
   selectedProgram = '';

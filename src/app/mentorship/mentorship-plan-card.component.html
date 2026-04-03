@@ -80,6 +80,11 @@
     </ng-template>
   </div>
 
+  <div class="mb-4 rounded-lg border border-emerald-300/30 bg-emerald-500/10 p-3">
+    <p class="text-xs font-semibold text-emerald-100">💚 Student & Support Discounts Available</p>
+    <p class="mt-1 text-[11px] text-emerald-100/80">Get 30% off with student ID, or ask about flexible pricing</p>
+  </div>
+
   <ul class="mb-4 flex flex-1 flex-col gap-2 text-sm text-slate-200">
     <li *ngFor="let feature of (compact ? (plan.features | slice:0:2) : plan.features)" class="flex items-start gap-3">
       <span class="mt-1 inline-flex h-4 w-4 flex-none items-center justify-center rounded-full bg-indigo-400/15 text-[10px] text-indigo-200">✓</span>
