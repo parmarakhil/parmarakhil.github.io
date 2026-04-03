@@ -3,6 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <base href="/">
+  <script>
+    (function () {
+      var redirect = window.location.search;
+
+      if (!redirect || redirect.indexOf('/?') !== 0) {
+        return;
+      }
+
+      var restoredPath = redirect
+        .slice(2)
+        .split('&')
+        .map(function (part, index) {
+          return index === 0 ? part : part.replace(/~and~/g, '&');
+        })
+        .join('?');
+
+      window.history.replaceState(null, '', '/' + restoredPath + window.location.hash);
+    })();
+  </script>
   <title>Akhil Parmar - MTS 1 @ eBay | Staff Software Engineer & Top 1% Mentor | Career Coaching</title>
   <meta name="keywords" content="software engineer mentor, career transition coach, mock interviews, resume review, system design interview, DSA preparation, system design patterns, LLD patterns, distributed systems, Kafka, cloud-native, product company jobs, software developer mentorship, coding interview prep, career guidance, top 1% mentor, Akhil Parmar, eBay MTS1, AWS expert"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
