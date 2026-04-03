@@ -1,0 +1,29 @@
+<article [id]="stage.id" class="rounded-3xl border border-white/10 bg-slate-900/65 p-5 shadow-xl shadow-slate-950/20 sm:p-8">
+  <div class="flex flex-wrap items-start justify-between gap-3 sm:gap-4">
+    <div>
+      <h3 class="font-display text-[2rem] font-bold leading-tight text-white sm:text-3xl">{{ stage.title }}</h3>
+      <p class="mt-2 text-sm text-slate-300 sm:text-base">{{ stage.subtitle }}</p>
+    </div>
+    <span class="max-w-full rounded-full border border-indigo-300/30 bg-indigo-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-100 sm:max-w-none">
+      {{ stage.focus }}
+    </span>
+  </div>
+
+  <div *ngIf="stage.flowSteps?.length" class="mt-6">
+    <div class="flex flex-wrap items-center gap-2 sm:min-w-max sm:flex-nowrap sm:gap-3">
+      <ng-container *ngFor="let step of stage.flowSteps; let i = index">
+        <div class="rounded-2xl border border-white/15 bg-slate-800/80 px-4 py-2.5 text-sm font-semibold text-slate-100 shadow-sm shadow-slate-950/20">
+          {{ step }}
+        </div>
+        <span *ngIf="i < (stage.flowSteps?.length || 0) - 1" class="hidden text-indigo-300 sm:inline">&rarr;</span>
+      </ng-container>
+    </div>
+  </div>
+
+  <ul class="mt-6 grid list-none gap-3 pl-0 text-sm text-slate-200 sm:grid-cols-2">
+    <li *ngFor="let point of stage.highlights" class="flex items-start gap-3 overflow-hidden rounded-2xl border border-white/10 bg-slate-800/55 px-4 py-3 leading-6">
+      <span class="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-indigo-300"></span>
+      <span class="break-words">{{ point }}</span>
+    </li>
+  </ul>
+</article>

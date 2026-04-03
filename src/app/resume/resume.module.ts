@@ -21,6 +21,8 @@ import { FooterComponent } from "../footer/footer.component";
 import { MentorshipPageComponent } from "../mentorship/mentorship-page.component";
 import { MentorshipPlanCardComponent } from "../mentorship/mentorship-plan-card.component";
 import { SocialComponent } from "../social/social.component";
+import { RoadmapsPageComponent } from "../roadmaps/roadmaps-page.component";
+import { RoadmapStageCardComponent } from "../roadmaps/roadmap-stage-card.component";
 
 @NgModule({
   imports: [
@@ -46,7 +48,9 @@ import { SocialComponent } from "../social/social.component";
     FooterComponent,
     MentorshipPageComponent,
     MentorshipPlanCardComponent,
-    SocialComponent
+    SocialComponent,
+    RoadmapsPageComponent,
+    RoadmapStageCardComponent
   ],
   exports: [ ResumeComponent, MentorshipPlanCardComponent ],
   providers: [ ContactService ]

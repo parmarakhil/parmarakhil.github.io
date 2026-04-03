@@ -2,11 +2,13 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ResumeComponent } from "./resume/resume.component";
 import { MentorshipPageComponent } from "./mentorship/mentorship-page.component";
+import { RoadmapsPageComponent } from "./roadmaps/roadmaps-page.component";
 
 // Any URL apart from the root domain is going to be rendered as "page-not-found".
 const routes: Routes = [
   { path: "", component: ResumeComponent},
   { path: "mentorship", component: MentorshipPageComponent },
+  { path: "roadmap", component: RoadmapsPageComponent },
   { path: "about", redirectTo: "/#about"},
   { path: "skills", redirectTo: "/#skills"},
   { path: "experience", redirectTo: "/#experience"},

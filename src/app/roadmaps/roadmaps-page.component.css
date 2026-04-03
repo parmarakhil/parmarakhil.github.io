@@ -1,0 +1,13 @@
+.roadmap-email-input:-webkit-autofill,
+.roadmap-email-input:-webkit-autofill:hover,
+.roadmap-email-input:-webkit-autofill:focus,
+.roadmap-email-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px rgba(30, 41, 59, 1) inset;
+  -webkit-text-fill-color: #ffffff;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.sticky-download-cta {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
