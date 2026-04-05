@@ -1,6 +1,8 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { serverTimestamp } from 'firebase/firestore';
 import { ContactService } from '../contact/contact.service';
 import { Contact } from '../model/contact.model';
@@ -68,6 +70,8 @@ https://akhilparmar.in/roadmap`;
 
   constructor(
     private fb: FormBuilder,
+    private location: Location,
+    private router: Router,
     private titleService: Title,
     private metaService: Meta,
     private contactService: ContactService
@@ -87,6 +91,17 @@ https://akhilparmar.in/roadmap`;
       name: 'description',
       content: 'Complete software engineering roadmap for college students, early career, and experienced engineers. Practical paths for DSA, system design, and AI skills in 2026.'
     });
+  }
+
+  goBack(): void {
+    const navigationId = window.history.state?.navigationId;
+
+    if (typeof navigationId === 'number' && navigationId > 1) {
+      this.location.back();
+      return;
+    }
+
+    this.router.navigateByUrl('/');
   }
 
   scrollToSection(sectionId: string): void {
