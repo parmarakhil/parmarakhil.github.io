@@ -1,0 +1,139 @@
+.content-hub-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #0f1419 0%, #1a202c 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ch-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ch-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ch-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #8b9ff5;
+  margin-bottom: 0.75rem;
+}
+
+.ch-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 1rem;
+  letter-spacing: -0.5px;
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.ch-subtitle {
+  font-size: 1rem;
+  color: #cbd5e1;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid */
+.ch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .ch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ch-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(139, 159, 245, 0.2);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.ch-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #8b9ff5;
+  box-shadow: 0 20px 40px rgba(139, 159, 245, 0.2);
+}
+
+.ch-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ch-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 1.25rem;
+}
+
+.ch-article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ch-article-list li {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.ch-article-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8b9ff5;
+}
+
+.ch-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #8b9ff5;
+  text-decoration: none;
+  margin-top: auto;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.ch-view-all:hover {
+  color: #9d6dc8;
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ch-grid {
+    grid-template-columns: 1fr;
+  }
+}

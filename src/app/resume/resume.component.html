@@ -1,11 +1,15 @@
 <app-header [activeSection]="activeSection" [pageXOffset]="pageXOffset" [ngClass]="{'sticky' : isSticky}"></app-header>
 <app-welcome in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'welcome')"></app-welcome>
 <app-about  in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'about')"></app-about>
+<app-roadmap-teaser></app-roadmap-teaser>
 <app-skills in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'skills')"></app-skills>
 <app-experience in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'experience')"></app-experience>
+<app-content-hub></app-content-hub>
 <app-posts in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'blogs')"></app-posts>
 <app-services in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'mentorship')"></app-services>
+<app-lead-magnet></app-lead-magnet>
 <app-testimonials in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'testimonials')"></app-testimonials>
 <app-social in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'social')"></app-social>
 <app-contact in-viewport [pageYOffset]="pageYOffset" (inViewport)="onViewport($event.value, 'contact')"></app-contact>
+<app-final-cta></app-final-cta>
 <app-footer></app-footer>

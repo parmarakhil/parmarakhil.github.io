@@ -1,40 +1,72 @@
-footer {
-    background-color: #0b0d0e;
-    display: flex;
-    flex-wrap: wrap;
+.site-footer {
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2.5rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.fork-github {
-    text-align: left;
-    font-weight: 500;
-    flex-grow: 1;
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-.fork-github a {
-    color: #fff;
-    text-decoration: none;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.fork-github span {
-    margin-left: 0.5em;
+.footer-logo {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  text-decoration: none;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  letter-spacing: -0.3px;
 }
 
-.fork-github a:hover {
-    text-decoration: underline;
+.footer-logo:hover {
+  color: #8b9ff5;
 }
 
-.icon {
-    font-size: 18px;
-    color: #fff;
+.footer-tagline {
+  font-size: 0.75rem;
+  color: #475569;
+  margin: 0;
 }
 
-.copyright {
-    text-align: right;
-    color: #fff;
-    font-weight: 600;
+.footer-nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
 }
 
-p {
-    margin: 0;
-    padding: 1em;
+.footer-nav a {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: #e2e8f0;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: #334155;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

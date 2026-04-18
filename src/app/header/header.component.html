@@ -5,21 +5,22 @@
     </div>
 
     <div class="child logo-container" itemprop="brand" itemscope itemtype="https://schema.org/Brand">
-        <a (click)="resetMenu()" href="#" class="logo" itemprop="name" itemprop="logo">AP</a>
+        <a (click)="resetMenu()" href="#" class="logo" itemprop="name">Akhil Parmar</a>
     </div>
 
     <div class="child nav-container" #nav [ngClass]="{'menu-open': hasMenuToggled}" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <ul>
-            <li><a (click)="resetMenu()" href="#about" i18n="nav@@aboutMe" itemprop="url"><span itemprop="name">About</span></a></li>
-            <li><a (click)="resetMenu()" href="#skills" itemprop="url"><span itemprop="name">Skills</span></a></li>
-            <li><a (click)="resetMenu()" href="#experience" i18n="nav@@experiences" itemprop="url"><span itemprop="name">Experience</span></a></li>
-            <li><a (click)="resetMenu()" href="#blogs" i18n="nav@@blogs" itemprop="url"><span itemprop="name">Articles</span></a></li>
+            <li><a (click)="resetMenu()" href="#blogs" itemprop="url"><span itemprop="name">Blog</span></a></li>
             <li><a (click)="resetMenu()" href="#mentorship" itemprop="url"><span itemprop="name">Mentorship</span></a></li>
             <li><a (click)="resetMenu()" routerLink="/roadmap" itemprop="url"><span itemprop="name">Roadmap</span></a></li>
+            <li><a (click)="resetMenu()" href="#about" i18n="nav@@aboutMe" itemprop="url"><span itemprop="name">About</span></a></li>
             <li><a (click)="resetMenu()" href="#testimonials" itemprop="url"><span itemprop="name">Testimonials</span></a></li>
-            <li><a (click)="resetMenu()" href="#social" itemprop="url"><span itemprop="name">Social</span></a></li>
             <li><a (click)="resetMenu()" href="#contact" i18n="nav@@contact" itemprop="url"><span itemprop="name">Contact</span></a></li>
         </ul>
+    </div>
+
+    <div class="child cta-container">
+        <a href="#mentorship" class="header-cta-btn">Book a Session</a>
     </div>
 
     <div class="child share-container" #shareBtn>

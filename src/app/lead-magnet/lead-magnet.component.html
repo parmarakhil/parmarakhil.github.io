@@ -1,0 +1,66 @@
+<section class="lead-magnet-section">
+  <div class="lm-container">
+    <div class="lm-card">
+      <div class="lm-icon">📄</div>
+      <h2 class="lm-title">Free System Design Roadmap (PDF)</h2>
+      <p class="lm-subtitle">
+        The exact roadmap I share with every mentee — covering DSA, LLD, HLD, and the mindset shift that separates senior engineers.
+      </p>
+
+      <!-- Roadmap Type Selection -->
+      <div *ngIf="!submitted" class="lm-roadmap-options">
+        <p class="lm-roadmap-label">Which roadmap matches your stage?</p>
+        <div class="lm-roadmap-grid">
+          <button
+            *ngFor="let option of roadmapOptions"
+            type="button"
+            (click)="selectRoadmap(option.id)"
+            [class.selected]="selectedRoadmapId === option.id"
+            class="lm-roadmap-option"
+          >
+            <div class="lm-option-badge" [class.active]="selectedRoadmapId === option.id">
+              <svg *ngIf="selectedRoadmapId === option.id" class="lm-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="lm-option-content">
+              <p class="lm-option-title">{{ option.label }}</p>
+              <p class="lm-option-desc">{{ option.description }}</p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Email Capture & Download -->
+      <div *ngIf="!submitted" class="lm-form-wrap">
+        <form class="lm-form" (ngSubmit)="onSubmit()" #f="ngForm">
+          <input
+            type="email"
+            class="lm-input"
+            placeholder="your@email.com"
+            [(ngModel)]="email"
+            name="email"
+            required
+            email
+          />
+          <button
+            type="submit"
+            class="lm-btn"
+            [disabled]="f.invalid || !selectedRoadmapId"
+            [class.disabled]="!selectedRoadmapId"
+          >
+            Download Free
+          </button>
+        </form>
+        <p class="lm-hint">No spam. High-signal content only.</p>
+      </div>
+
+      <!-- Success State -->
+      <div *ngIf="submitted" class="lm-success">
+        <span class="lm-success-icon">✓</span>
+        <p>Got it! Opening your {{ selectedRoadmap?.label }} roadmap...</p>
+        <p class="lm-success-subtext">Check your inbox for the link. You're all set!</p>
+      </div>
+    </div>
+  </div>
+</section>

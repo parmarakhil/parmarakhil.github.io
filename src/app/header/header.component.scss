@@ -30,24 +30,47 @@ header {
             width: auto;
             text-decoration: none;
             text-transform: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 800;
-            color: #fff;
+            color: #f1f5f9;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-family: 'Outfit', 'Inter', sans-serif;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, #8b9ff5 0%, #9d6dc8 100%);
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(139, 159, 245, 0.35);
+            padding: 0;
+            background: none;
 
             &:hover {
-                transform: translateY(-2px) scale(1.05);
-                box-shadow: 0 6px 20px rgba(139, 159, 245, 0.5);
+                color: #8b9ff5;
+            }
+        }
+    }
+
+    .child.cta-container {
+        flex-shrink: 0;
+        margin-left: 1rem;
+
+        .header-cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #9d6dc8 0%, #8b9ff5 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.6rem 1.5rem;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(139, 159, 245, 0.3);
+
+            &:hover {
+                background: linear-gradient(135deg, #7c5ac5 0%, #8b9ff5 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(139, 159, 245, 0.4);
             }
         }
     }
@@ -94,8 +117,8 @@ header {
                     }
 
                     &:not(.active):hover {
-                        color: #e2e8f0;
-                        background-color: rgba(139, 159, 245, 0.1);
+                        color: #8b9ff5;
+                        background-color: rgba(139, 159, 245, 0.08);
                         
                         &::before {
                             width: 100%;
@@ -104,10 +127,11 @@ header {
 
                     &.active {
                         color: #8b9ff5;
-                        font-weight: 600;
+                        font-weight: 700;
                         
                         &::before {
                             width: 100%;
+                            background: linear-gradient(90deg, #8b9ff5, #9d6dc8);
                         }
                         
                         &::after {

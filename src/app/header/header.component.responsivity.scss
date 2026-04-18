@@ -29,6 +29,10 @@
         padding: 10px;
         flex-wrap: wrap;
 
+        .child.cta-container {
+            display: none;
+        }
+
         .child.logo-container {
             flex-grow: 4;
         }

@@ -1,0 +1,243 @@
+.lm-roadmap-options {
+  margin-bottom: 2rem;
+}
+
+.lm-roadmap-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.lm-roadmap-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 540px) {
+  .lm-roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lm-roadmap-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(139, 159, 245, 0.15);
+  border-radius: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.lm-roadmap-option:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(139, 159, 245, 0.3);
+}
+
+.lm-roadmap-option.selected {
+  background: rgba(139, 159, 245, 0.12);
+  border-color: #8b9ff5;
+  box-shadow: 0 0 20px rgba(139, 159, 245, 0.15);
+}
+
+.lm-option-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(139, 159, 245, 0.3);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  background: transparent;
+}
+
+.lm-option-badge.active {
+  background: #8b9ff5;
+  border-color: #8b9ff5;
+}
+
+.lm-check-icon {
+  width: 14px;
+  height: 14px;
+  color: white;
+  stroke-width: 3;
+}
+
+.lm-option-content {
+  flex: 1;
+}
+
+.lm-option-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 0.4rem;
+}
+
+.lm-option-desc {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.lm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.lm-card {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(139, 159, 245, 0.2);
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.lm-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.lm-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 1rem;
+  letter-spacing: -0.5px;
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.lm-subtitle {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin: 0 0 2rem;
+}
+
+.lm-form-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lm-form {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.lm-input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: 1.5px solid rgba(139, 159, 245, 0.3);
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.05);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.lm-input::placeholder {
+  color: #64748b;
+}
+
+.lm-input:focus {
+  border-color: #8b9ff5;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(139, 159, 245, 0.2);
+}
+
+.lm-btn {
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, #9d6dc8 0%, #8b9ff5 100%);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', sans-serif;
+}
+
+.lm-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7c5ac5 0%, #8b9ff5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 159, 245, 0.3);
+}
+
+.lm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.lm-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lm-hint {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.lm-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lm-success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(139, 159, 245, 0.2);
+  color: #8b9ff5;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.lm-success p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.lm-success-subtext {
+  font-size: 0.85rem !important;
+  color: #94a3b8 !important;
+  margin-top: 0.5rem !important;
+}
+
+@media (max-width: 540px) {
+  .lm-form {
+    flex-direction: column;
+  }
+  .lm-card {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -1,9 +1,18 @@
-<footer itemscope itemtype="https://schema.org/WPFooter">
-    <p class="fork-github">
-        <a href="https://github.com/parmarakhil/parmarakhil.github.io" target="_blank">
-            <fa-icon [icon]="faGithubSquare" class="icon">
-            </fa-icon></a>
-            <a (click)="resetMenu()" href="#" itemprop="logo" style="font-family:Pacifico, cursive;"><span>Akhil</span></a>
-        </p>
-    <p class="copyright">{{ year | date:'yyyy' }} &copy; Copyright</p>
+<footer itemscope itemtype="https://schema.org/WPFooter" class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo" itemprop="logo">Akhil Parmar</a>
+      <p class="footer-tagline">Senior Engineer · Mentor · Speaker</p>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#blogs">Blog</a>
+      <a href="#mentorship">Mentorship</a>
+      <a routerLink="/roadmap">Roadmap</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <p class="footer-copy">{{ year | date:'yyyy' }} &copy; Akhil Parmar. All rights reserved.</p>
+  </div>
 </footer>

@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { ResumeComponent } from "../resume/resume.component";
@@ -23,10 +23,15 @@ import { MentorshipPlanCardComponent } from "../mentorship/mentorship-plan-card.
 import { SocialComponent } from "../social/social.component";
 import { RoadmapsPageComponent } from "../roadmaps/roadmaps-page.component";
 import { RoadmapStageCardComponent } from "../roadmaps/roadmap-stage-card.component";
+import { RoadmapTeaserComponent } from "../roadmap-teaser/roadmap-teaser.component";
+import { ContentHubComponent } from "../content-hub/content-hub.component";
+import { LeadMagnetComponent } from "../lead-magnet/lead-magnet.component";
+import { FinalCtaComponent } from "../final-cta/final-cta.component";
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
+    FormsModule,
     CommonModule, 
     RouterModule,
     CoreModule,
@@ -50,7 +55,11 @@ import { RoadmapStageCardComponent } from "../roadmaps/roadmap-stage-card.compon
     MentorshipPlanCardComponent,
     SocialComponent,
     RoadmapsPageComponent,
-    RoadmapStageCardComponent
+    RoadmapStageCardComponent,
+    RoadmapTeaserComponent,
+    ContentHubComponent,
+    LeadMagnetComponent,
+    FinalCtaComponent,
   ],
   exports: [ ResumeComponent, MentorshipPlanCardComponent ],
   providers: [ ContactService ]

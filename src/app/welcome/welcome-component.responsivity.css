@@ -1,60 +1,112 @@
 
-@media screen and (max-width: 1024px) {
-    #welcome {
-        height: 585px;
+/* ─── Hero section responsive rules ──────────────────────────────── */
+
+@media screen and (max-width: 1100px) {
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
     }
-    
-    .layer_one .avatar-container .illustration {
-        height: 585px;
+
+    .hero-title {
+        font-size: 3.2rem;
     }
 }
 
-@media screen and (max-width: 880px) {
-    #welcome {
-        height: 465px;
+@media screen and (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
-    
-    .layer_one .avatar-container .illustration {
-        height: 465px;
-    }
-}
 
-@media screen and (max-width: 720px) {
-    #welcome {
-        height: 385px;
+    /* Move image above text on tablet */
+    .hero-image {
+        order: -1;
     }
-    
-    .layer_one .avatar-container .illustration {
-        height: 385px;
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .role-badge {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta, .hero-stats, .social-proof {
+        justify-content: center;
+    }
+
+    .photo-wrapper {
+        width: 260px;
+        height: 300px;
+    }
+
+    .profile-img {
+        width: 230px;
+        height: 230px;
+    }
+
+    /* Hide service float cards on tablet — too cramped */
+    .fc { display: none; }
+
+    .hero-title {
+        font-size: 2.8rem;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #welcome {
-        height: 290px;
+    .hero-section {
+        padding-top: 70px;
+        padding-bottom: 4rem;
     }
-    
-    .layer_one .avatar-container .illustration {
-        height: 290px;
-    } 
+
+    .hero-container {
+        padding: 2rem 1.25rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        letter-spacing: -0.75px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .photo-wrapper {
+        width: 200px;
+        height: 240px;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
 }
 
-@media screen and (max-width: 500px) {
-    #welcome {
-        height: 250px;
+@media screen and (max-width: 400px) {
+    .hero-title {
+        font-size: 1.9rem;
     }
-    
-    .layer_one .avatar-container .illustration {
-        height: 250px;
-    } 
-}
-
-@media screen and (max-width: 320px) {
-    #welcome {
-        height: 220px;
-    }
-    
-    .layer_one .avatar-container .illustration {
-        height: 220px;
-    } 
 }
