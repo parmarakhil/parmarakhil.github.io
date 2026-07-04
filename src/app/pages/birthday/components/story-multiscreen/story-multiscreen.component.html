@@ -1,0 +1,67 @@
+<div class="multiscreen-wrapper">
+  <!-- Screen content with fade transition -->
+  <div [@screenState]="screenState" class="screen-container" [ngClass]="'screen-' + currentScreen.type">
+    <!-- Intro Screen -->
+    <div *ngIf="currentScreen.type === 'intro'" class="screen-intro">
+      <div class="intro-content">
+        <p class="intro-text">{{ currentScreen.content }}</p>
+      </div>
+      <button class="scroll-indicator" type="button" (click)="goToNextScreen()" aria-label="Go to next screen">
+        <div class="arrow-down"></div>
+        <p class="indicator-text">Scroll to unfold our story</p>
+      </button>
+    </div>
+
+    <!-- Calm Canvas Screen -->
+    <div *ngIf="currentScreen.type === 'calm-canvas'" class="screen-calm-canvas">
+      <app-sunflower-calm-canvas (continueClicked)="goToNextScreen()"></app-sunflower-calm-canvas>
+    </div>
+
+    <!-- Our Story Screen (Story + Gallery) -->
+    <div *ngIf="currentScreen.type === 'our-story'" class="screen-our-story">
+      <app-our-story-screen (nextClicked)="goToNextScreen()"></app-our-story-screen>
+    </div>
+
+    <!-- Climax Screen -->
+    <div *ngIf="currentScreen.type === 'climax'" class="screen-climax">
+      <div class="climax-wrapper">
+        <h2 class="climax-title">{{ currentScreen.title }}</h2>
+        <p class="climax-content">{{ currentScreen.content }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation buttons (bottom fixed) -->
+  <div class="fixed-nav-buttons">
+    <button 
+      class="nav-btn nav-prev" 
+      (click)="goToPreviousScreen()"
+      [disabled]="currentScreenIndex === 0"
+      aria-label="Go to previous screen"
+    >
+      <span>← Previous</span>
+    </button>
+    
+    <button 
+      class="nav-btn nav-next" 
+      (click)="goToNextScreen()"
+      [disabled]="currentScreenIndex === screens.length - 1"
+      aria-label="Go to next screen"
+    >
+      <span>Next →</span>
+    </button>
+  </div>
+
+  <!-- Progress indicator -->
+  <div class="screen-progress" *ngIf="currentScreen.type !== 'climax'">
+    <div class="progress-dots">
+      <button
+        *ngFor="let screen of screens; let i = index"
+        class="progress-dot"
+        [class.active]="i === currentScreenIndex"
+        (click)="goToScreen(i)"
+        [attr.aria-label]="'Go to screen ' + (i + 1)"
+      ></button>
+    </div>
+  </div>
+</div>

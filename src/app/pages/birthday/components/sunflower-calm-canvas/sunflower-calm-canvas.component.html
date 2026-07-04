@@ -1,0 +1,41 @@
+<div class="calm-canvas-container">
+  <div class="canvas-content">
+    <!-- Sunflower image -->
+    <div
+      class="sunflower-interactive"
+      [@sunflowerState]="sunflowerState"
+      role="button"
+      tabindex="0"
+      aria-label="Interactive breathing sunflower. Press and hold for a calming moment."
+    >
+      <img
+        src="assets/images/sunflower.png"
+        alt="Sunflower"
+        class="sunflower-image"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Breathing prompt (appears when held) -->
+    <div [@breathePromptState]="breathePromptState" class="breathing-prompt">
+      <p class="breathing-text">
+        <span class="breathing-line">Breathe in...</span>
+        <span class="breathing-line">Breathe out...</span>
+        <span class="breathing-line">Your mind can rest here.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Continue button (appears after 3 seconds of interaction) -->
+  <button
+    [@continueButtonState]="continueButtonState"
+    class="continue-button"
+    (click)="onContinueClick()"
+    aria-label="Continue to the next moment"
+  >
+    <span class="button-text">Continue</span>
+    <svg class="button-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 10l5 5 5-5z" fill="currentColor" />
+    </svg>
+  </button>
+</div>

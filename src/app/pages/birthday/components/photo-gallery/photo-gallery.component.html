@@ -1,0 +1,28 @@
+<section class="photo-gallery-section">
+  <div class="gallery-container">
+    <div class="photo-grid">
+      <div
+        *ngFor="let photo of datePhotos"
+        class="photo-item"
+        [class.hovered]="hoveredPhotoId === photo.id"
+        (mouseenter)="onPhotoHover(photo.id)"
+        (mouseleave)="onPhotoLeave()"
+        (touchstart)="onPhotoHover(photo.id)"
+        (touchend)="onPhotoLeave()"
+      >
+        <div class="photo-wrapper">
+          <img
+            [src]="photo.imagePath"
+            [alt]="photo.context"
+            class="photo-image"
+            loading="eager"
+          />
+        </div>
+        <div class="photo-caption">
+          <p class="caption-location">{{ photo.location }}</p>
+          <p class="caption-context">{{ photo.context }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

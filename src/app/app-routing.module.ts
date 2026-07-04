@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: "", component: ResumeComponent},
   { path: "mentorship", component: MentorshipPageComponent },
   { path: "roadmap", component: RoadmapsPageComponent },
+  // Private hidden route for birthday celebration page
+  { path: "1111", loadChildren: () => import('./pages/birthday/birthday.module').then(m => m.BirthdayModule) },
   { path: "about", redirectTo: "/#about"},
   { path: "skills", redirectTo: "/#skills"},
   { path: "experience", redirectTo: "/#experience"},

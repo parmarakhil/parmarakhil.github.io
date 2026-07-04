@@ -1,0 +1,16 @@
+<div class="story-container">
+  <div
+    *ngFor="let chapter of chapters"
+    class="chapter"
+    [class.intro]="chapter.type === 'intro'"
+    [class.chapter]="chapter.type === 'chapter'"
+    [class.climax]="chapter.type === 'climax'"
+    (inViewport)="onChapterVisible(chapter.id)"
+    in-viewport
+  >
+    <div class="chapter-inner" [@fadeIn] *ngIf="visibleChapters.has(chapter.id)">
+      <h2 *ngIf="chapter.type !== 'intro'" class="chapter-title">{{ chapter.title }}</h2>
+      <p class="chapter-text">{{ chapter.content }}</p>
+    </div>
+  </div>
+</div>

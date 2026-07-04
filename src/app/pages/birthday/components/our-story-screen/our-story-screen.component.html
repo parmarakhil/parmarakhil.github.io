@@ -1,0 +1,48 @@
+<div class="our-story-wrapper">
+  <div class="story-gallery-container" [@fadeIn]>
+    <!-- Story Section (Left/Top) -->
+    <div class="story-section">
+      <div class="story-content">
+        <p class="story-text">{{ storyText }}</p>
+      </div>
+    </div>
+
+    <!-- Gallery Section (Right/Bottom) -->
+    <div class="gallery-section">
+      <div class="gallery-grid">
+        <div
+          *ngFor="let memory of dateMemories"
+          class="memory-card"
+          [class.hovered]="hoveredMemoryId === memory.id"
+          (mouseenter)="onMemoryHover(memory.id)"
+          (mouseleave)="onMemoryLeave()"
+          (touchstart)="onMemoryHover(memory.id)"
+          (touchend)="onMemoryLeave()"
+        >
+          <div class="memory-image-wrapper">
+            <img
+              [src]="memory.imagePath"
+              [alt]="memory.context"
+              class="memory-image"
+              loading="eager"
+            />
+          </div>
+          <div class="memory-caption">
+            <p class="caption-title">{{ memory.caption }}</p>
+            <p class="caption-context">{{ memory.context }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="navigation-section">
+    <button class="nav-next-button" (click)="onContinue()">
+      <span>Continue to the Promise</span>
+      <svg class="nav-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 10l5 5 5-5z" fill="currentColor" />
+      </svg>
+    </button>
+  </div>
+</div>

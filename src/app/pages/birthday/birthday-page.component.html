@@ -1,0 +1,66 @@
+<!-- Clock Gate: Entrance Overlay -->
+<app-birthday-clock-gate
+  *ngIf="!gateClicked"
+  (gateClicked)="onGateClicked()"
+></app-birthday-clock-gate>
+
+<!-- Main Content: Revealed after gate -->
+<div class="birthday-page-wrapper" *ngIf="gateClicked">
+  <!-- Hero Header with Sunflower (Gatekeeper) -->
+  <header class="hero-section" *ngIf="!sunflowerClicked">
+    <app-sunflower-grounder
+      (proceedClicked)="onSunflowerProceed()"
+    ></app-sunflower-grounder>
+  </header>
+
+  <!-- Story Timeline (Only visible after sunflower proceed) -->
+  <main class="main-content" #mainContent *ngIf="sunflowerClicked">
+    <app-story-multiscreen (screenChanged)="onStoryScreenChanged($event)"></app-story-multiscreen>
+  </main>
+
+  <!-- Audio Toggle Button (Optional bottom-right floating) -->
+  <button
+    *ngIf="!isFinalScreen"
+    class="audio-toggle"
+    (click)="toggleAudio()"
+    (mouseenter)="onAudioButtonHover()"
+    (mouseleave)="onAudioButtonLeave()"
+    [attr.aria-pressed]="audioEnabled"
+    aria-label="Toggle background music"
+  >
+    <svg viewBox="0 0 24 24" class="speaker-icon" *ngIf="!audioEnabled">
+      <!-- Speaker muted icon -->
+      <path
+        d="M6.5 3L4.5 5H1v8h3.5l2 2v-12zm8-2c4 0 7.5 3.5 7.5 7.5s-3.5 7.5-7.5 7.5-7.5-3.5-7.5-7.5 3.5-7.5 7.5-7.5z"
+        fill="currentColor"
+      />
+    </svg>
+    <svg viewBox="0 0 24 24" class="speaker-icon" *ngIf="audioEnabled">
+      <!-- Speaker active icon -->
+      <path
+        d="M3.5 3h2.25l5.5 5.5V3h2v12h-2V9.75L5.75 15.25H3.5V3zm11.5 7c0 2.75-2.25 5-5 5v2c3.9 0 7-3.1 7-7s-3.1-7-7-7v2c2.75 0 5 2.25 5 5z"
+        fill="currentColor"
+      />
+    </svg>
+
+    <div class="audio-tooltip" *ngIf="showAudioTooltip">
+      Best experienced with sound.
+    </div>
+  </button>
+
+  <div class="final-signature" *ngIf="isFinalScreen" aria-live="polite">
+    <div class="heart-loop" aria-hidden="true">&#10084;</div>
+    <p class="signature-note">Always yours, Akhil</p>
+  </div>
+
+  <!-- Background Audio Element -->
+  <audio
+    #backgroundAudio
+    class="background-audio"
+    loop
+    preload="auto"
+    crossorigin="anonymous"
+  >
+    <source src="assets/images/background-music.mp3" type="audio/mpeg" />
+  </audio>
+</div>

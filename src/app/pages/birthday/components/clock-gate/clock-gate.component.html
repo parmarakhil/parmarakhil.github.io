@@ -1,0 +1,13 @@
+<div [@fadeOut]="currentState" class="clock-gate-container">
+  <div class="clock-wrapper">
+    <div class="clock-display">11:11</div>
+    <button
+      class="clock-button"
+      aria-label="Make a wish and click the time"
+      (click)="onClockClick()"
+      [disabled]="isHidden"
+    >
+      <div class="prompt-text">Make a wish and click the time.</div>
+    </button>
+  </div>
+</div>

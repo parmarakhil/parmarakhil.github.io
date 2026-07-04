@@ -1,0 +1,23 @@
+<section class="sunflower-section">
+  <div class="sunflower-container" [@bloomState]="bloomState">
+    <img
+      src="assets/images/sunflower.png"
+      alt="Sunflower"
+      class="sunflower-image"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Breathing prompt below sunflower -->
+  <div [@breatheState]="breatheState" class="breathe-prompt">
+    <p>Breathe in... Breathe out... You are safe here.</p>
+  </div>
+
+  <!-- Proceed button -->
+  <button class="proceed-button" (click)="onProceedClick()" aria-label="Continue to the story">
+    <span class="button-text">I'm ready</span>
+    <svg class="arrow-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 10l5 5 5-5z" fill="currentColor" />
+    </svg>
+  </button>
+</section>
