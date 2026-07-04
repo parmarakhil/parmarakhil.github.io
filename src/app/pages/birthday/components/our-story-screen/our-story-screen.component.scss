@@ -5,17 +5,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #faf8f5;
+  background: transparent;
   position: relative;
-  padding: 3rem 2rem;
+  padding: clamp(4rem, 10vh, 6rem) 1.25rem;
 }
 
 .story-gallery-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: clamp(2rem, 4vw, 3.25rem);
   align-items: start;
   margin-bottom: 4rem;
 }
@@ -25,20 +25,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 500px;
+  min-height: auto;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 24px;
+  background: rgba(20, 24, 29, 0.58);
+  border: 1px solid rgba(226, 177, 60, 0.15);
+  box-shadow: 0 18px 42px rgba(5, 8, 11, 0.38), inset 0 0 0 1px rgba(226, 177, 60, 0.05);
+  backdrop-filter: blur(10px);
 }
 
 .story-content {
-  max-width: 55ch;
+  max-width: 38ch;
 }
 
 .story-text {
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.9;
-  letter-spacing: 0.5px;
-  color: #2a2420;
+  letter-spacing: 0.03em;
+  color: #ede6da;
   margin: 0;
   text-align: left;
 }
@@ -63,9 +69,18 @@
   flex-direction: column;
   gap: 1rem;
   cursor: pointer;
-  transition: all 300ms ease-out;
+  transition: all 320ms ease-out;
+  padding: 0.65rem;
+  border-radius: 20px;
+  background: rgba(20, 24, 29, 0.56);
+  border: 1px solid rgba(226, 177, 60, 0.15);
+  box-shadow: 0 14px 30px rgba(5, 8, 11, 0.34), inset 0 0 0 1px rgba(226, 177, 60, 0.04);
+  backdrop-filter: blur(8px);
 
   &.hovered {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 36px rgba(226, 177, 60, 0.15), 0 12px 28px rgba(5, 8, 11, 0.36);
+
     .memory-image-wrapper {
       transform: scale(1.03);
       filter: brightness(1.05);
@@ -84,10 +99,10 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 6px;
-  background: #eae6e1;
+  border-radius: 16px;
+  background: #222a31;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), filter 300ms ease-out;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 20px rgba(0, 0, 0, 0.24);
 }
 
 .memory-image {
@@ -107,7 +122,7 @@
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 600;
-  color: #2a2420;
+  color: #efe6d6;
   letter-spacing: 0.02em;
   margin: 0;
   line-height: 1.4;
@@ -116,7 +131,7 @@
 .caption-context {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-  color: #8b8680;
+  color: #b8ad9c;
   font-weight: 400;
   margin: 0.5rem 0 0 0;
   line-height: 1.4;
@@ -129,14 +144,14 @@
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(42, 36, 32, 0.1);
+  border-top: 1px solid rgba(226, 177, 60, 0.15);
 }
 
 .nav-next-button {
   padding: 1rem 3rem;
-  background: rgba(226, 177, 60, 0.15);
+  background: rgba(20, 24, 29, 0.72);
   border: 1px solid rgba(226, 177, 60, 0.4);
-  border-radius: 3px;
+  border-radius: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -145,15 +160,16 @@
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: #2a2420;
+  color: #ece4d7;
   letter-spacing: 0.03em;
   transition: all 300ms ease-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 22px rgba(5, 8, 11, 0.36);
+  backdrop-filter: blur(10px);
 
   &:hover {
-    background: rgba(226, 177, 60, 0.25);
+    background: rgba(28, 33, 39, 0.88);
     border-color: #E2B13C;
-    box-shadow: 0 4px 12px rgba(226, 177, 60, 0.15);
+    box-shadow: 0 12px 28px rgba(226, 177, 60, 0.18);
     transform: translateY(-2px);
 
     .nav-arrow {
@@ -195,7 +211,7 @@
 
 @media (max-width: 768px) {
   .our-story-wrapper {
-    padding: 2rem 1.5rem;
+    padding: 3rem 1rem;
   }
 
   .story-gallery-container {
@@ -220,7 +236,7 @@
 
 @media (max-width: 480px) {
   .our-story-wrapper {
-    padding: 1.5rem 1rem;
+    padding: 2.2rem 0.8rem;
     min-height: auto;
   }
 
@@ -249,8 +265,8 @@
   }
 
   .memory-image-wrapper {
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   .caption-title {

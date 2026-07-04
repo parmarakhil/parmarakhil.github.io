@@ -1,9 +1,10 @@
 // Reset and normalize the page
 :host {
-  --primary-bg: #faf8f3;
-  --secondary-bg: #f5f2ed;
-  --text-dark: #2a2420;
-  --text-muted: #8b8680;
+  --primary-bg: #12161a;
+  --secondary-bg: #171d23;
+  --surface-glass: rgba(20, 24, 29, 0.62);
+  --text-dark: #eaeaea;
+  --text-muted: #b9b2a7;
   --accent-gold: #E2B13C;
   --transition-smooth: all 1200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -11,17 +12,51 @@
 .birthday-page-wrapper {
   width: 100%;
   min-height: 100vh;
-  background: var(--primary-bg);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(226, 177, 60, 0.08) 0%, rgba(226, 177, 60, 0) 40%),
+    radial-gradient(circle at 82% 75%, rgba(226, 177, 60, 0.06) 0%, rgba(226, 177, 60, 0) 42%),
+    linear-gradient(160deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: fixed;
+    width: 42vw;
+    height: 42vw;
+    min-width: 260px;
+    min-height: 260px;
+    max-width: 560px;
+    max-height: 560px;
+    border-radius: 50%;
+    background: rgba(226, 177, 60, 0.12);
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: -14vw;
+    left: -8vw;
+  }
+
+  &::after {
+    right: -10vw;
+    bottom: -16vw;
+  }
 }
 
 .hero-section {
   width: 100%;
-  background: linear-gradient(180deg, #faf8f3 0%, #f5f2ed 100%);
+  background: transparent;
   padding: 0;
   margin-top: 2rem;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     margin-top: 1.5rem;
@@ -34,8 +69,10 @@
 
 .main-content {
   width: 100%;
-  background: var(--primary-bg);
+  background: transparent;
   padding: 2rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 // Audio toggle button: bottom-right floating
@@ -46,7 +83,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(226, 177, 60, 0.15);
+  background: rgba(20, 24, 29, 0.72);
   border: 1px solid rgba(226, 177, 60, 0.3);
   cursor: pointer;
   display: flex;
@@ -54,15 +91,16 @@
   justify-content: center;
   z-index: 100;
   transition: all 300ms ease-out;
-  color: var(--text-dark);
+  color: #f3ede1;
   padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(5, 7, 9, 0.42);
+  backdrop-filter: blur(10px);
 
   &:hover {
-    background: rgba(226, 177, 60, 0.25);
+    background: rgba(26, 31, 37, 0.84);
     border-color: rgba(226, 177, 60, 0.5);
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(226, 177, 60, 0.15);
+    box-shadow: 0 10px 22px rgba(226, 177, 60, 0.16);
   }
 
   &:active {
@@ -94,8 +132,8 @@
   position: absolute;
   bottom: calc(100% + 0.75rem);
   right: 0;
-  background: rgba(42, 36, 32, 0.95);
-  color: #faf8f3;
+  background: rgba(17, 21, 26, 0.94);
+  color: #efe9df;
   padding: 0.5rem 0.75rem;
   border-radius: 3px;
   font-size: 0.75rem;
@@ -128,11 +166,11 @@
   gap: 0.55rem;
   padding: 0.5rem 0.95rem;
   border-radius: 999px;
-  background: rgba(255, 250, 242, 0.85);
-  border: 1px solid rgba(182, 127, 32, 0.32);
-  box-shadow: 0 8px 18px rgba(63, 45, 15, 0.12);
+  background: rgba(20, 24, 29, 0.72);
+  border: 1px solid rgba(226, 177, 60, 0.28);
+  box-shadow: 0 10px 24px rgba(5, 7, 9, 0.38);
   z-index: 120;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
 }
 
 .heart-loop {
@@ -146,7 +184,7 @@
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
   font-size: 0.92rem;
-  color: #3f2d0f;
+  color: #efe7da;
   letter-spacing: 0.02em;
 }
 

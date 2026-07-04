@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #faf8f5;
+  background: transparent;
   position: relative;
   overflow: hidden;
   user-select: none;
@@ -20,6 +20,12 @@
   gap: 3rem;
   position: relative;
   z-index: 10;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border-radius: 24px;
+  background: rgba(20, 24, 29, 0.56);
+  border: 1px solid rgba(226, 177, 60, 0.15);
+  box-shadow: 0 22px 46px rgba(5, 8, 11, 0.38), inset 0 0 0 1px rgba(226, 177, 60, 0.04);
+  backdrop-filter: blur(10px);
 }
 
 /* ===== SUNFLOWER INTERACTIVE ===== */
@@ -31,7 +37,7 @@
   justify-content: center;
   cursor: pointer;
   position: relative;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.24));
   transition: filter 300ms ease-out;
 
   &:active,
@@ -52,7 +58,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgba(226, 177, 60, 0.35);
+  border: 1px solid rgba(226, 177, 60, 0.22);
   display: block;
 }
 
@@ -86,7 +92,7 @@
 .breathing-text {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: #2f2923;
+  color: #e8e1d4;
   font-weight: 520;
   line-height: 1.8;
   letter-spacing: 0.02em;
@@ -126,9 +132,9 @@
   position: absolute;
   bottom: 3rem;
   padding: 1rem 2.5rem;
-  background: rgba(226, 177, 60, 0.15);
+  background: rgba(20, 24, 29, 0.74);
   border: 1px solid rgba(226, 177, 60, 0.4);
-  border-radius: 3px;
+  border-radius: 12px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -137,16 +143,17 @@
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 500;
-  color: #2a2420;
+  color: #efe8db;
   letter-spacing: 0.03em;
   transition: all 300ms ease-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 22px rgba(5, 8, 11, 0.36);
+  backdrop-filter: blur(10px);
   z-index: 20;
 
   &:hover {
-    background: rgba(226, 177, 60, 0.25);
+    background: rgba(28, 33, 39, 0.88);
     border-color: #E2B13C;
-    box-shadow: 0 4px 12px rgba(226, 177, 60, 0.15);
+    box-shadow: 0 14px 28px rgba(226, 177, 60, 0.17);
     transform: translateY(-2px);
 
     .button-arrow {

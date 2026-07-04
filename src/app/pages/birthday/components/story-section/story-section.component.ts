@@ -26,7 +26,7 @@ export class StorySectionComponent implements OnInit {
     {
       id: "intro",
       title: "11:11 — The Universe Aligns",
-      content: `They say 11:11 is the universe aligning to bring you exactly what you need. For a long time, I made that wish. Today, the universe gets to celebrate the day it actually answered. Happy Birthday to my favorite manifestation.`,
+      content: `They say 11:11 is the universe aligning to bring you exactly what you need. For a long time, I made that wish. Tomorrow, the universe gets to celebrate the day it actually answered. Happy Birthday to my favorite manifestation.`,
       type: "intro"
     },
     {

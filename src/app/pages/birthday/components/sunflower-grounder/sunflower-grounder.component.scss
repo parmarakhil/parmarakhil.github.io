@@ -5,10 +5,15 @@
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  background: #faf8f3;
+  background: transparent;
   position: relative;
   min-height: 100vh;
   justify-content: center;
+  border-radius: 24px;
+  background: rgba(20, 24, 29, 0.56);
+  border: 1px solid rgba(226, 177, 60, 0.15);
+  box-shadow: 0 20px 46px rgba(5, 8, 11, 0.38), inset 0 0 0 1px rgba(226, 177, 60, 0.05);
+  backdrop-filter: blur(10px);
 }
 
 .sunflower-container {
@@ -31,8 +36,8 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgba(226, 177, 60, 0.4);
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+  border: 1px solid rgba(226, 177, 60, 0.24);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.24));
   transition: filter 200ms ease-out;
 
   @media (hover: hover) {
@@ -45,7 +50,7 @@
 .breathe-prompt {
   text-align: center;
   font-size: clamp(0.875rem, 2.5vw, 1.125rem);
-  color: #57514b;
+  color: #e6decd;
   font-weight: 400;
   line-height: 1.6;
   max-width: 280px;
@@ -62,9 +67,9 @@
 .proceed-button {
   margin-top: 2rem;
   padding: 1rem 2.5rem;
-  background: rgba(226, 177, 60, 0.15);
+  background: rgba(20, 24, 29, 0.74);
   border: 1px solid rgba(226, 177, 60, 0.4);
-  border-radius: 3px;
+  border-radius: 12px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -73,15 +78,16 @@
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 500;
-  color: #2a2420;
+  color: #ece3d4;
   letter-spacing: 0.03em;
   transition: all 300ms ease-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 24px rgba(5, 8, 11, 0.38);
+  backdrop-filter: blur(10px);
 
   &:hover {
-    background: rgba(226, 177, 60, 0.25);
+    background: rgba(28, 33, 39, 0.88);
     border-color: #E2B13C;
-    box-shadow: 0 4px 12px rgba(226, 177, 60, 0.15);
+    box-shadow: 0 14px 28px rgba(226, 177, 60, 0.16);
     transform: translateY(-2px);
   }
 
