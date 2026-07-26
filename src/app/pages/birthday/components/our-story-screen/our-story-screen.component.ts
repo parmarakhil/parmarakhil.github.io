@@ -3,9 +3,12 @@ import { trigger, style, animate, transition } from "@angular/animations";
 
 interface DateMemory {
   id: string;
+  title: string;
+  song: string;
+  subtitle: string;
+  url: string;
+  icon: string;
   imagePath: string;
-  caption: string;
-  context: string;
 }
 
 @Component({
@@ -29,39 +32,57 @@ export class OurStoryScreenComponent implements OnInit {
   dateMemories: DateMemory[] = [
     {
       id: "memory-1",
-      imagePath: "assets/images/laxmi.jpeg",
-      caption: "Around the blessings",
-      context: "my laxmi"
+      title: "Our Promise",
+      song: "I Love You",
+      subtitle: "One of the songs that became part of our journey.",
+      url: "https://music.youtube.com/watch?v=lbfVSykGDX8&si=C8TRHfwucdajDWM-",
+      icon: "🎵",
+      imagePath: "assets/images/ILU.jpg"
     },
     {
       id: "memory-2",
-      imagePath: "assets/images/loveyou.jpeg",
-      caption: "Where Walls Came Down",
-      context: "A Soft Turning Point"
+      title: "Her Smile",
+      song: "Laal Bindi",
+      subtitle: "One of the songs that became part of our journey.",
+      url: "https://music.youtube.com/watch?v=uXyqsmb9xwY&si=ZvuC6JqpP6mdHUBt",
+      icon: "🎵",
+      imagePath: "assets/images/Laal bindi.jpg"
     },
     {
       id: "memory-3",
-      imagePath: "assets/images/myfavView.jpeg",
-      caption: "Finding Home in You",
-      context: "The Comfort Zone"
+      title: "The Beginning",
+      song: "Falling in Love",
+      subtitle: "One of the songs that became part of our journey.",
+      url: "https://music.youtube.com/watch?v=3qZc08AiPYQ&si=8FlA86leZgGkpJ6t",
+      icon: "🎵",
+      imagePath: "assets/images/Falling In Love.jpg"
     },
     {
       id: "memory-4",
-      imagePath: "assets/images/dream.jpeg",
-      caption: "Dreaming Forward",
-      context: "Future We Keep Choosing"
+      title: "The Rhythm We Shared",
+      song: "Qayde Se",
+      subtitle: "One of the songs that became part of our journey.",
+      url: "https://music.youtube.com/watch?v=Z25GNhpajyY&si=g9CBXMUteMzCl07s",
+      icon: "🎵",
+      imagePath: "assets/images/Qayde se.jpg"
     },
     {
       id: "memory-5",
-      imagePath: "assets/images/lovelykid.jpeg",
-      caption: "Your Tender Joy",
-      context: "The Smile I Protect"
+      title: "Forgiveness",
+      song: "Maafi",
+      subtitle: "One of the songs that became part of our journey.",
+      url: "https://music.youtube.com/watch?v=Hr5BtPkylmA&si=eA0Sgx14bwWCHiUv",
+      icon: "🎵",
+      imagePath: "assets/images/maafi.jpg"
     },
     {
       id: "memory-6",
-      imagePath: "assets/images/sleepyface.jpeg",
-      caption: "Peace Beside You",
-      context: "Where Minds Finally Rest"
+      title: "Distance, Yet Close",
+      song: "Dooron Dooron",
+      subtitle: "One of the songs that became part of our journey.",
+      url: "https://music.youtube.com/watch?v=9T-Zbxg9X_4&si=Yg5w4RQzPAeu8yGq",
+      icon: "🎵",
+      imagePath: "assets/images/Dooron.jpg"
     }
   ];
 
